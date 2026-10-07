@@ -15,3 +15,7 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# Secrets (Azure Speech key lives here; never commit)
+.env
+*.key
