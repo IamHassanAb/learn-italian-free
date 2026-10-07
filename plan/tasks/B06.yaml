@@ -2,7 +2,7 @@ id: B06
 stage: B
 title: Card deck from vocab/phrases items
 size: S
-status: todo
+status: done
 depends_on:
 - B03
 change: Build cards keyed by full item id.

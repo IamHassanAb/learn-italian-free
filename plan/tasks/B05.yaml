@@ -2,7 +2,7 @@ id: B05
 stage: B
 title: Checklist and streak storage
 size: S
-status: todo
+status: done
 depends_on:
 - B04
 change: Tick items; store per day; show streak.

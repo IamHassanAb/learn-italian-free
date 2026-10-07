@@ -2,10 +2,11 @@ id: D02
 stage: D
 title: Persona prompt builder from scenario fields
 size: S
-status: todo
+status: blocked
 depends_on:
 - D01
-change: Build the Claude prompt from persona, setting, register, goal and vocabulary.
+change: Build the Claude prompt from persona, setting, register, goal and vocabulary. BLOCKED by D14 (no Claude
+  on Pages).
 done_when:
 - Prompt for each of 8 scenarios generated from content only
 touches:

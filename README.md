@@ -25,6 +25,17 @@ You do not need to install anything to learn. The PDFs are already built.
 Everything linked is free to use. Some sites also sell apps or courses; they are marked "ignore" in the files and you never need them.
 Links were opened and checked on the date recorded in each file in `content/resources/`. Links rot, so tell us if one breaks.
 
+## The app (works on your phone, offline)
+A small study app lives in `docs/` and is published with GitHub Pages: a daily 30-minute plan, flashcards with spaced repetition,
+number/time/date drills, role-play scenarios and a log for words you get wrong. It installs to your home screen and works offline
+after the first visit. Your progress stays on your device (Settings has a backup you can move to another device).
+
+Run it locally: `python -m http.server 8000 --directory docs`, then open http://localhost:8000.
+
+**Publish it (maintainer):** GitHub repo, Settings, Pages, "Deploy from a branch", branch `main`, folder `/docs`.
+Rebuild the app after content changes with `python build/app.py` and commit `docs/`.
+The app uses your portfolio's "Study Room at Dusk" design tokens (`app/styles.css`).
+
 ## Rebuild the PDFs (optional)
 ```
 pip install -r requirements.txt
@@ -36,12 +47,11 @@ Needs Python 3.9+. The build looks for Arial, Liberation Sans or DejaVu Sans; se
 ## How the repo is organised
 Content is split into small files so any one thing is easy to fix or replace:
 `content/` (modules, one block per file; one file per link; fact-check ledger), `schema/` (what files may contain),
-`build/` (checker, link checker, PDF builder), `plan/` (roadmap: one file per task; run `python build/plan.py`).
+`build/` (checker, link checker, PDF and app builders), `app/` (web app source), `docs/` (built app for GitHub Pages), `plan/` (roadmap: one file per task; run `python build/plan.py`).
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to fix, add or remove things.
 
 ## Roadmap
-`python build/plan.py` prints the board. Next: more grammar rows and a pronunciation module, then a small study app
-(flashcards, daily plan, scripted role-play) generated from the same content.
+`python build/plan.py` prints the board. Next: more grammar rows and a pronunciation module.
 
 ## Credits and honest limits
 - The five-step method follows Olly Richards' video "How I Would Learn Italian (if I could start over in 2026)" (StoryLearning).

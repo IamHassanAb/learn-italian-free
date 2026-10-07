@@ -2,7 +2,7 @@ id: B09
 stage: B
 title: Audio button (browser Italian voice)
 size: S
-status: todo
+status: done
 depends_on:
 - B08
 change: Speak Italian text with the browser voice; hide button if no Italian voice.

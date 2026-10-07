@@ -1,0 +1,29 @@
+id: app-today
+output: app
+title: Today
+blocks:
+- id: read
+  title: Read with audio
+  minutes: 10
+  text: Read one story section while the audio plays. Do not stop at unknown words; underline the cognates you recognise. Then retell it in four sentences.
+  resources:
+  - melolingua-stories
+  - fablecottage-stories
+- id: speak
+  title: Speak out loud
+  minutes: 10
+  text: Review your due cards out loud, then play one scenario. Say it badly; that is the point.
+  actions:
+  - review
+  - scenarios
+- id: immerse
+  title: Italian home
+  minutes: 10
+  text: One video or podcast segment. Aim for the gist, not every word.
+  resources:
+  - easy-italian-street-playlist
+  - ime-caffe-italiano
+  - ime-podcast
+  - ime-videos-italian-subtitles
+  - ime-everyday-italian
+  - raiplay

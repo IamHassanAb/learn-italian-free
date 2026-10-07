@@ -2,7 +2,7 @@ id: B08
 stage: B
 title: Flashcard review screen
 size: M
-status: todo
+status: done
 depends_on:
 - B07
 change: Show it/en, reveal, rate again/good/easy.

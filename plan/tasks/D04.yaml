@@ -2,10 +2,11 @@ id: D04
 stage: D
 title: Correction summary after the chat
 size: S
-status: todo
+status: blocked
 depends_on:
 - D03
-change: At the end, list 3 mistakes and the corrected sentences; offer to add them to the gaps log.
+change: At the end, list 3 mistakes and the corrected sentences; offer to add them to the gaps log. BLOCKED by D14
+  (no Claude on Pages).
 done_when:
 - Corrections can be sent to the gaps log (B10)
 touches:

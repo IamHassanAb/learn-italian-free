@@ -2,11 +2,12 @@ id: B01
 stage: B
 title: JSON export of content for the app
 size: S
-status: todo
+status: done
 depends_on:
 - A6
-change: build/json.py writes dist/app/content.json (modules, parts, items with full ids, resources).
+change: build/appdata.py writes docs/data/content.json (modules, parts, items, resources, PDFs list, today plan).
+  Renamed from json.py, which shadowed Python's json module.
 done_when:
 - Valid JSON; item ids are module.part.item
 touches:
-- build/json.py
+- build/appdata.py

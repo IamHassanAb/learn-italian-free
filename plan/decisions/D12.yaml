@@ -1,0 +1,5 @@
+id: D12
+decision: The app is a static, installable web app on GitHub Pages (docs/), not a claude.ai artifact
+why: Maintainer will publish it on GitHub Pages and use it everywhere. Works offline, no server, no accounts.
+date: '2026-10-07'
+status: active

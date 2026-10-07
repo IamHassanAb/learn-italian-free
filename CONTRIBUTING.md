@@ -29,7 +29,8 @@ Thank you for helping other learners. Small, careful changes are best: one fix, 
 ```
 pip install -r requirements.txt
 python build/lint.py        # must pass (the same check runs on GitHub)
-python build/all.py         # rebuild PDFs if your change should appear in them, and commit dist/pdf/
+python build/all.py         # rebuild PDFs and the app, and commit dist/pdf/ and docs/
+node --test app/tests/lib.test.mjs app/tests/drills.test.mjs   # if you touched app/js/lib
 ```
 
 ## Where to start

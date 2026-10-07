@@ -1,14 +1,14 @@
 id: B13
 stage: B
-title: Publish privately and test update-in-place
+title: Publish on GitHub Pages
 size: S
 status: todo
 depends_on:
-- B05
-- B08
-- B12
-change: Publish as private artifact; republish; progress stays.
+- B03
+change: 'Maintainer: repo Settings, Pages, deploy from main /docs. Re-run python build/app.py after content changes
+  and commit docs/.'
 done_when:
-- Progress survives a republish
+- The site opens at the Pages URL and installs to a phone home screen
+- Progress survives a redeploy (same origin, same localStorage key)
 touches:
-- app/
+- docs/

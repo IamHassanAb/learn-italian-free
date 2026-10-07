@@ -1,14 +1,13 @@
 id: D01
 stage: D
-title: 'Gate: can the app call Claude, and at what cost?'
+title: 'Gate: can the app call Claude on GitHub Pages?'
 size: S
-status: todo
+status: done
 depends_on:
 - B02
-- B13
-change: Confirm the ask-Claude capability, limits, and that it counts against the maintainer's plan; ask the maintainer before
-  building.
+change: 'No. A static site cannot hold an API key. Decision D14: not built. Revisit only as an opt-in ''bring your
+  own API key'' feature.'
 done_when:
-- Written decision; user says go or no-go
+- Decision D14 recorded; maintainer informed
 touches:
 - plan/decisions/

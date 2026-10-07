@@ -1,0 +1,12 @@
+id: B15
+stage: B
+title: Unit tests for app logic
+size: S
+status: done
+depends_on:
+- B03
+change: 'app/tests: numbers, clock, calendar, srs, store, drills (14 tests); also run in CI.'
+done_when:
+- node --test app/tests/lib.test.mjs app/tests/drills.test.mjs passes
+touches:
+- app/tests/

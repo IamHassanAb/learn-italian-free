@@ -2,7 +2,7 @@ id: B12
 stage: B
 title: 'Drill: time, days, months, dates'
 size: M
-status: todo
+status: done
 depends_on:
 - B11
 change: Generated drills for the 05 content.

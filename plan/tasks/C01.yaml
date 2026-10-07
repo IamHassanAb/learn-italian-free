@@ -2,7 +2,7 @@ id: C01
 stage: C
 title: Scenario viewer (read-only)
 size: S
-status: todo
+status: done
 depends_on:
 - B03
 change: 'Show a scenario: vocab, dialogue, role-play prompts.'

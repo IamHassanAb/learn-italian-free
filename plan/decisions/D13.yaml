@@ -1,0 +1,6 @@
+id: D13
+decision: Progress is stored on the device (localStorage) with a JSON backup and restore
+why: No backend means no sync. Backup lets progress move between devices. Item ids are stable so edits do not erase
+  history.
+date: '2026-10-07'
+status: active

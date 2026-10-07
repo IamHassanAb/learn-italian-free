@@ -82,6 +82,13 @@ def main():
         for mid in s.get("modules", []):
             if mid not in c.modules: errors.append("steps/%s: unknown module %r" % (step_id, mid))
     for bid, b in c.bundles.items():
+        if b.get("output") not in sch["bundle"]["outputs"]: errors.append("bundles/%s: bad output %r" % (bid, b.get("output")))
+        for k in sch["bundle"]["required_by_output"].get(b.get("output"), []):
+            if k not in b: errors.append("bundles/%s: missing %r for output %s" % (bid, k, b.get("output")))
+        for blk in b.get("blocks", []):
+            for rid in blk.get("resources", []):
+                used_res.add(rid)
+                if rid not in c.resources: errors.append("bundles/%s: block %s uses unknown resource %r" % (bid, blk.get("id"), rid))
         for e in b.get("modules", []):
             mid = e["id"] if isinstance(e, dict) else e
             if mid not in c.modules: errors.append("bundles/%s: unknown module %r" % (bid, mid))

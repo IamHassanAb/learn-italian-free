@@ -1,0 +1,13 @@
+id: B16
+stage: B
+title: Verify the app on a real phone
+size: S
+status: todo
+depends_on:
+- B13
+change: 'Open the Pages URL on iPhone Safari and Android Chrome: install to home screen, check an Italian voice
+  exists, review a card, try offline.'
+done_when:
+- Both phones pass; any voice gaps noted in README
+touches:
+- README.md

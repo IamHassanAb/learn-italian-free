@@ -2,10 +2,10 @@ id: D03
 stage: D
 title: Conversation UI
 size: M
-status: todo
+status: blocked
 depends_on:
 - D02
-change: Chat with the persona; stays at A1-A2; Italian replies short.
+change: Chat with the persona; stays at A1-A2; Italian replies short. BLOCKED by D14 (no Claude on Pages).
 done_when:
 - Complete a bar scenario end to end
 touches:

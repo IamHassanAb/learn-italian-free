@@ -2,7 +2,7 @@ id: B11
 stage: B
 title: 'Drill: numbers'
 size: S
-status: todo
+status: done
 depends_on:
 - B03
 change: 'Generated: show number, type Italian (or reverse).'

@@ -1,0 +1,5 @@
+id: R06
+risk: Italian text-to-speech depends on the device having an Italian voice
+affects: B09, B11/B12 listening drills
+mitigation: Audio buttons and listening drills hide themselves when no Italian voice exists; Settings explains how
+  to add one. B16 checks real phones.

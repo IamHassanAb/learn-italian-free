@@ -1,0 +1,14 @@
+id: B17
+stage: B
+title: Study content for numbers/time/dates drills lives in content
+size: M
+status: todo
+depends_on:
+- B12
+change: The drills use code lists for weekdays and months (app/js/lib/calendar.js). Decide whether to move them
+  into content/ so one edit updates PDF and app.
+done_when:
+- Single source for weekday and month names
+touches:
+- app/js/lib/calendar.js
+- content/

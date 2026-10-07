@@ -2,7 +2,7 @@ id: B04
 stage: B
 title: 'Today screen: 30-minute plan'
 size: S
-status: todo
+status: done
 depends_on:
 - B03
 change: Three 10-minute blocks (read, speak, immerse) with links.

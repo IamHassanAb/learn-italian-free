@@ -24,8 +24,11 @@ module:
   steps: [0, 1, 2, 3, 4, 5]          # 0 = overview, not part of the 5-step path
 
 bundle:
-  required: [id, output, filename, title, subtitle, modules]   # modules: id or {id, number?, page_break?}
-  outputs: [pdf]
+  required: [id, output, title]
+  outputs: [pdf, app]
+  required_by_output:
+    pdf: [filename, subtitle, modules]      # modules: id or {id, number?, page_break?}
+    app: [blocks]                           # blocks: [{id, title, minutes, text, resources?, actions?}]
 
 step:
   required: [id, number, title, principle, modules]

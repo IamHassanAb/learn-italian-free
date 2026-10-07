@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Italiano ogni giorno">
+  <rect width="512" height="512" rx="96" fill="#2b2235"/>
+  <rect x="116" y="136" width="93" height="240" rx="10" fill="#6a9b7e"/>
+  <rect x="209.5" y="136" width="93" height="240" fill="#f6ece0"/>
+  <rect x="303" y="136" width="93" height="240" rx="10" fill="#d9936c"/>
+</svg>

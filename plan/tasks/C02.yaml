@@ -2,7 +2,7 @@ id: C02
 stage: C
 title: Hide/show the other side of the dialogue
 size: S
-status: todo
+status: done
 depends_on:
 - C01
 change: Toggle to hide the other person's lines; reveal one line at a time.

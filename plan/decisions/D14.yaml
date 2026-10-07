@@ -1,0 +1,6 @@
+id: D14
+decision: No Claude conversation partner in the Pages app
+why: 'A static site cannot keep an API key secret. Stage D is blocked. Possible later: an opt-in ''bring your own
+  API key'' setting, stored only in the user''s browser, with a clear cost warning.'
+date: '2026-10-07'
+status: active

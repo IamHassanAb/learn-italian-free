@@ -2,7 +2,7 @@ id: B10
 stage: B
 title: Gaps log (word/phrase/mistake -> flashcard)
 size: M
-status: todo
+status: done
 depends_on:
 - B08
 change: Add an entry in 10 seconds; it becomes a card; repeated mistakes link to a grammar row.

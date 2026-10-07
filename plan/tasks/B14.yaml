@@ -1,0 +1,12 @@
+id: B14
+stage: B
+title: Offline support (service worker)
+size: S
+status: done
+depends_on:
+- B03
+change: app/sw.js precaches the app shell and content; network first, cache as fallback.
+done_when:
+- After one visit the app reloads with no network (tested in headless Chrome)
+touches:
+- app/sw.js

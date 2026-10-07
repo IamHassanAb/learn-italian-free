@@ -1,12 +1,13 @@
 id: B02
 stage: B
-title: Check artifact capabilities (storage, ask-Claude)
+title: Decide hosting and check what the platform allows
 size: S
-status: todo
+status: done
 depends_on:
 - A6
-change: Load the artifact-capabilities skill; record what storage and Claude calls are available and any limits.
+change: 'Maintainer will host on GitHub Pages: a static installable web app, not a claude.ai artifact. See decisions
+  D12-D14.'
 done_when:
-- Findings written to plan/decisions/ as a new decision
+- Decisions D12, D13, D14 recorded
 touches:
 - plan/decisions/
