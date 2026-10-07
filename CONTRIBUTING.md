@@ -3,6 +3,7 @@
 Thank you for helping other learners. Small, careful changes are best: one fix, one row, one resource per pull request.
 
 ## Ground rules
+0. By contributing you agree your work is released under the licenses in `LICENSE` (code) and `LICENSE-CONTENT.md` (content).
 1. **Free only.** Every linked resource must be free to use. Paid extras can be noted as "ignore", never recommended.
 2. **Verify before you add.** Any Italian example or fact needs a second source (dictionary, grammar reference, native speaker).
    Record it in `content/ledger/` (claim, source, date). Never copy Italian from auto-generated captions.

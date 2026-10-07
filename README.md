@@ -51,4 +51,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to fix, add or remove things.
   (permits, tax code, bank accounts) is general: always check official sources. Corrections are welcome.
 
 ## License
-To be added by the maintainer before publishing.
+Content (the study material, PDFs and plan): [CC BY-SA 4.0](LICENSE-CONTENT.md). Code (`build/`, `schema/`, `.github/`): [MIT](LICENSE).
+Contributions are accepted under the same licenses.
