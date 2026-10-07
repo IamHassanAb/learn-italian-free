@@ -1,0 +1,17 @@
+id: greetings
+area: greetings
+module: basics-greetings
+claims:
+- claim: The switch from buongiorno to buonasera is fuzzy (about 4-5 pm, earlier in some regions); salve works all
+    day
+  source: https://www.thelocal.it/20231108/explained-when-do-italians-switch-from-buongiorno-to-buonasera
+  verified: '2026-10-07'
+- claim: In bocca al lupo is answered with Crepi (then grazie)
+  source: https://www.thinkinitalian.com/good-luck-in-italian
+  verified: '2026-10-07'
+- claim: Cin cin and Salute are toasts; Salute is also said after a sneeze
+  source: https://www.thinkinitalian.com/cin-cin-meaning-italian
+  verified: '2026-10-07'
+- claim: Permesso? asks to enter or pass
+  source: https://www.thelocal.it/20190802/italian-word-of-the-day-permesso/
+  verified: '2026-10-07'

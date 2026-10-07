@@ -1,0 +1,13 @@
+id: scenario-bar
+title: Al bar
+step: 4
+level: A1
+skill: speaking
+persona: Barista
+setting: A café counter
+register: Lei
+parts:
+- intro
+- vocab
+- dialogue
+- roleplay

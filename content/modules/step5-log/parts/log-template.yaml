@@ -1,0 +1,8 @@
+id: step5-log.log-template
+type: template
+columns:
+- Date
+- What I watched/heard
+- 3 new chunks
+- One thing I said to a real person
+blank_rows: 4

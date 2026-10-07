@@ -1,0 +1,8 @@
+id: pdf-01-cognates-and-grammar-lookup
+output: pdf
+filename: 01-Cognates-and-Grammar-Lookup.pdf
+title: Cognates and grammar lookup
+subtitle: 'Steps 1 and 3: use what you already know; look the rest up on demand'
+modules:
+- id: step1-cognates
+- id: step3-grammar

@@ -1,0 +1,7 @@
+id: colours
+area: colours
+module: basics-colours
+claims:
+- claim: blu, viola, rosa, arancione and marrone are treated as invariable (marroni/arancioni are heard)
+  source: https://migaku.com/blog/language-fun/italian-colors-vocabulary-grammar-guide
+  verified: '2026-10-07'

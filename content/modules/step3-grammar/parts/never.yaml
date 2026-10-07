@@ -1,0 +1,4 @@
+id: step3-grammar.never
+type: lookup-row
+when: '''Never'''
+answer: Non vado mai (non is required).

@@ -1,0 +1,10 @@
+id: scenario-bar.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**Barista:** Buongiorno, mi dica.'
+- '**Tu:** Buongiorno, vorrei un cappuccino e un cornetto, per favore.'
+- '**Barista:** Altro?'
+- '**Tu:** No, grazie. Quanto costa?'
+- '**Barista:** Tre euro e cinquanta.'
+- '**Tu:** Posso pagare con la carta?'

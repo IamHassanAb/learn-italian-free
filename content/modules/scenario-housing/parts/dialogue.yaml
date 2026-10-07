@@ -1,0 +1,9 @@
+id: scenario-housing.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**Tu:** Buongiorno, ho visto l''annuncio della stanza. È ancora libera?'
+- '**Padrone:** Sì, quattrocento euro, spese escluse.'
+- '**Tu:** Quanto sono le spese, più o meno?'
+- '**Padrone:** Circa cinquanta euro. Due mesi di caparra.'
+- '**Tu:** Posso vedere la stanza questa settimana?'

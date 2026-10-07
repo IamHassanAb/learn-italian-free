@@ -1,0 +1,7 @@
+id: time
+area: time
+module: basics-time
+claims:
+- claim: È l'una / Sono le due; e/meno for minutes; quarto and mezza are not used with the 24-hour clock
+  source: https://www.thinkinitalian.com/telling-the-time-in-italian/
+  verified: '2026-10-07'

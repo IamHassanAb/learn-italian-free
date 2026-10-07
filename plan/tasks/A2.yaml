@@ -1,0 +1,12 @@
+id: A2
+stage: A
+title: Resource registry (one file per link)
+size: S
+status: done
+depends_on:
+- A1
+change: content/resources/<id>.yaml for every URL, with cost, level, verified date, notes.
+done_when:
+- No raw URLs in content; unknown resource refs fail lint
+touches:
+- content/resources/

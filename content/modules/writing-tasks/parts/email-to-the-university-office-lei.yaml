@@ -1,0 +1,7 @@
+id: writing-tasks.email-to-the-university-office-lei
+type: writing-task
+title: Email to the university office (Lei)
+prompt: Ask for information about enrolment and the deadline.
+blank_lines: 4
+model: Gentile Segreteria, mi chiamo… e vorrei avere informazioni sull'iscrizione al corso di laurea in… Potete
+  indicarmi i documenti necessari e la scadenza? Cordiali saluti, …

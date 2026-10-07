@@ -1,0 +1,13 @@
+id: scenario-university
+title: All'università
+step: 4
+level: A1
+skill: speaking
+persona: Impiegata della segreteria
+setting: University students' office
+register: Lei
+parts:
+- intro
+- vocab
+- dialogue
+- roleplay

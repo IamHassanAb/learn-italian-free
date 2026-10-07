@@ -1,0 +1,37 @@
+id: step5-home.table
+type: table
+rows:
+- - Street interviews with IT/EN subtitles
+  - Easy Italian (Milan and other cities)
+  - A2–B2
+  - '[[res:easy-italian-channel|Channel]] · [[res:easy-italian-street-playlist|Street playlist]]'
+- - Slow monologues (good to shadow)
+  - 'Italy Made Easy: Caffè Italiano con Manu'
+  - A2–B1
+  - '[[res:ime-caffe-italiano|Playlist]]'
+- - Videos in Italian with subtitles
+  - 'Italy Made Easy: Videos 100% in Italian'
+  - A2–B1
+  - '[[res:ime-videos-italian-subtitles|Playlist]]'
+- - Podcast (slow Italian)
+  - 'Italy Made Easy podcast: free audio and free PDF transcripts; also on YouTube. Listen to one episode on loop
+    for a week.'
+  - A2–B1
+  - '[[res:ime-podcast|Podcast page]] · [[res:ime-podcast-videos|Video versions]]'
+- - Everyday language
+  - 'Italy Made Easy: Everyday Italian'
+  - A2
+  - '[[res:ime-everyday-italian|Playlist]]'
+- - Italian TV (free)
+  - RaiPlay, the public broadcaster. Free with an account; some titles are restricted outside Italy.
+  - B1+
+  - '[[res:raiplay|raiplay.it]]'
+- - People
+  - 'Italians around you: bar, flatmates, classmates, university groups'
+  - All
+  - Use the mingle kit in file 03
+columns:
+- Type
+- What
+- Level
+- Link

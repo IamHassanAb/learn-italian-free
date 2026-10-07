@@ -1,0 +1,57 @@
+id: step4-speaking.chunks
+type: phrases
+items:
+- id: i01
+  it: Vorrei…
+  en: I would like…
+  example: Vorrei un cappuccino, per favore.
+- id: i02
+  it: Ho bisogno di…
+  en: I need…
+  example: Ho bisogno di una farmacia.
+- id: i03
+  it: Mi piace / Mi piacciono…
+  en: I like…
+  example: Mi piace il caffè.
+- id: i04
+  it: Dove posso comprare…?
+  en: Where can I buy…?
+  example: Dove posso comprare una SIM?
+- id: i05
+  it: Quanto costa? / costano?
+  en: How much?
+  example: Quanto costano i biglietti?
+- id: i06
+  it: Posso pagare con la carta?
+  en: Can I pay by card?
+- id: i07
+  it: Non ho capito.
+  en: I didn't understand.
+  example: Scusi, non ho capito.
+- id: i08
+  it: Può ripetere, per favore? / Più piano?
+  en: Repeat? Slower? (formal)
+  example: Può parlare più piano?
+- id: i09
+  it: Come si dice … in italiano?
+  en: How do you say…?
+  example: Come si dice 'deadline'?
+- id: i10
+  it: Dov'è…? / Dove si trova…?
+  en: Where is…?
+  example: Dove si trova la stazione?
+- id: i11
+  it: C'è / Ci sono…?
+  en: Is there / are there…?
+  example: Ci sono camere libere?
+- id: i12
+  it: Sto imparando l'italiano.
+  en: I'm learning Italian.
+- id: i13
+  it: Parla inglese?
+  en: Do you speak English?
+  example: Ask this last, not first.
+- id: i14
+  it: Ho fame / freddo / caldo / sete
+  en: I'm hungry / cold / hot / thirsty
+  example: Fa freddo = weather.

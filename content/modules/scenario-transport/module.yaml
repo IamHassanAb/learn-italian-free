@@ -1,0 +1,13 @@
+id: scenario-transport
+title: Treno e autobus
+step: 4
+level: A1
+skill: speaking
+persona: Bigliettaio
+setting: A ticket desk
+register: Lei
+parts:
+- intro
+- vocab
+- dialogue
+- roleplay

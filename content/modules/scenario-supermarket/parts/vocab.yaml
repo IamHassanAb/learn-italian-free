@@ -1,0 +1,15 @@
+id: scenario-supermarket.vocab
+type: vocab
+items:
+- id: i01
+  it: un chilo / un etto / mezzo chilo
+  en: a kilo / 100 g / half kilo
+- id: i02
+  it: il reparto frutta e verdura
+  en: fruit and veg section
+- id: i03
+  it: la busta
+  en: the bag
+- id: i04
+  it: Ha la tessera?
+  en: Do you have the loyalty card?

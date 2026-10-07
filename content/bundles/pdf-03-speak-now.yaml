@@ -1,0 +1,26 @@
+id: pdf-03-speak-now
+output: pdf
+filename: 03-Speak-Now.pdf
+title: Speak now
+subtitle: 'Step 4: chunks, a mingle kit, 8 real scenarios, 3 short writing tasks'
+modules:
+- id: step4-speaking
+- id: scenario-bar
+  number: true
+  page_break: true
+- id: scenario-supermarket
+  number: true
+- id: scenario-housing
+  number: true
+- id: scenario-university
+  number: true
+- id: scenario-bureaucracy
+  number: true
+- id: scenario-pharmacy
+  number: true
+- id: scenario-transport
+  number: true
+- id: scenario-meeting-people
+  number: true
+- id: writing-tasks
+  page_break: true

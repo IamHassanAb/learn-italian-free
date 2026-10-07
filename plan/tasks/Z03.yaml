@@ -1,0 +1,12 @@
+id: Z03
+stage: Z
+title: Recordings
+size: M
+status: todo
+depends_on:
+- B13
+change: Record yourself and replay.
+done_when:
+- Deferred; needs microphone permission
+touches:
+- app/

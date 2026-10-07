@@ -1,0 +1,12 @@
+id: B06
+stage: B
+title: Card deck from vocab/phrases items
+size: S
+status: todo
+depends_on:
+- B03
+change: Build cards keyed by full item id.
+done_when:
+- Deck count matches item count in content
+touches:
+- app/

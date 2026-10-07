@@ -1,0 +1,15 @@
+id: scenario-meeting-people.vocab
+type: vocab
+items:
+- id: i01
+  it: Piacere! / Di dove sei?
+  en: Nice to meet you / Where are you from?
+- id: i02
+  it: Da quanto tempo sei qui?
+  en: How long have you been here?
+- id: i03
+  it: Ti va di…?
+  en: Do you feel like…?
+- id: i04
+  it: Ci vediamo!
+  en: See you!

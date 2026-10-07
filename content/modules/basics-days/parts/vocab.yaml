@@ -1,0 +1,23 @@
+id: basics-days.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: oggi / domani / dopodomani / ieri
+  en: today / tomorrow / the day after tomorrow / yesterday
+- id: i02
+  it: stamattina / questo pomeriggio / stasera / stanotte
+  en: 'this morning / this afternoon / this evening or tonight (stasera, before midnight) / during the night (stanotte:
+    the sleeping hours, tonight or last night)'
+- id: i03
+  it: adesso, ora / presto / tardi
+  en: now / early / late
+- id: i04
+  it: la settimana prossima / scorsa
+  en: next week / last week
+- id: i05
+  it: ogni giorno / tutti i giorni
+  en: every day
+- id: i06
+  it: sempre, spesso, a volte, raramente, mai
+  en: always, often, sometimes, rarely, never

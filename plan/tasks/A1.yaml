@@ -1,0 +1,11 @@
+id: A1
+stage: A
+title: Schema for content files
+size: S
+status: done
+depends_on: []
+change: schema/blocks.yaml defines part, module, bundle, step, resource and ledger shapes.
+done_when:
+- build/lint.py reads it and validates all files
+touches:
+- schema/blocks.yaml

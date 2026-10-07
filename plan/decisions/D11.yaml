@@ -1,0 +1,5 @@
+id: D11
+decision: Plan is split into small files
+why: One file per stage, task, decision and risk, so one change never forces editing a big document.
+date: '2026-10-07'
+status: active

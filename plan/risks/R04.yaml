@@ -1,0 +1,4 @@
+id: R04
+risk: Auto-captions garble Italian phrases
+affects: M09, M19, M20
+mitigation: Never copy Italian from captions; verify against a dictionary or second source.

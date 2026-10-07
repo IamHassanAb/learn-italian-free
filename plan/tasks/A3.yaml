@@ -1,0 +1,13 @@
+id: A3
+stage: A
+title: Migrate content to YAML (no wording changes)
+size: M
+status: done
+depends_on:
+- A1
+- A2
+change: 37 modules, 92 parts, bundles, steps, manifest.
+done_when:
+- Text of rebuilt PDFs matches old PDFs apart from line-wrap artifacts
+touches:
+- content/

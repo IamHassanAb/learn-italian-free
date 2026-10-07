@@ -1,0 +1,4 @@
+id: R05
+risk: YouTube links return 200 even if the id is wrong
+affects: all resources
+mitigation: Confirm by eye; playlist ids came from the channel page.

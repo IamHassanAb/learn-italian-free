@@ -1,0 +1,9 @@
+id: step2
+number: 2
+title: Read with audio
+principle: Read while you listen; do not stop at unknown words.
+modules:
+- step2-sources
+- step2-method
+- step2-schedule
+- step2-log

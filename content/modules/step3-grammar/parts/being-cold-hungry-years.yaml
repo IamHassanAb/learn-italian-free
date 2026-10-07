@@ -1,0 +1,4 @@
+id: step3-grammar.being-cold-hungry-years
+type: lookup-row
+when: Being cold/hungry/years
+answer: 'Ho freddo, ho fame, ho 23 anni. Weather: Fa freddo.'

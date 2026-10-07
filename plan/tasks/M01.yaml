@@ -1,0 +1,15 @@
+id: M01
+stage: M
+title: Fix the il/lo/l'/la/i/gli/le row
+size: S
+status: todo
+depends_on:
+- A6
+change: 'Source: ime-mini-course lesson 18 (see plan/notes/ime-mini-course-mapping.md). Correct the muddled article
+  row in step3-grammar: lo = masc singular before s+consonant, z, gn, ps, x, y; l'' before a vowel; gli = plural
+  of lo and l''.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- content/modules/step3-grammar/parts/il-lo-la-l-i-gli-le.yaml
+- content/ledger/

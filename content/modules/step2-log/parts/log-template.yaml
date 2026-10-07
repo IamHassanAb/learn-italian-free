@@ -1,0 +1,7 @@
+id: step2-log.log-template
+type: template
+columns:
+- Story
+- Chunks I learned (write 5)
+- My retelling in one sentence
+blank_rows: 3

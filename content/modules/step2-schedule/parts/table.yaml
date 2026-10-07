@@ -1,0 +1,14 @@
+id: step2-schedule.table
+type: table
+rows:
+- - '1'
+  - 'MeloLingua: Il Caffè della Mattina, Al Mercato, Il Gelato Perfetto'
+- - '2'
+  - 'MeloLingua: In Treno verso Firenze, La Cena della Nonna. Then re-read your favourite one with no English.'
+- - '3'
+  - 'Fable Cottage: Cenerentola and I tre capretti furbetti'
+- - '4'
+  - 'Fable Cottage: Biancaneve and one more of your choice. [B1] Retell it in 8 sentences and record yourself.'
+columns:
+- Week
+- Read

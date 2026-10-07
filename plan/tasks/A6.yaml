@@ -1,0 +1,13 @@
+id: A6
+stage: A
+title: 'README: how to add, replace, remove'
+size: S
+status: done
+depends_on:
+- A4
+- A5
+change: README.md with the everyday-jobs table and rules.
+done_when:
+- A new person can add a part by following the README
+touches:
+- README.md

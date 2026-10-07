@@ -1,0 +1,7 @@
+id: basics-weather.dialogue
+type: dialogue
+title: Mini dialogue
+lines:
+- — Che tempo fa oggi?
+- — Fa freddo e piove. Domani c'è il sole, ma ci sono solo otto gradi.
+- — Allora porto l'ombrello! (*l'ombrello* = umbrella)

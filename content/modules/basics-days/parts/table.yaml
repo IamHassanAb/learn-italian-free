@@ -1,0 +1,20 @@
+id: basics-days.table
+type: table
+rows:
+- - lunedì
+  - Monday
+  - venerdì
+  - Friday
+- - martedì
+  - Tuesday
+  - sabato
+  - Saturday
+- - mercoledì
+  - Wednesday
+  - domenica
+  - 'Sunday (feminine: la domenica)'
+- - giovedì
+  - Thursday
+  - il fine settimana / il weekend
+  - the weekend
+header: false

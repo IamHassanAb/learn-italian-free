@@ -1,0 +1,17 @@
+id: M18
+stage: M
+title: 'New PDF bundle: pronunciation'
+size: S
+status: todo
+depends_on:
+- M14
+- M15
+- M16
+- M17
+change: Add bundles/pdf-06-pronunciation.yaml and register the module in manifest and step.
+done_when:
+- build/all.py produces 06-Pronunciation.pdf
+touches:
+- content/bundles/
+- content/manifest.yaml
+- content/steps/step4.yaml

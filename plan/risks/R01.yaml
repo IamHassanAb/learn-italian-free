@@ -1,0 +1,4 @@
+id: R01
+risk: Browser voices vary; speech recognition may need permission
+affects: B09, Z04
+mitigation: Hide the audio button if no Italian voice; check capabilities in B02.

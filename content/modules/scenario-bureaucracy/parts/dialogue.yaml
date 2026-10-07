@@ -1,0 +1,9 @@
+id: scenario-bureaucracy.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**Tu:** Buongiorno, ho bisogno del codice fiscale. Quali documenti servono?'
+- '**Impiegato:** Passaporto e permesso di soggiorno.'
+- '**Tu:** Devo prendere un appuntamento?'
+- '**Impiegato:** Sì, online.'
+- '**Tu:** Può scrivere l''indirizzo del sito?'

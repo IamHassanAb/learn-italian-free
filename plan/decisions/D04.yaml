@@ -1,0 +1,5 @@
+id: D04
+decision: App is staged, not built at once
+why: 'Order: Today+flashcards/drills (B), scripted role-play (C), Claude partner (D).'
+date: '2026-10-07'
+status: active

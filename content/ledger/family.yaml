@@ -1,0 +1,7 @@
+id: family
+area: family
+module: basics-family
+claims:
+- claim: compagno/a di corso = classmate; coinquilino = flatmate
+  source: https://www.collinsdictionary.com/dictionary/italian-english/compagno-di-classe
+  verified: '2026-10-07'

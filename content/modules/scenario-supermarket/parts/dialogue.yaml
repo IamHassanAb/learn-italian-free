@@ -1,0 +1,8 @@
+id: scenario-supermarket.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**Tu:** Scusi, dove posso trovare il latte?'
+- '**Commesso:** In fondo, a destra.'
+- '*(alla cassa)* **Cassiere:** Ha la tessera?'
+- '**Tu:** No. Una busta, per favore.'

@@ -1,0 +1,12 @@
+id: M12
+stage: M
+title: Resource files for the lessons we link to
+size: S
+status: todo
+depends_on:
+- A6
+change: One resources/ file per mini-course lesson used, with a timestamped link (https://youtu.be/FAxsjpZ4lik?t=SECONDS).
+done_when:
+- Each file has start seconds from plan/notes/ime-mini-course-chapters.json; lint passes
+touches:
+- content/resources/ime-lesson-*.yaml

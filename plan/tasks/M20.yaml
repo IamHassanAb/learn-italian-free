@@ -1,0 +1,14 @@
+id: M20
+stage: M
+title: 'Introductions: update the meeting-people scenario'
+size: S
+status: todo
+depends_on:
+- M19
+change: 'Source: ime-mini-course lesson 29 (see plan/notes/ime-mini-course-mapping.md). Sono ...; Piacere; Come si
+  chiama? / Come ti chiami?; Sono italiano, di Roma (never ''sono di Italia''); bounce the question back. Verify
+  ''il piacere e mio''.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- scenario-meeting-people/parts/*.yaml

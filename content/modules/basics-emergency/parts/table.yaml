@@ -1,0 +1,15 @@
+id: basics-emergency.table
+type: table
+rows:
+- - '112'
+  - Single emergency number (free, works without SIM or credit). Calls to 113, 115 and 118 are also routed through
+    the same centre.
+- - 118 / 113 / 115
+  - Ambulance (medical) / State Police / Fire brigade. These still work; 112 is the one to remember.
+- - Aiuto! Ho bisogno di un medico.
+  - Help! I need a doctor.
+- - Mi sono perso/a. Ho perso il portafoglio / il passaporto.
+  - I'm lost. I've lost my wallet / passport.
+- - Non mi sento bene. Mi fa male…
+  - I don't feel well. My… hurts.
+header: false

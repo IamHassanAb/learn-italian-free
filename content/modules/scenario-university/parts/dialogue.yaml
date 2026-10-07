@@ -1,0 +1,8 @@
+id: scenario-university.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**Tu:** Buongiorno, vorrei informazioni sull''iscrizione al corso di laurea in Scienza dei dati.'
+- '**Impiegata:** Ha già i documenti?'
+- '**Tu:** Sì. Qual è la scadenza?'
+- '**Impiegata:** Il trenta settembre.'

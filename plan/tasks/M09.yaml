@@ -1,0 +1,13 @@
+id: M09
+stage: M
+title: 'Grammar row: irregular plurals'
+size: S
+status: todo
+depends_on:
+- M01
+change: 'Source: ime-mini-course lesson 17 (see plan/notes/ime-mini-course-mapping.md). la mano -> le mani, l''uovo
+  -> le uova, il dito -> le dita; foreign and accented words unchanged. Captions garbled: verify spellings.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step3-grammar/parts/plurals-irregular.yaml

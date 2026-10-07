@@ -1,0 +1,12 @@
+id: B02
+stage: B
+title: Check artifact capabilities (storage, ask-Claude)
+size: S
+status: todo
+depends_on:
+- A6
+change: Load the artifact-capabilities skill; record what storage and Claude calls are available and any limits.
+done_when:
+- Findings written to plan/decisions/ as a new decision
+touches:
+- plan/decisions/

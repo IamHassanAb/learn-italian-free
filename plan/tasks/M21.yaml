@@ -1,0 +1,14 @@
+id: M21
+stage: M
+title: Speaking caution note (decision D05)
+size: S
+status: todo
+depends_on:
+- A6
+change: 'Source: ime-mini-course lesson 30 (see plan/notes/ime-mini-course-mapping.md). Add the caution to step4-speaking:
+  start in low-stakes settings; expect English in tourist areas; mispronunciation is the usual reason people aren''t
+  understood.'
+done_when:
+- Note present in 03-Speak-Now.pdf; does NOT say 'don't speak yet'
+touches:
+- step4-speaking/parts/caution.yaml

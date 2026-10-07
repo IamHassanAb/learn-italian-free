@@ -1,0 +1,5 @@
+id: step3-grammar.tu-or-lei
+type: lookup-row
+when: tu or Lei?
+answer: 'tu with friends, classmates, young people. Lei (verb in 3rd person) with strangers, officials, professors:
+  Parla inglese? Può ripetere?'

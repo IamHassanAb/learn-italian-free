@@ -1,0 +1,4 @@
+id: step3-grammar.i-like
+type: lookup-row
+when: '''I like…'''
+answer: 'mi piace + singular, mi piacciono + plural: Mi piace il caffè. Mi piacciono i gelati.'

@@ -1,0 +1,5 @@
+id: D09
+decision: Removing a module means removing its ids from bundles, steps and manifest
+why: The checker lists leftover references; a loud failure is preferred to silent drops.
+date: '2026-10-07'
+status: active

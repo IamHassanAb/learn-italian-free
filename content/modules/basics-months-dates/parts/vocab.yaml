@@ -1,0 +1,16 @@
+id: basics-months-dates.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: la primavera / l'estate
+  en: spring / summer (in primavera, in estate)
+- id: i02
+  it: l'autunno / l'inverno
+  en: autumn / winter (in autunno, in inverno)
+- id: i03
+  it: Quando sei nato/a? Sono nato/a il…
+  en: When were you born? I was born on…
+- id: i04
+  it: il compleanno / Buon compleanno!
+  en: birthday / Happy birthday!

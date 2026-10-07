@@ -1,0 +1,17 @@
+# Private: transcripts of third-party videos (copyright)
+_sources/
+# Private: old versions and one-time migration scripts
+_archive/
+# Third-party download, do not redistribute
+language-goal-planner-final.pdf
+
+# Your own practice stays local
+progress/*
+!progress/README.md
+
+# Generated or machine-specific
+dist/linkcheck.json
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

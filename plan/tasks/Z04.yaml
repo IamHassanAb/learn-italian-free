@@ -1,0 +1,12 @@
+id: Z04
+stage: Z
+title: Speech recognition check
+size: M
+status: todo
+depends_on:
+- B13
+change: Check pronunciation with browser speech recognition.
+done_when:
+- Deferred; browser support varies
+touches:
+- app/

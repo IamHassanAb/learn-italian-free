@@ -1,0 +1,8 @@
+id: scenario-pharmacy.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**Tu:** Buongiorno, ho mal di gola e un po'' di tosse. Avete qualcosa?'
+- '**Farmacista:** Ha la febbre?'
+- '**Tu:** No.'
+- '**Farmacista:** Una pastiglia ogni quattro ore.'

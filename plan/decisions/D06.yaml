@@ -1,0 +1,5 @@
+id: D06
+decision: Everything must be free
+why: User requirement. Paid upsells are listed as ignore; checker warns on non-free resources.
+date: '2026-10-07'
+status: active

@@ -1,0 +1,37 @@
+id: step1-cognates.table
+type: table
+rows:
+- - -tion
+  - -zione (feminine)
+  - informazione, organizzazione, comunicazione
+- - -ty
+  - -tà (feminine, never changes in plural)
+  - università, attività, possibilità
+- - -ic / -ical
+  - -ico / -ica
+  - economico, tecnico, politico
+- - -ous
+  - -oso
+  - famoso, nervoso
+- - -ence / -ance
+  - -enza / -anza
+  - differenza, importanza
+- - -ment
+  - -mento
+  - documento, momento
+- - -ist
+  - -ista
+  - turista, artista
+- - -al
+  - -ale
+  - normale, personale
+- - -ure
+  - -ura
+  - cultura, natura
+- - -ly
+  - -mente
+  - lento → lentamente · facile → facilmente · normale → normalmente
+columns:
+- English
+- Italian
+- Examples

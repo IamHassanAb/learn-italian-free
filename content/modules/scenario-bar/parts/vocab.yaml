@@ -1,0 +1,15 @@
+id: scenario-bar.vocab
+type: vocab
+items:
+- id: i01
+  it: un caffè / un cappuccino / un cornetto
+  en: espresso / cappuccino / croissant
+- id: i02
+  it: lo scontrino
+  en: the receipt (often pay first)
+- id: i03
+  it: da portare via
+  en: to take away
+- id: i04
+  it: Il conto, per favore.
+  en: The bill, please.

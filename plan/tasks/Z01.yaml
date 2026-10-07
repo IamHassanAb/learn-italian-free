@@ -1,0 +1,12 @@
+id: Z01
+stage: Z
+title: Learn browser for all modules
+size: M
+status: todo
+depends_on:
+- B13
+change: Browse any module with audio buttons.
+done_when:
+- Deferred
+touches:
+- app/

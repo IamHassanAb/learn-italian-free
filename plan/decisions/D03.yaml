@@ -1,0 +1,6 @@
+id: D03
+decision: No Postgres for now
+why: Content is small and hand-edited; progress can live in the artifact's storage. Revisit if many users, own backend
+  or analytics are needed. Stable ids make a later load into Postgres cheap.
+date: '2026-10-07'
+status: active

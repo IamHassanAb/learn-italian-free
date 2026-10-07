@@ -1,0 +1,12 @@
+id: C01
+stage: C
+title: Scenario viewer (read-only)
+size: S
+status: todo
+depends_on:
+- B03
+change: 'Show a scenario: vocab, dialogue, role-play prompts.'
+done_when:
+- All 8 scenarios display from content
+touches:
+- app/

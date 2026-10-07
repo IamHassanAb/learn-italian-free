@@ -1,0 +1,13 @@
+id: M24
+stage: M
+title: 'Home part: immersion method (passive vs active)'
+size: S
+status: todo
+depends_on:
+- M23
+change: 'Source: ime-mini-course lesson 1, 8 (see plan/notes/ime-mini-course-mapping.md). Passive (background, don''t
+  try to understand) vs active (chosen content, subtitles, transcript). Only verified free resources.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step5-home/parts/immersion-method.yaml

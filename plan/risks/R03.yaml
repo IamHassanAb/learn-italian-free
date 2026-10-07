@@ -1,0 +1,4 @@
+id: R03
+risk: Content verification stays manual
+affects: M*
+mitigation: Ledger and link checker reduce it; every M task requires a second source.

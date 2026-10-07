@@ -1,0 +1,13 @@
+id: M11
+stage: M
+title: 'Irregular verbs: add dare, dire, uscire'
+size: S
+status: todo
+depends_on:
+- M01
+change: 'Source: ime-mini-course lesson 13 (see plan/notes/ime-mini-course-mapping.md). Extend the irregular-verbs
+  row (ten verbs -> thirteen) with their present forms.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step3-grammar/parts/most-common-irregular-verbs.yaml

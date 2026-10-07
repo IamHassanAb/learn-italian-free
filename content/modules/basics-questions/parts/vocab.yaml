@@ -1,0 +1,25 @@
+id: basics-questions.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: Chi? / Che cosa? (Cosa?)
+  en: Who? / What?
+- id: i02
+  it: Dove? / Da dove?
+  en: Where? / From where?
+- id: i03
+  it: Quando? / A che ora?
+  en: When? / At what time?
+- id: i04
+  it: Perché?
+  en: Why? (and 'because' in the answer)
+- id: i05
+  it: Come?
+  en: How? (also 'Come?' = 'Sorry, what?')
+- id: i06
+  it: Quanto? / Quanti?
+  en: How much? / How many?
+- id: i07
+  it: Quale? / Quali?
+  en: Which?

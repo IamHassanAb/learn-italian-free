@@ -1,0 +1,13 @@
+id: M16
+stage: M
+title: 'Pronunciation part: c and g rules'
+size: S
+status: todo
+depends_on:
+- M14
+change: 'Source: ime-mini-course lesson 25-26 (see plan/notes/ime-mini-course-mapping.md). ca co cu / ce ci / che
+  chi / cia cio ciu / sce sci / sch; same for g, gh, gi.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- basics-pronunciation/parts/c-and-g-rules.yaml

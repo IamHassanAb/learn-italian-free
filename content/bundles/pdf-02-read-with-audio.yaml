@@ -1,0 +1,10 @@
+id: pdf-02-read-with-audio
+output: pdf
+filename: 02-Read-with-Audio.pdf
+title: Read with audio
+subtitle: 'Step 2: two free sources, one method, a 4-week schedule'
+modules:
+- id: step2-sources
+- id: step2-method
+- id: step2-schedule
+- id: step2-log

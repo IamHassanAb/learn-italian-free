@@ -1,0 +1,13 @@
+id: M22
+stage: M
+title: 'Home part: accents and dialects'
+size: S
+status: todo
+depends_on:
+- A6
+change: 'Source: ime-mini-course lesson 24 (see plan/notes/ime-mini-course-mapping.md). Accents differ; dialects are
+  other languages; Italians switch to Italian for foreigners. Leave out the unverified 70% figure.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step5-home/parts/accents-dialects.yaml

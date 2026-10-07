@@ -1,0 +1,15 @@
+id: scenario-housing.vocab
+type: vocab
+items:
+- id: i01
+  it: l'affitto / le spese (incluse?)
+  en: rent / bills (included?)
+- id: i02
+  it: la caparra
+  en: the deposit
+- id: i03
+  it: il contratto
+  en: the contract
+- id: i04
+  it: arredato / i coinquilini
+  en: furnished / flatmates

@@ -1,0 +1,14 @@
+id: D01
+stage: D
+title: 'Gate: can the app call Claude, and at what cost?'
+size: S
+status: todo
+depends_on:
+- B02
+- B13
+change: Confirm the ask-Claude capability, limits, and that it counts against the maintainer's plan; ask the maintainer before
+  building.
+done_when:
+- Written decision; user says go or no-go
+touches:
+- plan/decisions/

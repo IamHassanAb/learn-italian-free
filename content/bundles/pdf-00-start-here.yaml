@@ -1,0 +1,9 @@
+id: pdf-00-start-here
+output: pdf
+filename: 00-START-HERE.pdf
+title: Start here
+subtitle: A lean plan built on the 5-step path
+modules:
+- id: start-path
+- id: start-daily
+- id: start-free

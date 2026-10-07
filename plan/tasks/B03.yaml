@@ -1,0 +1,13 @@
+id: B03
+stage: B
+title: 'App skeleton: loads content, shows module list'
+size: M
+status: todo
+depends_on:
+- B01
+- B02
+change: Single-page app that reads the JSON and lists steps and modules.
+done_when:
+- Opens locally and as a private artifact
+touches:
+- app/

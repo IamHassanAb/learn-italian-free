@@ -1,0 +1,28 @@
+id: basics-time.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: Che ore sono? / Che ora è?
+  en: What time is it?
+- id: i02
+  it: È l'una. Sono le due, le tre… le dodici.
+  en: It's one. It's two, three… twelve. (only one o'clock is singular)
+- id: i03
+  it: È mezzogiorno. È mezzanotte.
+  en: It's noon. It's midnight.
+- id: i04
+  it: Sono le tre e un quarto / e mezza / meno un quarto
+  en: 3:15 / 3:30 / 2:45
+- id: i05
+  it: Sono le tre e dieci. Sono le quattro meno cinque.
+  en: 3:10. 3:55.
+- id: i06
+  it: A che ora…? Alle otto. All'una. A mezzogiorno.
+  en: At what time…? At eight. At one. At noon.
+- id: i07
+  it: 'Timetables use 24 hours: le quattordici e trenta'
+  en: '14:30 (trains, museums, university). With 24h you do not say quarto or mezza: le quindici e quindici = 15:15.'
+- id: i08
+  it: di mattina, del pomeriggio, di sera, di notte
+  en: a.m. / afternoon / evening / night

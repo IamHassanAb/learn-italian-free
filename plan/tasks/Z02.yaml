@@ -1,0 +1,12 @@
+id: Z02
+stage: Z
+title: Listening and retelling log
+size: S
+status: todo
+depends_on:
+- B13
+change: Log what you listened to and a one-line retelling.
+done_when:
+- Deferred
+touches:
+- app/

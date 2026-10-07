@@ -1,0 +1,5 @@
+id: C
+title: Scripted scenario role-play
+goal: Play your lines; hide/show the other side; uses scenario files.
+done_means: Works for all 8 scenarios without code changes per scenario.
+order: 4

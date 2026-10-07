@@ -1,0 +1,11 @@
+id: emergency-numbers
+area: emergency-numbers
+module: basics-emergency
+claims:
+- claim: 112 is the single European emergency number; 113, 115 and 118 remain active and are routed through the
+    same centre
+  source: https://prefettura.interno.gov.it/it/prefetture/asti/112-nue-numero-unico-emergenza
+  verified: '2026-10-07'
+- claim: 112 is free and works without SIM or credit
+  source: https://www.italia.it/en/italy/practical-information/emergency-and-assistance
+  verified: '2026-10-07'

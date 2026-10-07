@@ -1,0 +1,5 @@
+id: step3-grammar.il-lo-la-l-i-gli-le
+type: lookup-row
+when: il / lo / la / l' / i / gli / le
+answer: il, i for most masculine words · lo, gli before s+consonant, z, gn, ps, and vowels (l' before vowels) ·
+  la, le for feminine · l' before a vowel.

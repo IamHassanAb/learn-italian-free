@@ -1,0 +1,21 @@
+id: M13
+stage: M
+title: Link grammar rows to their lessons
+size: S
+status: todo
+depends_on:
+- M12
+- M02
+- M03
+- M04
+- M05
+- M06
+- M07
+- M08
+- M09
+- M10
+change: Add [[res:...|Watch lesson]] to each grammar row.
+done_when:
+- Every grammar row has a lesson link; lint passes
+touches:
+- step3-grammar/parts/*.yaml

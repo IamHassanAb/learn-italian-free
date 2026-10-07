@@ -1,0 +1,5 @@
+id: D02
+decision: PDFs and the app are generated from one content source
+why: Keeps both in sync; PDFs stay for printing/offline.
+date: '2026-10-07'
+status: active

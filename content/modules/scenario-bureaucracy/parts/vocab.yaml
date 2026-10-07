@@ -1,0 +1,15 @@
+id: scenario-bureaucracy.vocab
+type: vocab
+items:
+- id: i01
+  it: il permesso di soggiorno / il codice fiscale
+  en: residence permit / tax code
+- id: i02
+  it: la tessera sanitaria / la residenza
+  en: health card / official residence
+- id: i03
+  it: un appuntamento
+  en: an appointment
+- id: i04
+  it: aprire un conto / una scheda SIM / i giga
+  en: open an account / SIM / data

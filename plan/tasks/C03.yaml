@@ -1,0 +1,13 @@
+id: C03
+stage: C
+title: Self-rating after a scenario
+size: S
+status: todo
+depends_on:
+- C02
+- B05
+change: Rate 1-3; stored; feeds the Today screen suggestion.
+done_when:
+- Rating persists by scenario id
+touches:
+- app/

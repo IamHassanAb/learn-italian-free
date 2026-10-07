@@ -1,0 +1,15 @@
+id: scenario-pharmacy.vocab
+type: vocab
+items:
+- id: i01
+  it: Ho mal di testa / di gola / di stomaco
+  en: headache / sore throat / stomachache
+- id: i02
+  it: la tosse / il raffreddore / la febbre
+  en: cough / cold / fever
+- id: i03
+  it: Avete qualcosa per…?
+  en: Do you have something for…?
+- id: i04
+  it: Sono allergico/a a…
+  en: I'm allergic to…

@@ -1,0 +1,13 @@
+id: M23
+stage: M
+title: Verify named immersion resources (QVC Italia, radio, Pilates channel)
+size: S
+status: todo
+depends_on:
+- A6
+change: 'Source: ime-mini-course lesson 8 (see plan/notes/ime-mini-course-mapping.md). Find real URLs for QVC Italia,
+  RTL 102.5, Radio DJ and the ''Pilates'' channel; confirm free; add resource files.'
+done_when:
+- 'Each resource has a url, cost: free and a verified date, or is dropped with a note'
+touches:
+- content/resources/

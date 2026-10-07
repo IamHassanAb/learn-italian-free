@@ -1,0 +1,13 @@
+id: M06
+stage: M
+title: 'Grammar row: questions'
+size: S
+status: todo
+depends_on:
+- M01
+change: 'Source: ime-mini-course lesson 21 (see plan/notes/ime-mini-course-mapping.md). Rising intonation; question
+  word + verb + subject; che/che cosa/cosa; quale/quali.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step3-grammar/parts/questions.yaml

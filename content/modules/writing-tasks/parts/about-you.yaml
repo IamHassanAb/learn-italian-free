@@ -1,0 +1,7 @@
+id: writing-tasks.about-you
+type: writing-task
+title: About you
+prompt: '6 sentences: who you are, why Italian, what you will do in Italy.'
+blank_lines: 4
+model: Mi chiamo… Sono di… Studio… Sto imparando l'italiano perché mi trasferisco in Italia. Mi piace… Voglio conoscere
+  gente nuova.

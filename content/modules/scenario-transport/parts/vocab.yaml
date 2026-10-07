@@ -1,0 +1,15 @@
+id: scenario-transport.vocab
+type: vocab
+items:
+- id: i01
+  it: andata / andata e ritorno
+  en: one-way / return
+- id: i02
+  it: il binario
+  en: platform
+- id: i03
+  it: A che ora parte? / arriva?
+  en: When does it leave / arrive?
+- id: i04
+  it: il ritardo / la fermata
+  en: delay / stop

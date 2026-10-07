@@ -1,0 +1,14 @@
+id: weather
+area: weather
+module: basics-weather
+claims:
+- claim: fa caldo/freddo, c'è il sole, è nuvoloso, è coperto, nevica, piove, c'è vento
+  source: https://italian.yabla.com/lesson-Talking-about-the-weather-in-Italian-1758
+  verified: '2026-10-07'
+- claim: fa fresco, il temporale, ombrello, ci sono 25 gradi
+  source: https://elon.io/grammar/italian/expressions/weather
+  verified: '2026-10-07'
+- claim: stasera = this evening/tonight before midnight; stanotte = during the night (tonight after midnight or
+    last night)
+  source: https://italymadeeasy.com/how-to-say-tomorrow-or-tonight-in-italian/
+  verified: '2026-10-07'

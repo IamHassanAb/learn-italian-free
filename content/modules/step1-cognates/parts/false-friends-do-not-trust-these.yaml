@@ -1,0 +1,41 @@
+id: step1-cognates.false-friends-do-not-trust-these
+type: table
+title: 'False friends: do not trust these'
+rows:
+- - libreria
+  - bookshop
+  - library (= biblioteca)
+- - camera
+  - room
+  - camera
+- - parenti
+  - relatives
+  - parents (= genitori)
+- - educato
+  - polite
+  - educated (= istruito)
+- - argomento
+  - topic
+  - argument
+- - attualmente
+  - currently
+  - actually
+- - eventualmente
+  - possibly
+  - eventually
+- - simpatico
+  - nice
+  - sympathetic
+- - sensibile
+  - sensitive
+  - sensible
+- - fattoria
+  - farm
+  - factory (= fabbrica)
+- - preservativo
+  - condom
+  - preservative
+columns:
+- Italian
+- Means
+- Not

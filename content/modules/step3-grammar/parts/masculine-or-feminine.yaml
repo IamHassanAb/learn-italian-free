@@ -1,0 +1,5 @@
+id: step3-grammar.masculine-or-feminine
+type: lookup-row
+when: Masculine or feminine?
+answer: '-o masculine, -a feminine, -e could be either. Plural: -o → -i, -a → -e, -e → -i. Words ending in an accent
+  (università, città) and loanwords (database) do not change.'

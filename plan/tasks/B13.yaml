@@ -1,0 +1,14 @@
+id: B13
+stage: B
+title: Publish privately and test update-in-place
+size: S
+status: todo
+depends_on:
+- B05
+- B08
+- B12
+change: Publish as private artifact; republish; progress stays.
+done_when:
+- Progress survives a republish
+touches:
+- app/

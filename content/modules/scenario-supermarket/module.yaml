@@ -1,0 +1,13 @@
+id: scenario-supermarket
+title: Al supermercato
+step: 4
+level: A1
+skill: speaking
+persona: Commesso / cassiere
+setting: A supermarket
+register: Lei
+parts:
+- intro
+- vocab
+- dialogue
+- roleplay

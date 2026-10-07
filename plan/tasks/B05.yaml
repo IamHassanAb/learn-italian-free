@@ -1,0 +1,12 @@
+id: B05
+stage: B
+title: Checklist and streak storage
+size: S
+status: todo
+depends_on:
+- B04
+change: Tick items; store per day; show streak.
+done_when:
+- Progress survives a page reload
+touches:
+- app/

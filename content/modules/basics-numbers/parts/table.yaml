@@ -1,0 +1,17 @@
+id: basics-numbers.table
+type: table
+rows:
+- - 0–10
+  - zero, uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci
+- - 11–20
+  - undici, dodici, tredici, quattordici, quindici, sedici, diciassette, diciotto, diciannove, venti
+- - Tens
+  - venti 20, trenta 30, quaranta 40, cinquanta 50, sessanta 60, settanta 70, ottanta 80, novanta 90
+- - Joining
+  - 'ventuno 21, ventidue 22, ventitré 23 (accent on the last é), ventotto 28 (the final vowel of the ten drops
+    before uno and otto: trentuno, quarantotto)'
+- - Big
+  - cento 100, centouno 101, duecento 200, mille 1.000, duemila 2.000 (mille becomes -mila), un milione 1.000.000
+- - Order
+  - primo, secondo, terzo, quarto, quinto, sesto, settimo, ottavo, nono, decimo
+header: false

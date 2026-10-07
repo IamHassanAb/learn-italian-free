@@ -1,0 +1,13 @@
+id: scenario-housing
+title: Cercare casa
+step: 4
+level: A1
+skill: speaking
+persona: Padrone di casa
+setting: Viewing or enquiring about a room
+register: Lei
+parts:
+- intro
+- vocab
+- dialogue
+- roleplay

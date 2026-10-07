@@ -1,0 +1,12 @@
+id: B12
+stage: B
+title: 'Drill: time, days, months, dates'
+size: M
+status: todo
+depends_on:
+- B11
+change: Generated drills for the 05 content.
+done_when:
+- Each drill uses content data, not hard-coded lists
+touches:
+- app/

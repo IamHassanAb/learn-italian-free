@@ -1,0 +1,12 @@
+id: D04
+stage: D
+title: Correction summary after the chat
+size: S
+status: todo
+depends_on:
+- D03
+change: At the end, list 3 mistakes and the corrected sentences; offer to add them to the gaps log.
+done_when:
+- Corrections can be sent to the gaps log (B10)
+touches:
+- app/

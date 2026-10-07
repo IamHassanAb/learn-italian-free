@@ -1,0 +1,13 @@
+id: M17
+stage: M
+title: 'Pronunciation part: read signs as Italian'
+size: S
+status: todo
+depends_on:
+- M14
+change: 'Source: ime-mini-course lesson 23 (see plan/notes/ime-mini-course-mapping.md). Exercise: read English words
+  on signs as if Italian.'
+done_when:
+- Part exists with 6 words and answers; lint passes
+touches:
+- basics-pronunciation/parts/read-signs.yaml

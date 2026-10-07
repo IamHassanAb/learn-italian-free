@@ -1,0 +1,13 @@
+id: M15
+stage: M
+title: 'Pronunciation part: consonants'
+size: S
+status: todo
+depends_on:
+- M14
+change: 'Source: ime-mini-course lesson 7 (see plan/notes/ime-mini-course-mapping.md). Consonant+5 vowels drill; h
+  silent; l, s, z, q notes. Do NOT copy the unverified r-rolling rule.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- basics-pronunciation/parts/consonants.yaml

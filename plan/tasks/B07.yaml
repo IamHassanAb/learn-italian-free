@@ -1,0 +1,12 @@
+id: B07
+stage: B
+title: Spaced-repetition scheduler
+size: M
+status: todo
+depends_on:
+- B06
+change: Simple intervals (1, 3, 7, 14 days); stored by item id.
+done_when:
+- Unit-tested intervals; a reworded card keeps its history
+touches:
+- app/

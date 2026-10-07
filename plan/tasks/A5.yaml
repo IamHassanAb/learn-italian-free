@@ -1,0 +1,13 @@
+id: A5
+stage: A
+title: Checker, link checker, fact ledger
+size: M
+status: done
+depends_on:
+- A3
+change: build/lint.py, build/linkcheck.py, content/ledger/ (11 files).
+done_when:
+- Orphans, duplicates, unknown refs, raw HTML, missing accents, removed manifest line all caught
+touches:
+- build/
+- content/ledger/

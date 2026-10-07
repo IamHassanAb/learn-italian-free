@@ -1,0 +1,22 @@
+id: basics-food.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: l'acqua naturale / frizzante
+  en: still / sparkling water
+- id: i02
+  it: il pane, la pasta, il riso, le uova, il latte
+  en: bread, pasta, rice, eggs, milk
+- id: i03
+  it: il formaggio, la carne, il pesce, la frutta, la verdura
+  en: cheese, meat, fish, fruit, vegetables
+- id: i04
+  it: il caffè, il tè, il succo, la birra, il vino
+  en: coffee, tea, juice, beer, wine
+- id: i05
+  it: Sono vegetariano/a. Sono allergico/a a…
+  en: I'm vegetarian. I'm allergic to…
+- id: i06
+  it: Il conto, per favore.
+  en: The bill, please.

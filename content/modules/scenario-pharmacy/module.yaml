@@ -1,0 +1,13 @@
+id: scenario-pharmacy
+title: In farmacia
+step: 4
+level: A1
+skill: speaking
+persona: Farmacista
+setting: A pharmacy
+register: Lei
+parts:
+- intro
+- vocab
+- dialogue
+- roleplay

@@ -1,0 +1,14 @@
+id: numbers
+area: numbers
+module: basics-numbers
+claims:
+- claim: The final vowel of a ten drops before uno and otto (ventuno, ventotto); numbers ending in three take an
+    accent (ventitré)
+  source: https://www.lingoda.com/blog/en/italian-numbers/
+  verified: '2026-10-07'
+- claim: Stress falls on the last syllable of ventitré (ven-ti-TRÉ); compounds of tre take an acute accent
+  source: https://dante-learning.com/eng/italian-written-accents-grave-acute/
+  verified: '2026-10-07'
+- claim: mille becomes -mila from 2,000 (duemila); 1.000 uses a dot and decimals a comma
+  source: https://www.mangolanguages.com/resources/learn/grammar/italian/how-to-form-write-and-use-numbers-in-italian
+  verified: '2026-10-07'

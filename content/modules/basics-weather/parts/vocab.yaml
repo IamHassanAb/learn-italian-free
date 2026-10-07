@@ -1,0 +1,34 @@
+id: basics-weather.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: Che tempo fa? / Com'è il tempo?
+  en: What's the weather like?
+- id: i02
+  it: Fa caldo / freddo / fresco
+  en: It's hot / cold / cool
+- id: i03
+  it: Fa bel tempo / Fa brutto tempo
+  en: The weather is nice / bad
+- id: i04
+  it: C'è il sole / C'è vento / C'è nebbia
+  en: It's sunny / windy / foggy
+- id: i05
+  it: È nuvoloso / È coperto
+  en: It's cloudy / overcast
+- id: i06
+  it: Piove. / Sta piovendo.
+  en: It rains. / It's raining.
+- id: i07
+  it: Nevica.
+  en: It's snowing.
+- id: i08
+  it: un temporale
+  en: a thunderstorm
+- id: i09
+  it: Ci sono 25 gradi. / la temperatura
+  en: It's 25 degrees (Celsius). / temperature
+- id: i10
+  it: Ho caldo / Ho freddo (me) vs. Fa caldo / Fa freddo (the weather)
+  en: I'm hot / cold vs. it's hot / cold

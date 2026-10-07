@@ -1,0 +1,8 @@
+id: podcast-costs
+area: podcast-costs
+module: step5-home
+claims:
+- claim: Italy Made Easy podcast episodes are free, with free downloadable PDFs (full transcript + comprehension
+    questions with answers)
+  source: https://italymadeeasy.com/podcast-in-italian/
+  verified: '2026-10-07'

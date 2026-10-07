@@ -1,0 +1,14 @@
+id: M19
+stage: M
+title: 'Speaking part: formality (tu / Lei / titles)'
+size: S
+status: todo
+depends_on:
+- A6
+change: 'Source: ime-mini-course lesson 10 (see plan/notes/ime-mini-course-mapping.md). When to use Lei vs tu; the
+  person ''above'' proposes tu; titles (signora, signor + surname, dottore, professore). Verify ''diamoci del tu''
+  etc.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step4-speaking/parts/formality.yaml

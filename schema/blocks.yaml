@@ -1,0 +1,42 @@
+# Single source of truth for what content files may contain. build/lint.py reads this file.
+# Inline markup allowed in any string: **bold**, *italic*, [[res:<resource-id>|link text]]
+# Italian fields (checked for missing accents): it, example, lines (dialogue), model.
+
+part_types:
+  text:         {required: [text],   optional: [title, small, blank_lines]}
+  bullets:      {required: [items],  optional: [title, blank_lines]}
+  dialogue:     {required: [lines],  optional: [title]}
+  table:        {required: [rows],   optional: [title, columns, header, blank_lines]}
+  vocab:        {required: [items],  optional: [title, header]}           # items: {id, it, en}
+  phrases:      {required: [items],  optional: [title]}                   # items: {id, it, en, example?}
+  lookup-row:   {required: [when, answer], optional: []}                  # grouped into one table per module
+  template:     {required: [columns, blank_rows], optional: [title]}      # blank table to fill in
+  writing-task: {required: [prompt, model], optional: [title, blank_lines]}
+
+item_required:
+  vocab: [id, it, en]
+  phrases: [id, it, en]
+
+module:
+  required: [id, title, step, level, skill, parts]
+  optional: [show_title, persona, setting, register, lookup_columns, goal]
+  skills: [method, vocab, reading, listening, speaking, grammar, writing]
+  steps: [0, 1, 2, 3, 4, 5]          # 0 = overview, not part of the 5-step path
+
+bundle:
+  required: [id, output, filename, title, subtitle, modules]   # modules: id or {id, number?, page_break?}
+  outputs: [pdf]
+
+step:
+  required: [id, number, title, principle, modules]
+
+resource:
+  required: [id, title, url, type, cost, level, verified, status, notes]
+  types: [video, channel, playlist, site, podcast, tv, search]
+  costs: [free, freemium, paid]
+  statuses: [active, planned, deprecated]
+
+ledger:
+  required: [id, area, module, claims]      # claims: [{claim, source, verified}]
+
+italian_fields: [it, example, lines, model]

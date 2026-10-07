@@ -1,0 +1,8 @@
+id: scenario-meeting-people.dialogue
+type: dialogue
+title: Dialogue (read aloud, then play it from memory)
+lines:
+- '**A:** Ciao, io sono Marco. Tu come ti chiami?'
+- '**Tu:** Piacere, mi chiamo… Sono di…'
+- '**A:** Da quanto tempo sei in Italia?'
+- '**Tu:** Da due settimane. Sto imparando l''italiano. Ti va di prendere un caffè?'

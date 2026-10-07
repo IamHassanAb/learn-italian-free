@@ -1,0 +1,10 @@
+id: dates
+area: dates
+module: basics-months-dates
+claims:
+- claim: Only the first of the month uses primo (il primo gennaio); other days use cardinals; months are lowercase
+  source: https://dante-learning.com/eng/italian-dates-il-14-gennaio/
+  verified: '2026-10-07'
+- claim: Che data è oggi? is standard; Quanti ne abbiamo oggi? is informal
+  source: https://forum.wordreference.com/threads/quanto-ne-abbiamo-oggi.863057/
+  verified: '2026-10-07'

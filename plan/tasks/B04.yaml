@@ -1,0 +1,12 @@
+id: B04
+stage: B
+title: 'Today screen: 30-minute plan'
+size: S
+status: todo
+depends_on:
+- B03
+change: Three 10-minute blocks (read, speak, immerse) with links.
+done_when:
+- Links come from resources; no URL in app code
+touches:
+- app/

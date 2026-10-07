@@ -1,0 +1,15 @@
+id: scenario-university.vocab
+type: vocab
+items:
+- id: i01
+  it: l'iscrizione / la segreteria
+  en: enrolment / students' office
+- id: i02
+  it: la scadenza
+  en: deadline
+- id: i03
+  it: l'esame / il ricevimento
+  en: exam / office hours
+- id: i04
+  it: il corso / la lezione
+  en: course / class

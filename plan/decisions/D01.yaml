@@ -1,0 +1,5 @@
+id: D01
+decision: Authoring format is YAML
+why: Easy to hand-edit; good for tables and phrase lists.
+date: '2026-10-07'
+status: active

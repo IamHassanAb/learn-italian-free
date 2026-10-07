@@ -1,0 +1,31 @@
+id: basics-places.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: la stazione, la fermata, l'aeroporto
+  en: station, stop, airport
+- id: i02
+  it: il supermercato, la farmacia, la banca, la posta
+  en: supermarket, pharmacy, bank, post office
+- id: i03
+  it: l'università, la biblioteca, l'ospedale
+  en: university, library, hospital
+- id: i04
+  it: il bagno / i servizi
+  en: toilet
+- id: i05
+  it: a destra / a sinistra / sempre dritto
+  en: right / left / straight on
+- id: i06
+  it: vicino / lontano · qui / lì
+  en: near / far · here / there
+- id: i07
+  it: davanti a / dietro / accanto a / di fronte a
+  en: in front of / behind / next to / opposite
+- id: i08
+  it: all'angolo · il semaforo · l'incrocio
+  en: at the corner · traffic light · crossing
+- id: i09
+  it: Dov'è il bagno? Dov'è la fermata? È lontano?
+  en: Where is the toilet? Where is the stop? Is it far?

@@ -1,0 +1,5 @@
+id: D
+title: Claude conversation partner
+goal: Claude plays the scenario persona and corrects you afterwards.
+done_means: 'Gate: capability and cost check passes first.'
+order: 5

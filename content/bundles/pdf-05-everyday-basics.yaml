@@ -1,0 +1,32 @@
+id: pdf-05-everyday-basics
+output: pdf
+filename: 05-Everyday-Basics.pdf
+title: Everyday basics
+subtitle: Numbers, time, days, months, weather, greetings, places and emergencies
+modules:
+- id: basics-howto
+- id: basics-numbers
+  number: true
+- id: basics-time
+  number: true
+- id: basics-days
+  number: true
+- id: basics-months-dates
+  number: true
+- id: basics-weather
+  number: true
+- id: basics-greetings
+  number: true
+- id: basics-questions
+  number: true
+- id: basics-places
+  number: true
+- id: basics-food
+  number: true
+- id: basics-family
+  number: true
+- id: basics-colours
+  number: true
+- id: basics-emergency
+  number: true
+- id: basics-self-test

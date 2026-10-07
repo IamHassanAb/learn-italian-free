@@ -1,0 +1,41 @@
+id: basics-greetings.vocab
+type: vocab
+header: false
+items:
+- id: i01
+  it: Buongiorno / Buonasera / Buonanotte
+  en: 'Good morning-day / good evening / goodnight. The switch to buonasera is fuzzy: usually 4–5 pm, earlier in
+    some regions. Buonasera also works as a goodbye.'
+- id: i02
+  it: Ciao (informal) / Salve (neutral)
+  en: Hi or bye / hello (salve works at any time of day)
+- id: i03
+  it: Arrivederci / A presto / A dopo / Ci vediamo
+  en: Goodbye / see you soon / see you later / see you
+- id: i04
+  it: Come stai? (tu) / Come sta? (Lei)
+  en: How are you?
+- id: i05
+  it: Sto bene, grazie. E tu? / E Lei? · Così così.
+  en: I'm well, thanks. And you? · So-so.
+- id: i06
+  it: Grazie / Grazie mille / Prego
+  en: Thanks / thanks a lot / you're welcome (also 'please, go ahead')
+- id: i07
+  it: Per favore / Per piacere
+  en: Please
+- id: i08
+  it: Scusi (formal) / Scusa (informal) / Permesso?
+  en: Excuse me / May I come in or pass?
+- id: i09
+  it: Mi dispiace. / Non c'è problema.
+  en: I'm sorry. / No problem.
+- id: i10
+  it: Buon appetito! / Salute! / Cin cin!
+  en: Enjoy your meal! / Bless you or cheers! / Cheers!
+- id: i11
+  it: Buon viaggio! / Buon weekend! / Auguri!
+  en: Safe trip! / Have a good weekend! / Best wishes!
+- id: i12
+  it: 'In bocca al lupo! → Crepi! (then add: grazie)'
+  en: Good luck! ('into the wolf's mouth') → 'may the wolf die'. Saying only grazie is said to bring bad luck.

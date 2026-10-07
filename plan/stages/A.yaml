@@ -1,0 +1,5 @@
+id: A
+title: 'Foundation: modular YAML content and builds'
+goal: Content in small YAML files; PDFs rebuilt from it; checker and link checker.
+done_means: PDFs match the old ones; checker catches mistakes.
+order: 1

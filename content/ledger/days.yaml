@@ -1,0 +1,7 @@
+id: days
+area: days
+module: basics-days
+claims:
+- claim: il lunedì = every Monday; lunedì = this/next Monday; day names are lowercase
+  source: https://italianpills.com/days-italian/
+  verified: '2026-10-07'

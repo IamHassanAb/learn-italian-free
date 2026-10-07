@@ -1,0 +1,4 @@
+id: R02
+risk: Claude role-play depends on availability and the maintainer's usage limits
+affects: D01
+mitigation: Gate task D01 asks the maintainer before building.

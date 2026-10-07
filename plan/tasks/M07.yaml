@@ -1,0 +1,13 @@
+id: M07
+stage: M
+title: 'Grammar row: negation'
+size: S
+status: todo
+depends_on:
+- M01
+change: 'Source: ime-mini-course lesson 22 (see plan/notes/ime-mini-course-mapping.md). non before the verb; no =
+  answer only; non ho capito; non mi piace.'
+done_when:
+- Italian examples checked against a second source; claim added to content/ledger/; lint passes
+touches:
+- step3-grammar/parts/negation.yaml

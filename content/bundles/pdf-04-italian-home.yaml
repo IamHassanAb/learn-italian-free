@@ -1,0 +1,9 @@
+id: pdf-04-italian-home
+output: pdf
+filename: 04-Italian-Home.pdf
+title: Italian home
+subtitle: 'Step 5: a small set of sources to repeat, plus a weekly rhythm'
+modules:
+- id: step5-home
+- id: step5-rhythm
+- id: step5-log

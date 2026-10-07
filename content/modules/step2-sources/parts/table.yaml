@@ -1,0 +1,17 @@
+id: step2-sources.table
+type: table
+rows:
+- - 'MeloLingua: Il Caffè della Mattina, Al Mercato, Il Gelato Perfetto, In Treno verso Firenze, La Cena della Nonna'
+  - A1
+  - Native audio, glossary and comprehension questions, about 600 words total. No signup for these 5 stories.
+  - '[[res:melolingua-stories|Open stories]]'
+- - 'The Fable Cottage: Cenerentola, Biancaneve, Hansel e Gretel, Jack e il fagiolo magico, I tre capretti furbetti
+    and 5 more'
+  - A1–A2
+  - Italian + English text with audio, most with animated video. 10 free stories.
+  - '[[res:fablecottage-stories|Story list]] · [[res:fablecottage-cenerentola|Cenerentola]]'
+columns:
+- Source
+- Level
+- Why
+- Link

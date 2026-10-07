@@ -1,0 +1,13 @@
+id: A4
+stage: A
+title: PDF renderer from YAML
+size: M
+status: done
+depends_on:
+- A3
+change: build/pdf.py renders each bundle to dist/pdf/.
+done_when:
+- One-URL-change test passes
+touches:
+- build/pdf.py
+- build/content.py
