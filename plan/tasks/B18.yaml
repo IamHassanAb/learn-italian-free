@@ -1,0 +1,16 @@
+id: B18
+stage: B
+title: Retell-it helper in the Read with audio block
+size: S
+status: done
+depends_on:
+- B04
+change: 'Content module step2-retell (four-sentence frame, rules, self-check) shows in 02-Read-with-Audio.pdf and
+  in the app''s #/retell screen, which adds a 90-second timer, an ''I retold it'' button that counts toward the
+  streak, and a link to the Gaps log. The Today read block links to it.'
+done_when:
+- Screen works in headless Chrome (timer, logging, streak); sweep of all 54 routes finds no '[object', overflow
+  or console errors
+touches:
+- content/modules/step2-retell/
+- app/js/views/retell.js

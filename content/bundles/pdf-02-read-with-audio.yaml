@@ -6,5 +6,6 @@ subtitle: 'Step 2: two free sources, one method, a 4-week schedule'
 modules:
 - id: step2-sources
 - id: step2-method
+- id: step2-retell
 - id: step2-schedule
 - id: step2-log

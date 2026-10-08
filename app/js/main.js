@@ -9,10 +9,11 @@ import { scenariosView } from "./views/scenarios.js";
 import { libraryView } from "./views/library.js";
 import { gapsView } from "./views/gaps.js";
 import { settingsView } from "./views/settings.js";
+import { retellView } from "./views/retell.js";
 
 const TABS = [["today", "Today"], ["review", "Review"], ["drills", "Drills"], ["scenarios", "Role-play"], ["more", "More"]];
-const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, more: moreView };
-const TAB_OF = { library: "more", gaps: "more", settings: "more" };
+const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, more: moreView };
+const TAB_OF = { library: "more", gaps: "more", settings: "more", retell: "today" };
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* blocked: the store falls back to memory */ }

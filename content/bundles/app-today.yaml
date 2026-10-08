@@ -5,10 +5,13 @@ blocks:
 - id: read
   title: Read with audio
   minutes: 10
-  text: Read one story section while the audio plays. Do not stop at unknown words; underline the cognates you recognise. Then retell it in four sentences.
+  text: Read one story section while the audio plays. Do not stop at unknown words; underline the cognates you recognise.
+    Then retell it in four sentences.
   resources:
   - melolingua-stories
   - fablecottage-stories
+  actions:
+  - retell
 - id: speak
   title: Speak out loud
   minutes: 10

@@ -52,6 +52,11 @@ test("util: norm, dates, speakable", () => {
   assert.equal(daysBetween("2026-10-07", "2026-10-10"), 3); assert.equal(localDate(new Date(2026, 0, 5)), "2026-01-05");
   assert.equal(speakable("un caffè / un cornetto"), "un caffè, un cornetto"); assert.equal(speakable("**Barista:** Buongiorno…"), "Barista: Buongiorno");
 });
+test("store: a retelling counts as activity", () => {
+  const s = createStore({ getItem: () => null, setItem() {}, removeItem() {} });
+  s.addRetell("2026-10-07"); s.addRetell("2026-10-07");
+  assert.equal(s.day("2026-10-07").retells, 2); assert.equal(s.streak("2026-10-07"), 1);
+});
 test("store: streak, export/import, reset, broken storage", () => {
   const mem = {}; const stub = { getItem: k => mem[k] ?? null, setItem: (k, v) => { mem[k] = v; }, removeItem: k => { delete mem[k]; } };
   const s = createStore(stub);

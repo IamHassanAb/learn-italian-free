@@ -15,6 +15,7 @@ export function todayView(ctx) {
       h("p", null, b.text),
       links.length ? h("ul", { class: "linklist" }, links.map(r => h("li", null, h("a", { href: r.url, target: "_blank", rel: "noopener noreferrer" }, r.title), r.level ? h("span", { class: "muted small" }, `  ${r.level}`) : null))) : null,
       b.actions ? h("div", { class: "row" },
+        b.actions.includes("retell") ? h("a", { class: "btn warm", href: "#/retell" }, "Retell it") : null,
         b.actions.includes("review") ? h("a", { class: "btn warm", href: "#/review" }, q.queue.length ? `Review ${q.queue.length} card${q.queue.length === 1 ? "" : "s"}` : "No cards due") : null,
         b.actions.includes("scenarios") ? h("a", { class: "btn", href: "#/scenarios" }, "Play a scenario") : null) : null,
       h("label", { class: "check" }, h("input", { type: "checkbox", id: "blk-" + b.id, checked: !!day.blocks[b.id], onChange: (e) => { store.markBlock(today, b.id, e.target.checked); ctx.refresh(); } }), "Done today"));

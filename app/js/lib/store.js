@@ -9,8 +9,8 @@ export function createStore(storage) {
   const write = () => { try { storage.setItem(KEY, JSON.stringify(state)); return true; } catch { return false; } };
   state = Object.assign(DEFAULTS(), read() || {});
   state.settings = Object.assign(DEFAULTS().settings, state.settings);
-  const day = (d) => (state.daily[d] ||= { blocks: {}, reviewed: 0, newSeen: 0, drills: 0 });
-  const isActive = (d) => !!d && (Object.values(d.blocks || {}).some(Boolean) || d.reviewed >= 5 || d.drills > 0);
+  const day = (d) => (state.daily[d] ||= { blocks: {}, reviewed: 0, newSeen: 0, drills: 0, retells: 0 });
+  const isActive = (d) => !!d && (Object.values(d.blocks || {}).some(Boolean) || d.reviewed >= 5 || d.drills > 0 || d.retells > 0);
   return {
     get state() { return state; },
     setting(k, v) { state.settings[k] = v; write(); },
@@ -19,11 +19,12 @@ export function createStore(storage) {
     day,
     markBlock(d, id, on) { day(d).blocks[id] = !!on; write(); },
     addReviewed(d, n, newN) { const x = day(d); x.reviewed += n; x.newSeen += newN; write(); },
+    addRetell(d) { const x = day(d); x.retells = (x.retells || 0) + 1; write(); },
     addDrill(d, kind, correct, total) {
       day(d).drills += 1; const k = (state.drills[kind] ||= { sessions: 0, correct: 0, total: 0 });
       k.sessions += 1; k.correct += correct; k.total += total; write();
     },
-    // A day counts when any block is ticked, 5+ cards were reviewed, or a drill was done.
+    // A day counts when any block is ticked, 5+ cards were reviewed, a drill was done or a story was retold.
     streak(today = localDate()) {
       let d = isActive(state.daily[today]) ? today : addDays(today, -1), n = 0;
       while (isActive(state.daily[d])) { n++; d = addDays(d, -1); }
