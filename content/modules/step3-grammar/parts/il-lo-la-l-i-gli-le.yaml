@@ -1,5 +1,7 @@
 id: step3-grammar.il-lo-la-l-i-gli-le
 type: lookup-row
 when: il / lo / la / l' / i / gli / le
-answer: il, i for most masculine words · lo, gli before s+consonant, z, gn, ps, and vowels (l' before vowels) ·
-  la, le for feminine · l' before a vowel.
+answer: '**Masculine:** il (plural i) for most words: il libro, i libri. lo (plural gli) before s + consonant, z,
+  gn, ps, x, y: lo studente, lo zaino, gli studenti. l'' (plural gli) before a vowel: l''amico, gli amici. **Feminine:**
+  la (plural le): la casa, le case. l'' before a vowel, singular only: l''amica, but the plural is always le: le
+  amiche. Learn each noun with its article.'

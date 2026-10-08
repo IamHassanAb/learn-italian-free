@@ -51,6 +51,6 @@ Verdict key: USE = take the idea, SPLIT = take part, LINK = link only, SKIP = le
 ## Conflicts and flags to resolve before building
 1. RESOLVED (maintainer, 2026-10-07): keep 'speak before you're ready' with a caution note from lesson 30 (low-stakes settings first; expect English switching in touristy places; mispronunciation is the usual cause of not being understood). Do not copy 'do not speak yet'.
 2. RESOLVED (maintainer checked, 2026-10-07): the IME podcast audio is free and its PDFs are free. Lesson 31's 'subscriber benefit' wording is a sales framing; list as free, record 'user-confirmed' in the ledger.
-3. Our existing definite-article row is imprecise: fix with lesson 18.
+3. RESOLVED (2026-10-08, task M01): the definite-article row was corrected and checked against three independent sources.
 4. Unverified claims not to copy: Army category 1 / hours, 60% shared vocabulary, r-rolling rule, 70% dialect figure, article rule for prendere/volere.
 5. Unclear named resources: the "Pilates" YouTube channel, TED talks in Italian (a search, fine), radio stations (verify URLs).

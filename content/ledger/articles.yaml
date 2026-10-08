@@ -1,0 +1,15 @@
+id: articles
+area: articles
+module: step3-grammar
+claims:
+- claim: 'Definite articles: il/i, lo/gli (s+consonant, z, gn, ps, x, y), l'' before a vowel with plural gli, la/le,
+    and l'' for feminine singular before a vowel; le is the plural of every feminine noun'
+  source: https://www.thinkinitalian.com/italian-definite-articles
+  verified: '2026-10-08'
+- claim: 'Same rule, second source: lo/gli before s+consonant, z, ps, gn, x, y; gli is the plural of both lo and
+    l''; le before all feminine plurals'
+  source: https://www.lawlessitalian.com/grammar/articles/definite-article/
+  verified: '2026-10-08'
+- claim: Third source on the same rule (also notes gl' is rare)
+  source: https://oneworlditaliano.com/en/italian-grammar/grammar-reference/italian-definite-articles/
+  verified: '2026-10-08'
