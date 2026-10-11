@@ -1,0 +1,14 @@
+id: rental-terms
+area: rental-terms
+module: scenario-housing
+claims:
+- claim: The rental security deposit is the deposito cauzionale (art. 11 legge 392/1978), capped at three months'
+    rent and earning legal interest; a caparra confirmatoria (art. 1385 codice civile) is a different thing
+  source: https://www.brocardi.it/legge-equo-canone/titolo-i/capo-i/art11.html
+  verified: '2026-10-11'
+- claim: 'Same distinction: deposito cauzionale versus caparra confirmatoria'
+  source: https://blog.sturent.it/caparra-e-deposito-cauzionale-affitto/
+  verified: '2026-10-11'
+- claim: Students can use a contratto transitorio per studenti universitari (art. 5 legge 431/1998), 6 to 36 months
+  source: https://fiscomania.com/contratto-locazione-studenti-universitari/
+  verified: '2026-10-11'

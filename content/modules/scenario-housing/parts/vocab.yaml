@@ -5,8 +5,8 @@ items:
   it: l'affitto / le spese (incluse?)
   en: rent / bills (included?)
 - id: i02
-  it: la caparra
-  en: the deposit
+  it: il deposito cauzionale (la cauzione)
+  en: the security deposit (not la caparra, which is earnest money)
 - id: i03
   it: il contratto
   en: the contract

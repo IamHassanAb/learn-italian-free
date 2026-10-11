@@ -4,4 +4,4 @@ title: Message to a landlord
 prompt: Ask to view a room; ask the price, bills and deposit.
 blank_lines: 4
 model: Buongiorno, ho visto l'annuncio della stanza. È ancora disponibile? Quanto costa al mese e le spese sono
-  incluse? Quanto è la caparra? Posso vederla giovedì? Grazie mille.
+  incluse? Quanto devo lasciare come deposito cauzionale? Posso vederla giovedì? Grazie mille.
