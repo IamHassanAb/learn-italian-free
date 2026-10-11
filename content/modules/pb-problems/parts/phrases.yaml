@@ -1,0 +1,18 @@
+id: pb-problems.phrases
+type: phrases
+items:
+- id: p196
+  it: C'è stato un errore.
+  en: There has been a mistake.
+- id: p197
+  it: Può controllare, per favore?
+  en: Could you check, please? (Polite)
+- id: p198
+  it: Non funziona.
+  en: It doesn't work.
+- id: p199
+  it: Potrebbe spiegarmi meglio?
+  en: Could you explain it more clearly? (Polite)
+- id: p200
+  it: Vorrei risolvere questo problema.
+  en: I'd like to resolve this problem.

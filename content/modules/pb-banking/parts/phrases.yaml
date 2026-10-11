@@ -1,0 +1,48 @@
+id: pb-banking.phrases
+type: phrases
+items:
+- id: p146
+  it: Vorrei aprire un conto corrente.
+  en: I'd like to open a bank account.
+- id: p147
+  it: Quali documenti sono necessari?
+  en: Which documents are necessary?
+- id: p148
+  it: Posso usare il passaporto come documento?
+  en: Can I use my passport as ID?
+- id: p149
+  it: Mi serve il codice fiscale?
+  en: Do I need a tax identification number?
+- id: p150
+  it: Qual è il saldo del mio conto?
+  en: What is my account balance?
+- id: p151
+  it: Vorrei prelevare dei contanti.
+  en: I'd like to withdraw some cash.
+- id: p152
+  it: Dov'è il bancomat più vicino?
+  en: Where is the nearest ATM?
+- id: p153
+  it: La mia carta è stata rifiutata.
+  en: My card was declined.
+- id: p154
+  it: Quanto costa la commissione?
+  en: How much is the fee?
+- id: p155
+  it: Posso fare un bonifico internazionale?
+  en: Can I make an international bank transfer?
+- id: p156
+  it: Il pagamento è stato effettuato?
+  en: Has the payment been made?
+- id: p157
+  it: Non ho ricevuto i soldi.
+  en: I haven't received the money.
+- id: p158
+  it: Vorrei una ricevuta, per favore.
+  en: I'd like a receipt, please.
+- id: p159
+  it: Posso pagare a rate?
+  en: Can I pay in instalments?
+- id: p160
+  it: Qual è il tasso di cambio?
+  en: What is the exchange rate?

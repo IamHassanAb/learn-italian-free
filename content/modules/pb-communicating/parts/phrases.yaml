@@ -1,0 +1,35 @@
+id: pb-communicating.phrases
+type: phrases
+items:
+- id: p011
+  it: Non parlo bene l'italiano.
+  en: I don't speak Italian well.
+- id: p012
+  it: Parla inglese?
+  en: Do you speak English? (Polite)
+- id: p013
+  it: Non capisco.
+  en: I don't understand.
+- id: p014
+  it: Può ripetere, per favore?
+  en: Could you repeat that, please? (Polite)
+- id: p015
+  it: Più lentamente, per favore.
+  en: 'More slowly, please. (Everyday: più piano)'
+  example: Più piano, per favore.
+- id: p016
+  it: Che cosa significa?
+  en: What does it mean?
+- id: p017
+  it: Come si dice … in italiano?
+  en: How do you say … in Italian?
+  example: Come si dice "deadline" in italiano?
+- id: p018
+  it: Ho capito.
+  en: I understand / I got it.
+- id: p019
+  it: Può scriverlo, per favore?
+  en: Could you write it down, please? (Polite)
+- id: p020
+  it: Sto imparando l'italiano.
+  en: I'm learning Italian.

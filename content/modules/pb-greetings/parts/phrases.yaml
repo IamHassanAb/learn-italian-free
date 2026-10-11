@@ -1,0 +1,33 @@
+id: pb-greetings.phrases
+type: phrases
+items:
+- id: p001
+  it: Buongiorno.
+  en: Good morning / good day.
+- id: p002
+  it: Buonasera.
+  en: Good evening.
+- id: p003
+  it: Ciao!
+  en: Hi / bye. (Informal)
+- id: p004
+  it: Arrivederci.
+  en: Goodbye. (Polite or neutral)
+- id: p005
+  it: Per favore.
+  en: Please.
+- id: p006
+  it: Grazie.
+  en: Thank you.
+- id: p007
+  it: Prego.
+  en: You're welcome / go ahead.
+- id: p008
+  it: Mi scusi.
+  en: Excuse me. (Polite)
+- id: p009
+  it: Mi dispiace.
+  en: I'm sorry.
+- id: p010
+  it: Permesso?
+  en: Excuse me - may I pass / come in?

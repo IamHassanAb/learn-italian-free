@@ -1,0 +1,29 @@
+id: pb-overview.pronunciation
+type: table
+title: Quick pronunciation guide
+columns:
+- Italian spelling
+- Approximate sound
+- Example
+rows:
+- - c + e / i
+  - '''ch'' as in church'
+  - ciao
+- - ch + e / i
+  - '''k'' sound'
+  - che
+- - g + e / i
+  - soft 'j' sound
+  - giorno
+- - gh + e / i
+  - hard 'g' sound
+  - spaghetti
+- - gn
+  - like 'ny' in canyon
+  - bagno
+- - gli
+  - a soft sound roughly like 'lly'
+  - biglietto
+- - double consonants
+  - hold the consonant slightly longer
+  - appuntamento

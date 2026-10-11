@@ -1,0 +1,41 @@
+id: pdf-06-phrases
+output: pdf
+filename: 06-200-Phrases.pdf
+title: 200 essential phrases
+subtitle: A practical phrasebook for living, studying and getting around in Italy
+modules:
+- id: pb-overview
+- id: pb-greetings
+  number: true
+- id: pb-communicating
+  number: true
+- id: pb-meeting
+  number: true
+- id: pb-room-search
+  number: true
+- id: pb-shopping
+  number: true
+- id: pb-food
+  number: true
+- id: pb-transport
+  number: true
+- id: pb-university-admin
+  number: true
+- id: pb-emergencies
+  number: true
+- id: pb-conversation
+  number: true
+- id: pb-plans
+  number: true
+- id: pb-room-practical
+  number: true
+- id: pb-banking
+  number: true
+- id: pb-sim
+  number: true
+- id: pb-classes
+  number: true
+- id: pb-health
+  number: true
+- id: pb-problems
+  number: true

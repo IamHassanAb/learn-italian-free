@@ -1,0 +1,33 @@
+id: pb-health.phrases
+type: phrases
+items:
+- id: p186
+  it: Ho mal di testa.
+  en: I have a headache.
+- id: p187
+  it: Ho mal di stomaco.
+  en: I have a stomachache.
+- id: p188
+  it: Ho la febbre.
+  en: I have a fever.
+- id: p189
+  it: Da quanto tempo ha questi sintomi?
+  en: How long have you had these symptoms? (Polite; a clinician may ask you this)
+- id: p190
+  it: Mi fa male qui.
+  en: It hurts here.
+- id: p191
+  it: Avete qualcosa per il raffreddore?
+  en: Do you have something for a cold?
+- id: p192
+  it: Dove trovo una farmacia di turno?
+  en: Where can I find a pharmacy that is open on duty / after hours?
+- id: p193
+  it: Devo prendere un appuntamento.
+  en: I need to make an appointment.
+- id: p194
+  it: Sono allergico a questo farmaco.
+  en: 'I''m allergic to this medicine. (Male speaker; female: allergica)'
+- id: p195
+  it: Dove posso trovare un medico?
+  en: Where can I find a doctor?

@@ -1,0 +1,48 @@
+id: pb-room-search.phrases
+type: phrases
+items:
+- id: p031
+  it: Sto cercando una stanza singola.
+  en: I'm looking for a single room.
+- id: p032
+  it: La stanza è ancora disponibile?
+  en: Is the room still available?
+- id: p033
+  it: Quanto costa al mese?
+  en: How much does it cost per month?
+- id: p034
+  it: Le bollette sono incluse?
+  en: Are the utility bills included?
+- id: p035
+  it: Quanto devo lasciare come deposito cauzionale?
+  en: How much do I need to leave as a security deposit?
+- id: p036
+  it: È possibile avere un contratto transitorio per studenti?
+  en: Is it possible to have a student rental contract? (6 to 36 months; ask the university housing office.)
+- id: p037
+  it: Posso vedere la stanza?
+  en: Can I see the room?
+- id: p038
+  it: Posso fare una videochiamata?
+  en: Can I have a video call?
+- id: p039
+  it: Quanto dista dall'università?
+  en: How far is it from the university?
+- id: p040
+  it: È vicino alla fermata dell'autobus?
+  en: Is it near the bus stop?
+- id: p041
+  it: Quando potrei trasferirmi?
+  en: When could I move in?
+- id: p042
+  it: Il contratto verrà registrato?
+  en: Will the rental contract be registered?
+- id: p043
+  it: C'è una cucina in comune?
+  en: Is there a shared kitchen?
+- id: p044
+  it: Posso pagare tramite bonifico bancario?
+  en: Can I pay by bank transfer?
+- id: p045
+  it: Vorrei pensarci.
+  en: I'd like to think about it.

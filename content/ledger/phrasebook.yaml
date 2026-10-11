@@ -1,0 +1,15 @@
+id: phrasebook
+area: phrasebook
+module: pb-overview
+claims:
+- claim: The 200-phrase list was written and reviewed by the maintainer, who confirmed it is theirs to use. It was
+    read in full by Claude for grammar and naturalness (no errors found) and edited in the points listed in plan/notes/phrasebook-import.md.
+  source: maintainer supplied (italian_survival_phrases_200_reviewed.pdf)
+  verified: '2026-10-11'
+- claim: With a profession or role, Italian usually omits the indefinite article (Sono studente); Sono uno studente
+    is also acceptable
+  source: https://forum.wordreference.com/threads/sono-studente-sono-uno-studente.493433/
+  verified: '2026-10-11'
+- claim: 112.gov.it is the official Interior Ministry site for the single emergency number
+  source: https://www.ilmoderatore.it/numero-unico-di-emergenza-112-nuovo-sito-ufficiale-112-gov/
+  verified: '2026-10-11'

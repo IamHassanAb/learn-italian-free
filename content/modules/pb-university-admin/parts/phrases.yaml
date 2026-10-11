@@ -1,0 +1,33 @@
+id: pb-university-admin.phrases
+type: phrases
+items:
+- id: p081
+  it: Sono uno studente internazionale.
+  en: 'I''m an international student. (Female: Sono una studentessa internazionale.)'
+- id: p082
+  it: Dove si trova la segreteria studenti?
+  en: Where is the student office?
+- id: p083
+  it: Devo completare l'iscrizione.
+  en: I need to complete my enrolment.
+- id: p084
+  it: Quali documenti servono?
+  en: Which documents are required?
+- id: p085
+  it: Ho un appuntamento.
+  en: I have an appointment.
+- id: p086
+  it: Sono in attesa del visto.
+  en: I'm waiting for my visa.
+- id: p087
+  it: Dove posso fare una fotocopia?
+  en: Where can I make a photocopy?
+- id: p088
+  it: Potrebbe aiutarmi, per favore?
+  en: Could you help me, please? (Polite)
+- id: p089
+  it: A chi devo rivolgermi?
+  en: Whom should I contact?
+- id: p090
+  it: Quando riceverò una risposta?
+  en: When will I receive a response?

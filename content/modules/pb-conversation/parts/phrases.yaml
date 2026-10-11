@@ -1,0 +1,48 @@
+id: pb-conversation.phrases
+type: phrases
+items:
+- id: p101
+  it: Come va?
+  en: How's it going?
+- id: p102
+  it: Tutto bene, grazie.
+  en: Everything's good, thanks.
+- id: p103
+  it: E tu? / E Lei?
+  en: And you? (Informal / polite)
+- id: p104
+  it: Che fai oggi?
+  en: What are you doing today? (Informal)
+- id: p105
+  it: Non lo so.
+  en: I don't know.
+- id: p106
+  it: Forse.
+  en: Maybe.
+- id: p107
+  it: Certo!
+  en: Of course!
+- id: p108
+  it: Va bene.
+  en: Okay / that works.
+- id: p109
+  it: Non c'è problema.
+  en: No problem.
+- id: p110
+  it: Dipende.
+  en: It depends.
+- id: p111
+  it: Davvero?
+  en: Really?
+- id: p112
+  it: Che bello!
+  en: That's great! / How nice!
+- id: p113
+  it: Hai ragione.
+  en: You're right.
+- id: p114
+  it: Non sono sicuro.
+  en: 'I''m not sure. (Male speaker; female: sicura)'
+- id: p115
+  it: Ci penso io.
+  en: I'll take care of it.

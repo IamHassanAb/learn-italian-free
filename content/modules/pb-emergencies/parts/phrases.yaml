@@ -1,0 +1,33 @@
+id: pb-emergencies.phrases
+type: phrases
+items:
+- id: p091
+  it: Aiuto!
+  en: Help!
+- id: p092
+  it: Ho bisogno di un medico.
+  en: I need a doctor.
+- id: p093
+  it: Dov'è il pronto soccorso?
+  en: Where is the emergency department?
+- id: p094
+  it: Chiami un'ambulanza, per favore.
+  en: Call an ambulance, please. (Polite command)
+- id: p095
+  it: Mi sono perso.
+  en: 'I''m lost. (Male speaker; female: persa)'
+- id: p096
+  it: Ho perso il telefono.
+  en: I've lost my phone.
+- id: p097
+  it: Mi hanno rubato il portafoglio.
+  en: My wallet has been stolen.
+- id: p098
+  it: Non mi sento bene.
+  en: I don't feel well.
+- id: p099
+  it: Ho bisogno di aiuto.
+  en: I need help.
+- id: p100
+  it: Chiami la polizia, per favore!
+  en: Call the police, please. (Polite command)

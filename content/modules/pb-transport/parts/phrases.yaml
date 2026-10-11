@@ -1,0 +1,34 @@
+id: pb-transport.phrases
+type: phrases
+items:
+- id: p071
+  it: Dov'è la fermata dell'autobus?
+  en: Where is the bus stop?
+- id: p072
+  it: Quale autobus va all'università?
+  en: Which bus goes to the university?
+- id: p073
+  it: Questo autobus va a [luogo]?
+  en: 'Does this bus go to [place]? (Use a, alla, al or in: alla stazione, in centro.)'
+  example: Questo autobus va alla stazione?
+- id: p074
+  it: Quanto costa il biglietto?
+  en: How much is the ticket?
+- id: p075
+  it: Dove posso comprare il biglietto?
+  en: Where can I buy the ticket?
+- id: p076
+  it: A che ora parte il treno?
+  en: What time does the train leave?
+- id: p077
+  it: Devo scendere qui?
+  en: Should I get off here?
+- id: p078
+  it: Mi può indicare la strada?
+  en: Could you show me the way? (Polite)
+- id: p079
+  it: Quanto tempo ci vuole per arrivare?
+  en: How long does it take to get there?
+- id: p080
+  it: Può chiamarmi un taxi?
+  en: Could you call me a taxi? (Polite)

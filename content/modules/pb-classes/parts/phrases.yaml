@@ -1,0 +1,49 @@
+id: pb-classes.phrases
+type: phrases
+items:
+- id: p171
+  it: Quando iniziano le lezioni?
+  en: When do classes start?
+- id: p172
+  it: In quale aula si svolge la lezione?
+  en: Which classroom is the lesson in?
+- id: p173
+  it: Le lezioni sono in inglese?
+  en: Are the classes in English?
+- id: p174
+  it: La frequenza è obbligatoria?
+  en: Is attendance mandatory?
+- id: p175
+  it: Dove posso trovare l'orario delle lezioni?
+  en: Where can I find the class timetable?
+- id: p176
+  it: Hai gli appunti della lezione?
+  en: Do you have the lecture notes? (Informal)
+- id: p177
+  it: Posso sedermi qui?
+  en: Can I sit here?
+- id: p178
+  it: Non ho capito questa parte.
+  en: I didn't understand this part.
+- id: p179
+  it: Puoi spiegarmelo?
+  en: Can you explain it to me? (Informal)
+- id: p180
+  it: Quando si svolge l'esame?
+  en: When is the exam taking place?
+- id: p181
+  it: Come funziona l'esame?
+  en: How does the exam work?
+- id: p182
+  it: Dobbiamo lavorare in gruppo?
+  en: Do we have to work in a group?
+- id: p183
+  it: C'è una biblioteca qui vicino?
+  en: Is there a library nearby?
+- id: p184
+  it: Devo parlare con il professore.
+  en: 'I need to speak with the professor. (Female: la professoressa)'
+  example: Devo parlare con la professoressa.
+- id: p185
+  it: Dove posso trovare il materiale del corso?
+  en: Where can I find the course materials?

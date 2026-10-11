@@ -1,0 +1,48 @@
+id: pb-food.phrases
+type: phrases
+items:
+- id: p056
+  it: Un caffè, per favore.
+  en: An espresso, please.
+- id: p057
+  it: Vorrei un cappuccino.
+  en: I'd like a cappuccino.
+- id: p058
+  it: Un tavolo per una persona, per favore.
+  en: A table for one, please.
+- id: p059
+  it: Posso vedere il menù?
+  en: Can I see the menu?
+- id: p060
+  it: Vorrei ordinare.
+  en: I'd like to order.
+- id: p061
+  it: Cosa mi consiglia?
+  en: What do you recommend? (Polite)
+- id: p062
+  it: Senza carne, per favore.
+  en: Without meat, please.
+- id: p063
+  it: Sono allergico a…
+  en: 'I''m allergic to… (Male speaker; female: allergica)'
+- id: p064
+  it: Posso avere dell'acqua naturale?
+  en: Could I have still water?
+- id: p065
+  it: Il conto, per favore.
+  en: The bill, please.
+- id: p066
+  it: Da asporto, per favore.
+  en: For takeaway, please.
+- id: p067
+  it: È piccante?
+  en: Is it spicy?
+- id: p068
+  it: Non mangio maiale.
+  en: I don't eat pork.
+- id: p069
+  it: È halal?
+  en: Is it halal?
+- id: p070
+  it: Possiamo pagare separatamente?
+  en: Can we pay separately?

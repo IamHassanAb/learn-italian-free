@@ -1,0 +1,48 @@
+id: pb-room-practical.phrases
+type: phrases
+items:
+- id: p131
+  it: L'affitto è troppo alto.
+  en: The rent is too high.
+- id: p132
+  it: Il prezzo include le bollette?
+  en: Does the price include utilities?
+- id: p133
+  it: Quanto devo pagare in totale?
+  en: How much do I have to pay in total?
+- id: p134
+  it: Quando devo pagare l'affitto?
+  en: When do I have to pay the rent?
+- id: p135
+  it: È richiesto un deposito cauzionale?
+  en: Is a security deposit required?
+- id: p136
+  it: La camera è arredata?
+  en: Is the room furnished?
+- id: p137
+  it: C'è il Wi-Fi?
+  en: Is there Wi-Fi?
+- id: p138
+  it: La lavatrice è in comune?
+  en: Is the washing machine shared?
+- id: p139
+  it: Posso cucinare qui?
+  en: Can I cook here?
+- id: p140
+  it: Ci sono altri studenti nell'appartamento?
+  en: Are there other students in the apartment?
+- id: p141
+  it: La stanza è disponibile da subito?
+  en: Is the room available immediately?
+- id: p142
+  it: Vorrei leggere il contratto prima di firmare.
+  en: I'd like to read the contract before signing.
+- id: p143
+  it: Posso visitare la stanza prima di decidere?
+  en: Can I view the room before deciding?
+- id: p144
+  it: C'è una fermata dell'autobus nelle vicinanze?
+  en: Is there a bus stop nearby?
+- id: p145
+  it: Potrebbe mandarmi altre foto?
+  en: Could you send me more photos? (Polite)

@@ -1,0 +1,33 @@
+id: pb-sim.phrases
+type: phrases
+items:
+- id: p161
+  it: Vorrei comprare una SIM italiana.
+  en: I'd like to buy an Italian SIM card.
+- id: p162
+  it: Quali offerte avete?
+  en: What plans / offers do you have?
+- id: p163
+  it: Quanti giga sono inclusi?
+  en: How many gigabytes are included? (Everyday wording)
+- id: p164
+  it: Le chiamate sono illimitate?
+  en: Are calls unlimited?
+- id: p165
+  it: Quanto costa al mese?
+  en: How much does it cost per month?
+- id: p166
+  it: Ci sono costi aggiuntivi?
+  en: Are there any extra charges?
+- id: p167
+  it: Vorrei mantenere il mio numero.
+  en: I'd like to keep my number.
+- id: p168
+  it: Come posso attivare la SIM?
+  en: How can I activate the SIM?
+- id: p169
+  it: Non funziona internet.
+  en: The internet isn't working.
+- id: p170
+  it: Non riesco a connettermi al Wi-Fi.
+  en: I can't connect to the Wi-Fi.

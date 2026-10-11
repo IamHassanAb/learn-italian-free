@@ -1,0 +1,33 @@
+id: pb-shopping.phrases
+type: phrases
+items:
+- id: p046
+  it: Quanto costa?
+  en: How much does it cost?
+- id: p047
+  it: Quanto viene in tutto?
+  en: How much is it altogether?
+- id: p048
+  it: Posso pagare con la carta?
+  en: Can I pay by card?
+- id: p049
+  it: Posso pagare in contanti?
+  en: Can I pay in cash?
+- id: p050
+  it: Avete una busta, per favore?
+  en: Do you have a shopping bag, please?
+- id: p051
+  it: Dove si trova il supermercato più vicino?
+  en: Where is the nearest supermarket?
+- id: p052
+  it: Dov'è la farmacia?
+  en: Where is the pharmacy?
+- id: p053
+  it: Sto solo guardando, grazie.
+  en: I'm just looking, thank you.
+- id: p054
+  it: Mi serve questo.
+  en: I need this.
+- id: p055
+  it: Avete qualcosa di più economico?
+  en: Do you have something cheaper?

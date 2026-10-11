@@ -1,0 +1,35 @@
+id: pb-meeting.phrases
+type: phrases
+items:
+- id: p021
+  it: Come ti chiami?
+  en: What's your name? (Informal)
+- id: p022
+  it: Mi chiamo [nome].
+  en: My name is [name].
+- id: p023
+  it: Piacere!
+  en: Nice to meet you.
+- id: p024
+  it: Di dove sei?
+  en: Where are you from? (Informal)
+- id: p025
+  it: Vengo da [paese].
+  en: 'I''m from [country]. (The article changes: dal Brasile, dall''India, dalla Spagna.)'
+  example: Vengo dalla Spagna.
+- id: p026
+  it: Sono studente.
+  en: 'I''m a student. (Female: Sono studentessa.)'
+- id: p027
+  it: Studio all'Università di [città].
+  en: I study at the University of [city].
+  example: Studio all'Università di Bologna.
+- id: p028
+  it: Da quanto tempo vivi qui?
+  en: How long have you lived here? (Informal)
+- id: p029
+  it: Ti va di prendere un caffè?
+  en: Would you like to grab a coffee? (Informal)
+- id: p030
+  it: Ci vediamo dopo!
+  en: See you later!
