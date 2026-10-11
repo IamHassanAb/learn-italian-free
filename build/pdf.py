@@ -87,7 +87,8 @@ class Renderer:
             rows = ([["Italiano", "English"]] if hdr else []) + [[i["it"], i["en"]] for i in p["items"]]
             out.append(self.table(rows, hdr))
         elif t == "phrases":
-            rows = [["Chunk", "English", "Example"]] + [[i["it"], i["en"], i.get("example", "")] for i in p["items"]]
+            ex = any(i.get("example") for i in p["items"])
+            rows = [["Phrase", "English", "Example"] if ex else ["Phrase", "English"]] + [[i["it"], i["en"], i.get("example", "")] if ex else [i["it"], i["en"]] for i in p["items"]]
             out.append(self.table(rows, True))
         elif t == "template":
             out.append(self.table([p["columns"]] + [[""] * len(p["columns"])] * p["blank_rows"], True))

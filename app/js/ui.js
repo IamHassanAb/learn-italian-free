@@ -60,7 +60,7 @@ export function renderPart(ctx, p) {
     case "dialogue": out.push(h("div", null, p.lines.map(l => { const x = parseLine(l); return h("div", { class: "line" }, h("span", { class: "who" }, x.who || ""), h("span", { class: "txt" }, inline(x.text, ctx.resources)), speakBtn(ctx, x.text)); }))); break;
     case "table": out.push(table(ctx, p.columns, p.rows)); break;
     case "vocab": out.push(table(ctx, p.header === false ? null : ["Italiano", "English"], p.items.map(i => [i.it, i.en]), 0)); break;
-    case "phrases": out.push(table(ctx, ["Chunk", "English", "Example"], p.items.map(i => [i.it, i.en, i.example || ""]), 0)); break;
+    case "phrases": { const ex = p.items.some(i => i.example); out.push(table(ctx, ex ? ["Phrase", "English", "Example"] : ["Phrase", "English"], p.items.map(i => ex ? [i.it, i.en, i.example || ""] : [i.it, i.en]), 0)); break; }
     case "writing-task": out.push(h("details", null, h("summary", null, inline(p.title, ctx.resources)), h("p", null, inline(p.prompt, ctx.resources)), h("p", { class: "muted small" }, "Model answer:"), h("p", null, inline(p.model, ctx.resources)))); break;
     default: break;   // template blanks are for the printed PDFs
   }

@@ -22,7 +22,10 @@ export function reviewView(ctx) {
       h("div", { class: "grid stats" },
         h("div", { class: "card stat" }, h("b", null, String(q.due.length)), h("span", { class: "muted small" }, "due now")),
         h("div", { class: "card stat" }, h("b", null, String(q.fresh.length)), h("span", { class: "muted small" }, `new today (max ${store.state.settings.newPerDay})`))),
-      h("section", { class: "card" }, h("h2", null, "Decks"), h("p", { class: "muted small" }, "Tap to include or leave out."), h("div", { class: "row" }, chips)),
+      h("section", { class: "card stack" }, h("div", { class: "row between" }, h("h2", null, "Decks"),
+        h("div", { class: "row" }, h("button", { class: "btn ghost small", type: "button", onClick: () => { store.setting("decks", decks().map(x => x.id)); setup(); } }, "All"),
+          h("button", { class: "btn ghost small", type: "button", onClick: () => { store.setting("decks", []); setup(); } }, "None"))),
+        h("p", { class: "muted small" }, "Tap to include or leave out. New cards are taken in course order."), h("div", { class: "row" }, chips)),
       q.queue.length
         ? h("button", { class: "btn warm", type: "button", onClick: () => start(q.queue) }, `Start · ${q.queue.length} card${q.queue.length === 1 ? "" : "s"}`)
         : h("div", { class: "card" }, h("p", null, "Nothing due. Come back tomorrow, add a gap, or raise the new-card limit in Settings.")),
