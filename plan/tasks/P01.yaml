@@ -1,0 +1,12 @@
+id: P01
+stage: M
+title: Native-speaker review of the 200-phrase book
+size: S
+status: todo
+depends_on: []
+change: Ask a native Italian speaker to read plan/notes/phrasebook-import.md and the pb-* modules, especially tone
+  (formal and informal), p036, p126, p148 and anything the maintainer is unsure about.
+done_when:
+- Corrections applied or confirmed; reviewer credited in the README if they agree
+touches:
+- content/modules/pb-*/
