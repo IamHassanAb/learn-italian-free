@@ -1,0 +1,12 @@
+id: S05
+stage: S
+title: 'Maintainer: run supabase/italiano_progress.sql in project gebbkrttofqrytialpgx'
+size: S
+status: todo
+depends_on:
+- S01
+change: 'Maintainer: run supabase/italiano_progress.sql in project gebbkrttofqrytialpgx.'
+done_when:
+- Table italiano_progress exists with RLS enabled
+touches:
+- Supabase dashboard, SQL Editor

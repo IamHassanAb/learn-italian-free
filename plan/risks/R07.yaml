@@ -1,0 +1,5 @@
+id: R07
+risk: Free Supabase projects may pause when unused, and the app then cannot sync until the project is resumed
+affects: S05-S08
+mitigation: Progress always stays on the device; sync resumes when the project is restored. Check Supabase's current
+  pause rules.

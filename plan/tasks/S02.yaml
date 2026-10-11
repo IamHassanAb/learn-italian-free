@@ -1,0 +1,11 @@
+id: S02
+stage: S
+title: Merge logic that never loses work
+size: S
+status: done
+depends_on: []
+change: Merge logic that never loses work.
+done_when:
+- Newest review wins per card; days combined; deletions stay deleted; settings untouched
+touches:
+- app/js/lib/merge.js (+ tests)

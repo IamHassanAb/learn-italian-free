@@ -1,0 +1,12 @@
+id: S08
+stage: S
+title: Verify sync on two real devices
+size: S
+status: todo
+depends_on:
+- S07
+change: Verify sync on two real devices.
+done_when:
+- A tick on one device appears on the other after Sync now; anonymous request to the table is refused
+touches:
+- Phone and laptop

@@ -1,0 +1,7 @@
+id: D16
+decision: Cross-device sync is optional, uses the owner's own Supabase project over plain fetch, and is single-user
+why: Publishable keys are safe in a public page when row level security is on and sign-ups are disabled. Forks leave
+  config.json empty or point it at their own project. A static site still cannot hold a secret, so no secret keys
+  are ever used.
+date: '2026-10-11'
+status: active

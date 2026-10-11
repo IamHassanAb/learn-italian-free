@@ -1,0 +1,12 @@
+id: S07
+stage: S
+title: 'Maintainer: put the publishable key in app/config.json, rebuild, push'
+size: S
+status: todo
+depends_on:
+- S06
+change: 'Maintainer: put the publishable key in app/config.json, rebuild, push.'
+done_when:
+- Settings shows the sign-in form
+touches:
+- app/config.json

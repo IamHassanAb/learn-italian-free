@@ -36,6 +36,17 @@ Run it locally: `python -m http.server 8000 --directory docs`, then open http://
 Rebuild the app after content changes with `python build/app.py` and commit `docs/`.
 The app uses your portfolio's "Study Room at Dusk" design tokens (`app/styles.css`).
 
+## Optional: sync your progress across devices
+Progress is stored on each device. To keep a phone and a laptop in step, the app can sync through **your own free Supabase project**
+(plain browser JavaScript, no server of ours; sign-ups stay off so it is private to you).
+1. In your Supabase project open SQL Editor, paste `supabase/italiano_progress.sql`, and run it.
+2. Authentication, Sign In / Providers: turn **off** "Allow new users to sign up". Then Authentication, Users, Add user, and create your own email and password (auto-confirm).
+3. Project Settings, API Keys: copy the **publishable** key (`sb_publishable_...`) into `app/config.json` as `supabaseKey`, and your project address as `supabaseUrl`.
+   Never use the secret or service_role key in this app.
+4. `python build/app.py`, commit and push. Open the app, More, Settings, "Sync across devices", and sign in on each device.
+Merging never discards work: the newest review of each card wins, activity days are combined, and deleted gap entries stay deleted. Device settings are never synced.
+Leave `config.json` empty and the sync section simply does not appear.
+
 ## Rebuild the PDFs (optional)
 ```
 pip install -r requirements.txt

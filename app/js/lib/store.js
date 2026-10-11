@@ -1,19 +1,23 @@
 import { localDate, addDays } from "./util.js";
 const KEY = "italiano-ogni-giorno:v1";
-const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null }, cards: {}, daily: {}, gaps: [], ratings: {}, drills: {} });
+const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {} });
 
 // storage: anything with getItem/setItem (localStorage, or a stub in tests). Keeps working in memory if it throws.
 export function createStore(storage) {
   let state;
+  const listeners = new Set();
   const read = () => { try { const raw = storage && storage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch { return null; } };
-  const write = () => { try { storage.setItem(KEY, JSON.stringify(state)); return true; } catch { return false; } };
-  state = Object.assign(DEFAULTS(), read() || {});
-  state.settings = Object.assign(DEFAULTS().settings, state.settings);
+  const persist = () => { try { storage.setItem(KEY, JSON.stringify(state)); return true; } catch { return false; } };
+  // Every change is saved and announced (the cloud sync listens to schedule an upload).
+  const write = () => { const ok = persist(); listeners.forEach((fn) => { try { fn(); } catch { /* a listener must never break saving */ } }); return ok; };
+  const fill = (o) => { const s = Object.assign(DEFAULTS(), o || {}); s.settings = Object.assign(DEFAULTS().settings, s.settings); return s; };
+  state = fill(read());
   const day = (d) => (state.daily[d] ||= { blocks: {}, reviewed: 0, newSeen: 0, drills: 0, retells: 0 });
   const isActive = (d) => !!d && (Object.values(d.blocks || {}).some(Boolean) || d.reviewed >= 5 || d.drills > 0 || d.retells > 0);
   return {
     get state() { return state; },
-    setting(k, v) { state.settings[k] = v; write(); },
+    onChange(fn) { listeners.add(fn); return () => listeners.delete(fn); },
+    setting(k, v) { state.settings[k] = v; persist(); },          // settings are per device: never synced
     card: (id) => state.cards[id],
     setCard(id, s) { state.cards[id] = s; write(); },
     day,
@@ -31,14 +35,16 @@ export function createStore(storage) {
       return n;
     },
     addGap(g) { const e = { id: "gap." + Date.now().toString(36), created: localDate(), ...g }; state.gaps.unshift(e); write(); return e; },
-    removeGap(id) { state.gaps = state.gaps.filter(g => g.id !== id); delete state.cards[id]; write(); },
+    removeGap(id) { state.gaps = state.gaps.filter(g => g.id !== id); delete state.cards[id]; state.gapsDeleted = [...(state.gapsDeleted || []), id].slice(-500); write(); },
     setRating(id, stars) { state.ratings[id] = { stars, last: localDate() }; write(); },
     exportJSON() { return JSON.stringify(state, null, 1); },
     importJSON(text) {
       let o; try { o = JSON.parse(text); } catch { return { ok: false, error: "That file is not valid JSON." }; }
       if (!o || o.v !== 1 || typeof o.cards !== "object" || typeof o.settings !== "object") return { ok: false, error: "That file is not an Italiano ogni giorno backup." };
-      state = Object.assign(DEFAULTS(), o); state.settings = Object.assign(DEFAULTS().settings, o.settings); write(); return { ok: true };
+      state = fill(o); write(); return { ok: true };
     },
+    // Used by the sync: swap in a merged copy but keep this device's own settings. Does not trigger an upload.
+    replaceShared(next) { state = fill({ ...next, settings: state.settings }); persist(); },
     reset() { state = DEFAULTS(); write(); },
     persistent() { try { storage.setItem(KEY + ":t", "1"); storage.removeItem(KEY + ":t"); return true; } catch { return false; } },
   };

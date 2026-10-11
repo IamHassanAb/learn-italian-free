@@ -1,0 +1,11 @@
+id: S01
+stage: S
+title: Database script for per-user progress (RLS, grants, size limit)
+size: S
+status: done
+depends_on: []
+change: Database script for per-user progress (RLS, grants, size limit).
+done_when:
+- Table with row level security, authenticated-only grants, 1 MB size check, updated_at trigger
+touches:
+- supabase/italiano_progress.sql

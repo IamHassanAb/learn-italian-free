@@ -1,0 +1,12 @@
+id: S06
+stage: S
+title: 'Maintainer: turn off sign-ups and create the owner account'
+size: S
+status: todo
+depends_on:
+- S05
+change: 'Maintainer: turn off sign-ups and create the owner account.'
+done_when:
+- Sign-ups disabled; one user with email and password
+touches:
+- Supabase dashboard, Authentication

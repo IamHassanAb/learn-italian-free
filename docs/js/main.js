@@ -1,5 +1,6 @@
 import { createStore } from "./lib/store.js";
 import { createSpeech } from "./lib/speech.js";
+import { createSync } from "./lib/sync.js";
 import { longDate } from "./lib/calendar.js";
 import { h, toast } from "./ui.js";
 import { todayView } from "./views/today.js";
@@ -35,7 +36,7 @@ function moreView(c) {
       h("a", { class: "card block", href: "#/settings", style: "text-decoration:none;color:inherit" }, h("h2", null, "Settings"), h("p", { class: "muted small" }, "New cards, voice, theme, backup."))));
 }
 
-function buildCtx(content) {
+function buildCtx(content, sync) {
   const cardCache = { content };
   const buildCards = () => {
     const list = [];
@@ -55,7 +56,7 @@ function buildCtx(content) {
   };
   const hour = () => new Date().getHours();
   return {
-    content, store, speech, resources: content.resources, cards, decks, applyTheme,
+    content, store, speech, sync, resources: content.resources, cards, decks, applyTheme,
     greeting: () => (hour() < 5 ? "Buonanotte" : hour() < 17 ? "Buongiorno" : "Buonasera"),
     refresh: () => render(),
   };
@@ -85,19 +86,34 @@ function render() {
   const first = app.querySelector("h1"); document.title = first ? `${first.textContent} · Italiano ogni giorno` : "Italiano ogni giorno";
 }
 
+// Keep this device and the cloud copy in step: on start, when the connection returns, and when the app comes back to the front.
+let lastAuto = 0;
+function startSync() {
+  const sync = ctx.sync;
+  if (!sync.enabled) return;
+  const auto = () => { if (sync.info().signedIn && Date.now() - lastAuto > 30000) { lastAuto = Date.now(); sync.syncNow(); } };
+  auto();
+  window.addEventListener("online", () => { lastAuto = 0; auto(); });
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") auto(); });
+}
+
 async function boot() {
   applyTheme();
   document.getElementById("today-date").textContent = longDate(new Date());
   try {
     const res = await fetch("data/content.json", { cache: "no-cache" });
     if (!res.ok) throw new Error("HTTP " + res.status);
-    ctx = buildCtx(await res.json());
+    const content = await res.json();
+    let config = {};
+    try { const r = await fetch("config.json", { cache: "no-cache" }); if (r.ok) config = await r.json(); } catch { /* no sync config: the app works without it */ }
+    ctx = buildCtx(content, createSync({ config, store, storage }));
   } catch (err) {
     app.replaceChildren(h("div", { class: "stack" }, h("h1", null, "Could not load the lessons"), h("p", { class: "muted" }, "Check your connection and reload. If you opened index.html directly from disk, serve the folder over http instead (for example: python -m http.server)."), h("p", { class: "muted small" }, String(err.message || err))));
     return;
   }
   window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
   render();
+  startSync();
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }

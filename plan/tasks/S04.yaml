@@ -1,0 +1,12 @@
+id: S04
+stage: S
+title: Sync card in Settings and automatic sync on start, reconnect and focus
+size: S
+status: done
+depends_on:
+- S03
+change: Sync card in Settings and automatic sync on start, reconnect and focus.
+done_when:
+- Verified in headless Chrome against an intercepted fake Supabase
+touches:
+- app/js/main.js, app/js/views/settings.js

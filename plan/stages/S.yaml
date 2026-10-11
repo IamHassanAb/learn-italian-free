@@ -1,0 +1,5 @@
+id: S
+title: Optional cross-device sync (Supabase)
+goal: Keep progress in step across devices through the owner's own Supabase project, without a server of ours.
+done_means: Two real devices stay in step; sign-ups are off; the app works unchanged without a key.
+order: 3

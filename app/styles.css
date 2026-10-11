@@ -71,7 +71,7 @@ a { color: hsl(var(--warm)); text-underline-offset: 3px; }
 .card > :last-child { margin-bottom: 0; }
 .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-button, .btn, select, input[type=text], input[type=file], textarea {
+button, .btn, select, input[type=text], input[type=email], input[type=password], input[type=file], textarea {
   font: inherit; color: inherit; min-height: 44px; border-radius: var(--radius);
 }
 .btn, button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 16px; cursor: pointer; text-decoration: none;
@@ -84,7 +84,7 @@ button, .btn, select, input[type=text], input[type=file], textarea {
 .btn.small, button.small { min-height: 36px; padding: 4px 10px; }
 button[disabled] { opacity: .5; cursor: not-allowed; }
 :focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
-input[type=text], select, textarea { width: 100%; padding: 8px 12px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+input[type=text], input[type=email], input[type=password], select, textarea { width: 100%; padding: 8px 12px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
 label { display: block; font-size: .8rem; margin-bottom: 4px; color: hsl(var(--muted-foreground)); }
 .field { display: flex; flex-direction: column; }
 .chip { display: inline-flex; align-items: center; min-height: 36px; padding: 2px 12px; border: 1px solid hsl(var(--border)); border-radius: 999px; background: transparent; font-size: .8rem; }
@@ -141,3 +141,6 @@ hr { border: 0; border-top: 1px solid hsl(var(--border)); margin: 4px 0; width: 
 .lookup .card { padding: 12px; }
 .lookup h3 { margin-bottom: 4px; font-size: .95rem; }
 .lookup p { overflow-wrap: anywhere; }
+
+/* keep focused or scrolled-to controls clear of the fixed bottom tab bar */
+input, select, textarea, button, .btn, label { scroll-margin-block: 100px; }

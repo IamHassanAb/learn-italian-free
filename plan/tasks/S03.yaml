@@ -1,0 +1,12 @@
+id: S03
+stage: S
+title: Sync client over fetch with token refresh, debounce and offline handling
+size: M
+status: done
+depends_on:
+- S02
+change: Sync client over fetch with token refresh, debounce and offline handling.
+done_when:
+- 24 unit tests pass, including a fake two-device Supabase
+touches:
+- app/js/lib/sync.js (+ tests)
