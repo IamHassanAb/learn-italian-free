@@ -1,0 +1,13 @@
+id: H02
+stage: H
+title: Touch targets of at least 44px
+size: S
+status: done
+depends_on:
+- H01
+change: Raise chips, small buttons, Back links, Copy, End, Use this and listen buttons to 44px; spread inline link
+  lists so they are tappable.
+done_when:
+- Audit reports 0 tap targets under 44px
+touches:
+- app/

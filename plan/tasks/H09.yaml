@@ -1,0 +1,13 @@
+id: H09
+stage: H
+title: Quick search
+size: S
+status: done
+depends_on:
+- H02
+change: A search box (on Today and More, and as its own screen) across phrasebook, vocabulary, grammar rows and
+  your conversation log; shows the Italian first with a listen button.
+done_when:
+- Typing 'pharmacy' or 'farmacia' lists the matching phrases within a tap or two
+touches:
+- app/

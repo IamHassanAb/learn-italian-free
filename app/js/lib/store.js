@@ -1,6 +1,6 @@
 import { localDate, addDays } from "./util.js";
 const KEY = "italiano-ogni-giorno:v1";
-const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null, translateProvider: "auto", translateEmail: "", translateDir: "auto" }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {} });
+const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null, translateProvider: "auto", translateEmail: "", translateDir: "auto", hand: "right" }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {} });
 
 // storage: anything with getItem/setItem (localStorage, or a stub in tests). Keeps working in memory if it throws.
 export function createStore(storage) {

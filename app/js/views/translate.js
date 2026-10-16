@@ -8,7 +8,7 @@ const DIRS = [["auto", "Auto"], ["en-it", "EN → IT"], ["it-en", "IT → EN"]];
 export function translateView(ctx) {
   const { store, translator } = ctx;
   const root = h("div", { class: "stack" });
-  let dir = store.state.settings.translateDir || "auto", timer = null, seq = 0, current = null, saving = false, situation = "";
+  let dir = store.state.settings.translateDir || "auto", timer = null, seq = 0, current = null, saving = false, situation = store.state.settings.lastSituation || "";
 
   const input = h("textarea", { id: "tr-input", rows: 3, placeholder: "Type English or Italian…", autocapitalize: "sentences", spellcheck: "false", "aria-label": "Text to translate" });
   const results = h("div", { class: "stack", "aria-live": "polite" });
@@ -51,6 +51,13 @@ export function translateView(ctx) {
   const italianOf = (c) => (c.to === "it" ? c.out : c.text);
   const englishOf = (c) => (c.to === "it" ? c.text : c.out);
 
+  // One-tap save: Italian and English as translated, the situation you used last time, and "unchecked". Details can be added from the log later.
+  function quickSave() {
+    const c = current; if (!c) return;
+    store.addGap({ it: italianOf(c), en: englishOf(c), tag: null, ctx: store.state.settings.lastSituation || null, kind: c.to === "it" ? "wanted" : "heard", note: null, src: "translate", provider: c.provider, checked: false });
+    toast("Logged. It is now a flashcard, marked unchecked."); saving = false; form.replaceChildren(); input.value = ""; current = null; results.replaceChildren(); input.focus();
+  }
+
   function paintResult() {
     const c = current; if (!c) return;
     const copy = () => (navigator.clipboard ? navigator.clipboard.writeText(c.out).then(() => toast("Copied.")).catch(() => toast("Could not copy.")) : toast("Could not copy."));
@@ -63,7 +70,9 @@ export function translateView(ctx) {
           c.to === "it" ? speakBtn(ctx, c.out, "Listen") : null,
           h("button", { class: "btn small", type: "button", onClick: copy }, "Copy"),
           h("a", { class: "btn small", href: googleTranslateLink(c.text, c.from, c.to), target: "_blank", rel: "noopener noreferrer" }, "Check in Google Translate"),
-          h("button", { class: "btn warm", type: "button", onClick: () => { saving = true; paintForm(); form.scrollIntoView({ block: "center" }); } }, "Save to log")),
+          h("div", { class: "row handrow", style: "width:100%" },
+            h("button", { class: "btn", type: "button", onClick: () => { saving = true; paintForm(); form.scrollIntoView({ block: "center" }); } }, "Add details…"),
+            h("button", { class: "btn warm", type: "button", onClick: quickSave }, "Quick save"))),
         c.alternatives.length ? h("div", { class: "stack" }, h("p", { class: "muted small" }, "Other possible translations (from other translators):"),
           c.alternatives.map((a) => h("div", { class: "row between" }, h("span", null, a.text), h("button", { class: "btn small", type: "button", onClick: () => { c.out = a.text; c.alternatives = c.alternatives.filter((x) => x !== a); paintResult(); } }, "Use this")))) : null,
         h("p", { class: "muted small" }, "Machine translation can be wrong. Check anything important with a local, then mark it checked in the log."),
@@ -80,7 +89,7 @@ export function translateView(ctx) {
     const topics = (ctx.content.modules["step3-grammar"] || { parts: [] }).parts.filter((p) => p.type === "lookup-row");
     const tag = h("select", { id: "log-tag", "aria-label": "Grammar topic" }, h("option", { value: "" }, "Grammar topic (optional)"), topics.map((t) => h("option", { value: t.id }, t.when)));
     const chips = h("div", { class: "row", role: "group", "aria-label": "Situation" });
-    const paintChips = () => chips.replaceChildren(...SITUATIONS.map((x) => h("button", { class: "chip", type: "button", "aria-pressed": String(situation === x), onClick: () => { situation = situation === x ? "" : x; paintChips(); } }, x)));
+    const paintChips = () => chips.replaceChildren(...SITUATIONS.map((x) => h("button", { class: "chip", type: "button", "aria-pressed": String(situation === x), onClick: () => { situation = situation === x ? "" : x; store.setting("lastSituation", situation); paintChips(); } }, x)));
     paintChips();
     const save = () => {
       if (!itBox.value.trim() || !enBox.value.trim()) { toast("The Italian and the English both need text."); return; }

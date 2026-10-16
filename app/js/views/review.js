@@ -38,7 +38,8 @@ export function reviewView(ctx) {
     return itFirst;
   }
 
-  function start(queue) { session = { queue: queue.slice(), total: queue.length, done: 0, grades: { again: 0, good: 0, easy: 0 }, revealed: false }; show(); }
+  const bodyClass = (on) => document.body.classList.toggle("session", on);
+  function start(queue) { bodyClass(true); session = { queue: queue.slice(), total: queue.length, done: 0, grades: { again: 0, good: 0, easy: 0 }, revealed: false }; show(); }
 
   function show() {
     if (!session.queue.length) return finish();
@@ -61,7 +62,7 @@ export function reviewView(ctx) {
       else if (session.revealed) { if (e.key === "1") grade("again"); if (e.key === "2") grade("good"); if (e.key === "3") grade("easy"); }
     };
     mount(root, 
-      h("div", { class: "row between" }, h("p", { class: "eyebrow" }, `${card.deckTitle}${isNew ? " · new" : ""}`), h("button", { class: "btn ghost small", type: "button", onClick: () => { document.onkeydown = null; session = null; setup(); } }, "End")),
+      h("div", { class: "row between" }, h("p", { class: "eyebrow" }, `${card.deckTitle}${isNew ? " · new" : ""}`), h("button", { class: "btn ghost small", type: "button", onClick: () => { document.onkeydown = null; session = null; bodyClass(false); setup(); } }, "End")),
       h("div", { class: "progress", role: "progressbar", "aria-valuenow": pct, "aria-valuemin": 0, "aria-valuemax": 100 }, h("i", { style: `width:${pct}%` })),
       h("section", { class: "card stack", "aria-live": "polite" },
         h("p", { class: "muted small" }, itFirst ? "What does this mean?" : "Say it in Italian"),
@@ -70,16 +71,17 @@ export function reviewView(ctx) {
           h("hr"),
           h("div", { class: "row" }, h("div", { class: "flash answer" }, inline(answer)), itFirst ? null : speakBtn(ctx, card.it)),
           card.example ? h("p", { class: "muted" }, "e.g. ", inline(card.example)) : null] : null),
+      // fixed bar at the bottom of the screen: within thumb reach, and the main button sits on the side of your hand (Settings)
       session.revealed
-        ? h("div", { class: "grid" },
-            h("button", { class: "btn", type: "button", onClick: () => grade("again") }, "Again", h("span", { class: "kbd" }, "1")),
-            h("button", { class: "btn primary", type: "button", onClick: () => grade("good") }, `Good · ${label(previewDays(st, "good"))}`, h("span", { class: "kbd" }, "2")),
-            h("button", { class: "btn warm", type: "button", onClick: () => grade("easy") }, `Easy · ${label(previewDays(st, "easy"))}`, h("span", { class: "kbd" }, "3")))
-        : h("button", { class: "btn primary", type: "button", onClick: reveal }, "Show answer ", h("span", { class: "kbd" }, "space")));
+        ? h("div", { class: "actionbar" },
+            h("button", { class: "btn tertiary-action", type: "button", onClick: () => grade("again") }, "Again", h("span", { class: "kbd" }, "1")),
+            h("button", { class: "btn primary primary-action", type: "button", onClick: () => grade("good") }, `Good · ${label(previewDays(st, "good"))}`, h("span", { class: "kbd" }, "2")),
+            h("button", { class: "btn warm secondary-action", type: "button", onClick: () => grade("easy") }, `Easy · ${label(previewDays(st, "easy"))}`, h("span", { class: "kbd" }, "3")))
+        : h("div", { class: "actionbar" }, h("button", { class: "btn primary primary-action", type: "button", onClick: reveal }, "Show answer ", h("span", { class: "kbd" }, "space"))));
   }
 
   function finish() {
-    document.onkeydown = null;
+    document.onkeydown = null; bodyClass(false);
     const g = session.grades; const n = g.again + g.good + g.easy;
     mount(root, 
       h("div", null, h("p", { class: "eyebrow" }, "Done"), h("h1", null, "Bravo!")),
@@ -90,6 +92,6 @@ export function reviewView(ctx) {
   }
 
   setup();
-  root.cleanup = () => { document.onkeydown = null; };
+  root.cleanup = () => { document.onkeydown = null; bodyClass(false); };
   return root;
 }

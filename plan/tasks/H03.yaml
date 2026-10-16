@@ -1,0 +1,13 @@
+id: H03
+stage: H
+title: Typing and touch basics
+size: S
+status: done
+depends_on:
+- H01
+change: All fields use 16px text (no iPhone zoom); no tap delay or grey tap flash; stop pull-down-to-refresh reloading
+  the app mid-review; text selection kept for Italian text.
+done_when:
+- Audit reports 0 fields under 16px
+touches:
+- app/

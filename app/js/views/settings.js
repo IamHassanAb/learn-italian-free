@@ -78,7 +78,8 @@ export function settingsView(ctx) {
           h("button", { class: "btn", type: "button", onClick: () => ctx.speech.speak("Buongiorno! Sto imparando l'italiano.", s.rate) }, "Test voice")]
         : h("p", { class: "muted" }, "No Italian voice was found. Audio buttons are hidden. You can usually add one in your device's language or speech settings.")),
       h("section", { class: "card stack" }, h("h2", null, "Appearance"),
-        select("set-theme", "Theme", s.theme, [["auto", "Match my device"], ["light", "Light (cream)"], ["dark", "Dark (dusk)"]], v => { store.setting("theme", v); ctx.applyTheme(); })),
+        select("set-theme", "Theme", s.theme, [["auto", "Match my device"], ["light", "Light (cream)"], ["dark", "Dark (dusk)"]], v => { store.setting("theme", v); ctx.applyTheme(); }),
+        select("set-hand", "Which hand holds your phone?", s.hand || "right", [["right", "Right hand (main buttons on the right)"], ["left", "Left hand (main buttons on the left)"], ["center", "Centred"]], v => { store.setting("hand", v); ctx.applyTheme(); })),
       h("section", { class: "card stack" }, h("h2", null, "Translation"),
         select("set-tprov", "Translator", s.translateProvider || "auto", [["auto", "Automatic (on-device if your browser has it, otherwise MyMemory)"], ["mymemory", "MyMemory only"]], v => store.setting("translateProvider", v)),
         h("p", { class: "muted small" }, ctx.translator.chromeSupported() ? "This browser has an on-device translator (private, works offline)." : "This browser has no on-device translator (desktop Chrome does), so MyMemory is used."),

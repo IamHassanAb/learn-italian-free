@@ -1,0 +1,13 @@
+id: H10
+stage: H
+title: Self-hosted fonts and fewer weights
+size: S
+status: done
+depends_on:
+- H03
+change: Download Fraunces and JetBrains Mono (SIL Open Font Licence) once into the app, load only the weights used,
+  no third-party request, cached for offline.
+done_when:
+- No request to fonts.googleapis.com; first load works offline after one visit
+touches:
+- app/

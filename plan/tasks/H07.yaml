@@ -1,0 +1,13 @@
+id: H07
+stage: H
+title: Hand choice setting
+size: S
+status: done
+depends_on:
+- H02
+change: 'Settings: Right-handed (default), Left-handed or Centred; moves the main action buttons in the bottom action
+  bar.'
+done_when:
+- Choice is saved and applied on Review and Translate
+touches:
+- app/

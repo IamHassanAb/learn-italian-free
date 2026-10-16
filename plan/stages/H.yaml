@@ -1,0 +1,7 @@
+id: H
+title: Phone first
+goal: 'The app is comfortable to use with one thumb on a phone: big targets, no zoom, no keyboard clashes, quick
+  search, fast on mobile data.'
+done_means: The mobile audit passes at 320, 360, 390 and 412 px wide and in landscape, and the owner has tried it
+  on a real phone.
+order: 1

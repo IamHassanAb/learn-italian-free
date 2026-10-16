@@ -1,0 +1,7 @@
+id: D20
+decision: 'Mobile first: tabs unchanged, Review full screen with a bottom action bar, quick search added, fonts
+  self-hosted, hand choice in Settings, PWA extras skipped'
+why: Owner's answers 2026-10-16. The owner uses the app mostly on a smartphone, standing in conversations and in
+  short daily sessions. Install prompts, shortcuts and share-target were explicitly set aside.
+date: '2026-10-16'
+status: active

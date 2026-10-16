@@ -1,0 +1,13 @@
+id: H06
+stage: H
+title: Review is full screen with a thumb-reach action bar
+size: S
+status: done
+depends_on:
+- H05
+change: During a session the answer and grade buttons sit in a fixed bar at the bottom, large, with the hand choice
+  applied; the card scrolls above it.
+done_when:
+- A whole card can be reviewed with one thumb without scrolling at 320 x 568
+touches:
+- app/

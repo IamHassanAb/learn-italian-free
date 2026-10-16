@@ -1,0 +1,13 @@
+id: H04
+stage: H
+title: Compact header and screen edges
+size: S
+status: done
+depends_on:
+- H01
+change: One-line header about 52px, date on the same line; respect the notch and side insets in landscape; remove
+  the portrait lock from the manifest.
+done_when:
+- Audit shows header at most 56px at 320px wide and no sideways overflow at any size
+touches:
+- app/

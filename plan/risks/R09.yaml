@@ -1,0 +1,6 @@
+id: R09
+risk: Mobile behaviour is measured in desktop Chrome only; iPhone Safari keyboard, notch and viewport quirks are
+  untested
+affects: H02-H11
+mitigation: Use dynamic viewport units and safe-area insets, avoid position tricks that fail on iOS, and finish
+  with task H11 on a real phone.

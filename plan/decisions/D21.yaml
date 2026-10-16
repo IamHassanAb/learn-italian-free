@@ -1,0 +1,6 @@
+id: D21
+decision: 'No feature freeze: keep building features now, alongside using the app'
+why: Owner's choice 2026-10-16, declining the suggested one-week freeze and field
+  test.
+date: '2026-10-16'
+status: active

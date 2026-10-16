@@ -1,0 +1,16 @@
+id: H11
+stage: H
+title: Real-phone check
+size: S
+status: todo
+depends_on:
+- H06
+- H08
+- H09
+- H10
+change: 'A short checklist for the owner''s own phone: keyboard, notch, landscape, speaker voice, one-hand reach;
+  fix what it finds.'
+done_when:
+- Owner confirms on a real phone
+touches:
+- app/

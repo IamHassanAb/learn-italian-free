@@ -1,0 +1,13 @@
+id: H05
+stage: H
+title: 'Bottom tab bar: icons, and hidden while typing'
+size: S
+status: done
+depends_on:
+- H02
+change: Small icon above each label; the bar hides while a text field has focus so the keyboard never covers a field,
+  and while a review session is running.
+done_when:
+- No field is ever behind the bar; audit finds no content hidden under it
+touches:
+- app/

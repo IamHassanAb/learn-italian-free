@@ -13,12 +13,21 @@ import { gapsView } from "./views/gaps.js";
 import { settingsView } from "./views/settings.js";
 import { retellView } from "./views/retell.js";
 import { setupView } from "./views/setup.js";
+import { searchView } from "./views/search.js";
 import { translateView } from "./views/translate.js";
 import { createTranslator } from "./lib/translate.js";
 
 const TABS = [["today", "Today"], ["review", "Review"], ["translate", "Translate"], ["scenarios", "Role-play"], ["more", "More"]];
-const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, translate: translateView, more: moreView };
-const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", drills: "more", retell: "today" };
+const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, translate: translateView, search: searchView, more: moreView };
+// Small line icons (24x24 paths) so each tab is recognisable at a glance.
+const ICONS = {
+  today: "M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z",
+  review: "M4 7h13a2 2 0 012 2v9a2 2 0 01-2 2H4zM7 4h13a2 2 0 012 2v9",
+  translate: "M3 5h8M7 3v2M5 9c1 3 3 5 6 6M10 5c-1 5-3 8-7 10M13 21l4-10 4 10M14.5 18h5",
+  scenarios: "M4 5h16a1 1 0 011 1v9a1 1 0 01-1 1H10l-5 4v-4H4a1 1 0 01-1-1V6a1 1 0 011-1z",
+  more: "M5 12h.01M12 12h.01M19 12h.01",
+};
+const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", search: "more", drills: "more", retell: "today" };
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* blocked: the store falls back to memory */ }
@@ -30,11 +39,13 @@ let current = null, ctx = null;
 function applyTheme() {
   const t = store.state.settings.theme;
   if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+  document.body.dataset.hand = store.state.settings.hand || "right";
 }
 
 function moreView(c) {
   return h("div", { class: "stack" }, h("div", null, h("p", { class: "eyebrow" }, "More"), h("h1", null, "More")),
     h("div", { class: "grid" },
+      h("a", { class: "card block", href: "#/search", style: "text-decoration:none;color:inherit" }, h("h2", null, "Quick search"), h("p", { class: "muted small" }, "Find any phrase, word or grammar row, in English or Italian.")),
       h("a", { class: "card block", href: "#/library", style: "text-decoration:none;color:inherit" }, h("h2", null, "Library"), h("p", { class: "muted small" }, "Cognates, grammar lookup, basics and the printable PDFs.")),
       h("a", { class: "card block", href: "#/drills", style: "text-decoration:none;color:inherit" }, h("h2", null, "Drills"), h("p", { class: "muted small" }, "Numbers, time, days, months and dates. Ten questions each.")),
       h("a", { class: "card block", href: "#/gaps", style: "text-decoration:none;color:inherit" }, h("h2", null, "Conversation log"), h("p", { class: "muted small" }, "Lines from real conversations, with corrections. They become flashcards.")),
@@ -74,7 +85,11 @@ function parseHash() {
 
 function renderTabs(active) {
   const nav = document.getElementById("tabs");
-  nav.replaceChildren(...TABS.map(([id, label]) => h("a", { href: `#/${id}`, "aria-current": id === active ? "page" : null }, label)));
+  nav.replaceChildren(...TABS.map(([id, label]) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("aria-hidden", "true");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path"); path.setAttribute("d", ICONS[id]); svg.append(path);
+    return h("a", { href: `#/${id}`, "aria-current": id === active ? "page" : null }, svg, label);
+  }));
 }
 
 function render() {
@@ -101,6 +116,11 @@ function startSync() {
   window.addEventListener("online", () => { lastAuto = 0; auto(); });
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") auto(); });
 }
+
+// Hide the bottom tab bar while a text field has focus, so the on-screen keyboard never covers what you are typing.
+const TEXTY = "textarea, select, input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=button]):not([type=submit]):not([type=file])";
+document.addEventListener("focusin", (e) => { if (e.target.matches && e.target.matches(TEXTY)) document.body.classList.add("typing"); });
+document.addEventListener("focusout", () => { setTimeout(() => { if (!document.activeElement || !document.activeElement.matches(TEXTY)) document.body.classList.remove("typing"); }, 50); });
 
 async function boot() {
   applyTheme();

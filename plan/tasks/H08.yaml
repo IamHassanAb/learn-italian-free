@@ -1,0 +1,13 @@
+id: H08
+stage: H
+title: Translate and log in as few taps as possible
+size: S
+status: done
+depends_on:
+- H05
+change: Keep the input near the top, the result and a one-tap Quick save button right under it (Italian, situation
+  remembered from last time), details optional afterwards.
+done_when:
+- Logging a line takes 4 taps or fewer after the translation appears
+touches:
+- app/

@@ -1,0 +1,12 @@
+id: H01
+stage: H
+title: Repeatable mobile audit script
+size: S
+status: done
+depends_on: []
+change: tools/mobile-audit.mjs runs 13 screens at 5 phone sizes and reports small tap targets, small input text,
+  header height, sideways overflow, content hidden under the bottom bar (scroll measured after the scroll finishes).
+done_when:
+- Script runs and prints a baseline; later tasks bring its counts to zero
+touches:
+- app/
