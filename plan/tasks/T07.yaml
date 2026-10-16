@@ -1,0 +1,12 @@
+id: T07
+stage: T
+title: Cloze cards from logged sentences
+size: S
+status: todo
+depends_on:
+- T04
+change: 'Cloze cards from logged sentences: hide the key chunk in the real sentence (sentence-mining model).'
+done_when:
+- Card shows the sentence with the chunk hidden; answer reveals it
+touches:
+- app/

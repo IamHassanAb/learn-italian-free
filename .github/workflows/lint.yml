@@ -14,4 +14,4 @@ jobs:
       - name: Check the plan
         run: python build/plan.py
       - name: App unit tests
-        run: node --test app/tests/lib.test.mjs app/tests/drills.test.mjs app/tests/sync.test.mjs app/tests/syncconfig.test.mjs
+        run: node --test app/tests/lib.test.mjs app/tests/drills.test.mjs app/tests/sync.test.mjs app/tests/syncconfig.test.mjs app/tests/translate.test.mjs

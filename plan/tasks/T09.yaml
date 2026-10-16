@@ -1,0 +1,12 @@
+id: T09
+stage: T
+title: Paste import
+size: S
+status: todo
+depends_on:
+- T02
+change: 'Paste import: paste a Google Translate conversation or phrasebook text and pick the lines to log.'
+done_when:
+- Pasted two-line pairs become selectable entries
+touches:
+- app/

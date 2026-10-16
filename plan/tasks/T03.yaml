@@ -1,0 +1,13 @@
+id: T03
+stage: T
+title: Save to log
+size: M
+status: done
+depends_on:
+- T02
+change: 'Save to log: editable Italian, situation, what-was-it, note, grammar topic; entries start unchecked and
+  become flashcards.'
+done_when:
+- Entry appears in the log and in the Review decks
+touches:
+- app/

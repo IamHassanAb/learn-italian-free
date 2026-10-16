@@ -1,0 +1,12 @@
+id: T01
+stage: T
+title: Translator module
+size: M
+status: done
+depends_on: []
+change: 'Translator module: on-device Chrome translator first (only if the model is ready, with a timeout), then
+  MyMemory; sentence splitting, entity decoding, quota counter, alternatives.'
+done_when:
+- 9 unit tests plus a headless-browser run
+touches:
+- app/

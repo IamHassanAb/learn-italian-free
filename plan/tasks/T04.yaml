@@ -1,0 +1,13 @@
+id: T04
+stage: T
+title: Conversation log
+size: M
+status: done
+depends_on:
+- T03
+change: 'Conversation log: situation and kind chips, unchecked and checked filter, mark checked, edits merge across
+  devices by newest change.'
+done_when:
+- Merge unit test passes
+touches:
+- app/

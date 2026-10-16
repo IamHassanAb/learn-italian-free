@@ -1,0 +1,13 @@
+id: T10
+stage: T
+title: Optional better translator with a hidden key
+size: S
+status: todo
+depends_on:
+- T02
+change: 'Optional better translator with a hidden key: a Supabase Edge Function calling Azure or Google Translation,
+  called only after sign-in.'
+done_when:
+- Key lives only in Supabase secrets; the app never sees it
+touches:
+- app/

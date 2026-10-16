@@ -1,0 +1,8 @@
+id: D18
+decision: Translate with the on-device browser translator when ready, otherwise MyMemory; never a hidden-key service
+  in v1
+why: 'Verified 2026-10-16: Chrome''s Translator API supports Italian but only on desktop; LibreTranslate''s public
+  server now needs a key; Lingva is fragile; MyMemory allows browser requests with no key (5,000 characters a day,
+  50,000 with an email). A key-based service needs a backend to hide the key (task T10).'
+date: '2026-10-16'
+status: active

@@ -27,7 +27,7 @@ Links were opened and checked on the date recorded in each file in `content/reso
 
 ## The app (works on your phone, offline)
 A small study app lives in `docs/` and is published with GitHub Pages: a daily 30-minute plan, flashcards with spaced repetition,
-number/time/date drills, role-play scenarios and a log for words you get wrong. It installs to your home screen and works offline
+number/time/date drills, role-play scenarios, and a **Translate & log** screen: translate while you talk, then save the line (with the situation and any correction) to a conversation log that becomes flashcards. It installs to your home screen and works offline
 after the first visit. Your progress stays on your device (Settings has a backup you can move to another device).
 
 Run it locally: `python -m http.server 8000 --directory docs`, then open http://localhost:8000.
@@ -35,6 +35,9 @@ Run it locally: `python -m http.server 8000 --directory docs`, then open http://
 **Publish it (maintainer):** GitHub repo, Settings, Pages, "Deploy from a branch", branch `main`, folder `/docs`.
 Rebuild the app after content changes with `python build/app.py` and commit `docs/`.
 The app uses your portfolio's "Study Room at Dusk" design tokens (`app/styles.css`).
+
+**About translation.** Translate uses your browser's on-device translator when it has one ready (desktop Chrome), otherwise the free MyMemory service, which sees the text you type
+(5,000 characters a day, or 50,000 if you add your email in Settings; the email stays on your device). Machine translation can be wrong, so every logged line starts "unchecked" until you confirm it with a local or a source.
 
 ## Optional: sync your progress across devices
 Progress is stored on each device. To keep a phone and a laptop in step, the app can sync through **your own free Supabase project**

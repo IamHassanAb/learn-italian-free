@@ -1,0 +1,12 @@
+id: T05
+stage: T
+title: Translate replaces Drills in the bottom tabs; Drills moves to More and the Today
+size: M
+status: done
+depends_on:
+- T02
+change: Translate replaces Drills in the bottom tabs; Drills moves to More and the Today speak block.
+done_when:
+- Navigation sweep finds no errors
+touches:
+- app/

@@ -1,0 +1,6 @@
+id: T
+title: Translate and log real conversations
+goal: Translate while talking to locals, log the line with its situation and correction, and turn it into study
+  material.
+done_means: A logged line becomes a flashcard marked unchecked until confirmed; recurring errors are visible.
+order: 3

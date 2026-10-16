@@ -1,0 +1,13 @@
+id: T02
+stage: T
+title: Translate screen
+size: M
+status: done
+depends_on:
+- T01
+change: 'Translate screen: live translation while typing, auto-detect or fixed direction, alternatives, listen,
+  copy, check in Google Translate, clear errors for quota and offline.'
+done_when:
+- Verified in headless Chrome against a faked MyMemory
+touches:
+- app/

@@ -1,0 +1,13 @@
+id: T08
+stage: T
+title: Recurring-error view
+size: S
+status: todo
+depends_on:
+- T04
+change: 'Recurring-error view: count logged errors by grammar topic, link to the grammar row, retest due corrections
+  after a few days.'
+done_when:
+- A topic with 3 or more entries is flagged
+touches:
+- app/

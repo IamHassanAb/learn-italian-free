@@ -28,7 +28,11 @@ export function mergeStates(local, remote) {
 
   const deleted = new Set([...(local.gapsDeleted || []), ...(remote.gapsDeleted || [])]);
   const byId = new Map();
-  for (const g of [...(remote.gaps || []), ...(local.gaps || [])]) if (!deleted.has(g.id)) byId.set(g.id, g);
+  for (const g of [...(remote.gaps || []), ...(local.gaps || [])]) {
+    if (deleted.has(g.id)) continue;
+    const prev = byId.get(g.id);
+    byId.set(g.id, !prev || (g.updated || "") >= (prev.updated || "") ? g : prev);
+  }
   out.gaps = [...byId.values()].sort((x, y) => (y.created || "").localeCompare(x.created || "") || y.id.localeCompare(x.id));
   out.gapsDeleted = [...deleted].slice(-500);
   for (const id of deleted) delete out.cards[id];

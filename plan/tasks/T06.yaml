@@ -1,0 +1,13 @@
+id: T06
+stage: T
+title: Own-sentence cards
+size: S
+status: todo
+depends_on:
+- T04
+change: 'Own-sentence cards: after reviewing a logged chunk, write your own sentence with it; store it, show it
+  back later, and keep a ''confirmed by a local'' flag.'
+done_when:
+- 'Webb (2005): needs enough time, so schedule it as a short separate session, not inside fast review'
+touches:
+- app/

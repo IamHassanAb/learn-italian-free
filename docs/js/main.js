@@ -13,10 +13,12 @@ import { gapsView } from "./views/gaps.js";
 import { settingsView } from "./views/settings.js";
 import { retellView } from "./views/retell.js";
 import { setupView } from "./views/setup.js";
+import { translateView } from "./views/translate.js";
+import { createTranslator } from "./lib/translate.js";
 
-const TABS = [["today", "Today"], ["review", "Review"], ["drills", "Drills"], ["scenarios", "Role-play"], ["more", "More"]];
-const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, more: moreView };
-const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", retell: "today" };
+const TABS = [["today", "Today"], ["review", "Review"], ["translate", "Translate"], ["scenarios", "Role-play"], ["more", "More"]];
+const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, translate: translateView, more: moreView };
+const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", drills: "more", retell: "today" };
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* blocked: the store falls back to memory */ }
@@ -34,7 +36,8 @@ function moreView(c) {
   return h("div", { class: "stack" }, h("div", null, h("p", { class: "eyebrow" }, "More"), h("h1", null, "More")),
     h("div", { class: "grid" },
       h("a", { class: "card block", href: "#/library", style: "text-decoration:none;color:inherit" }, h("h2", null, "Library"), h("p", { class: "muted small" }, "Cognates, grammar lookup, basics and the printable PDFs.")),
-      h("a", { class: "card block", href: "#/gaps", style: "text-decoration:none;color:inherit" }, h("h2", null, "Gaps log"), h("p", { class: "muted small" }, "Words and mistakes you hit. They become flashcards.")),
+      h("a", { class: "card block", href: "#/drills", style: "text-decoration:none;color:inherit" }, h("h2", null, "Drills"), h("p", { class: "muted small" }, "Numbers, time, days, months and dates. Ten questions each.")),
+      h("a", { class: "card block", href: "#/gaps", style: "text-decoration:none;color:inherit" }, h("h2", null, "Conversation log"), h("p", { class: "muted small" }, "Lines from real conversations, with corrections. They become flashcards.")),
       h("a", { class: "card block", href: "#/settings", style: "text-decoration:none;color:inherit" }, h("h2", null, "Settings"), h("p", { class: "muted small" }, "New cards, voice, theme, backup."))));
 }
 
@@ -58,7 +61,7 @@ function buildCtx(content, sync, syncInfo) {
   };
   const hour = () => new Date().getHours();
   return {
-    content, store, speech, sync, syncConfig: syncInfo.config, syncSource: syncInfo.source, storage, resources: content.resources, cards, decks, applyTheme,
+    content, store, speech, sync, translator: createTranslator({ win: window, storage, getSettings: () => store.state.settings }), syncConfig: syncInfo.config, syncSource: syncInfo.source, storage, resources: content.resources, cards, decks, applyTheme,
     greeting: () => (hour() < 5 ? "Buonanotte" : hour() < 17 ? "Buongiorno" : "Buonasera"),
     refresh: () => render(),
   };

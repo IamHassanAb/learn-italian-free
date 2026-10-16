@@ -18,6 +18,7 @@ blocks:
   text: Review your due cards out loud, then play one scenario. Say it badly; that is the point.
   actions:
   - review
+  - drills
   - scenarios
 - id: immerse
   title: Italian home

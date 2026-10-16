@@ -1,0 +1,7 @@
+id: D19
+decision: Machine translations are logged as unchecked until the learner confirms them
+why: MyMemory returned errors in testing (a typo, 'Dive si trova la farmacia?', and a stray 'Buongiorno'). A learner
+  must not memorise unchecked machine output as correct Italian, so the app shows alternatives, links to Google
+  Translate, and tracks a checked flag.
+date: '2026-10-16'
+status: active

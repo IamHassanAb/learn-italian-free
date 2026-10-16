@@ -1,0 +1,5 @@
+id: R08
+risk: Machine translation can teach wrong Italian, and typed text is sent to a third-party service
+affects: T01-T04
+mitigation: Unchecked flag, alternatives, Google Translate link, a plain warning, and a notice saying which provider
+  saw the text. On-device translation sends nothing.

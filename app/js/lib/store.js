@@ -1,6 +1,6 @@
 import { localDate, addDays } from "./util.js";
 const KEY = "italiano-ogni-giorno:v1";
-const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {} });
+const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null, translateProvider: "auto", translateEmail: "", translateDir: "auto" }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {} });
 
 // storage: anything with getItem/setItem (localStorage, or a stub in tests). Keeps working in memory if it throws.
 export function createStore(storage) {
@@ -34,7 +34,8 @@ export function createStore(storage) {
       while (isActive(state.daily[d])) { n++; d = addDays(d, -1); }
       return n;
     },
-    addGap(g) { const e = { id: "gap." + Date.now().toString(36), created: localDate(), ...g }; state.gaps.unshift(e); write(); return e; },
+    addGap(g) { const e = { id: "gap." + Date.now().toString(36), created: localDate(), updated: new Date().toISOString(), ...g }; state.gaps.unshift(e); write(); return e; },
+    updateGap(id, patch) { const g = state.gaps.find((x) => x.id === id); if (!g) return null; Object.assign(g, patch, { updated: new Date().toISOString() }); write(); return g; },
     removeGap(id) { state.gaps = state.gaps.filter(g => g.id !== id); delete state.cards[id]; state.gapsDeleted = [...(state.gapsDeleted || []), id].slice(-500); write(); },
     setRating(id, stars) { state.ratings[id] = { stars, last: localDate() }; write(); },
     exportJSON() { return JSON.stringify(state, null, 1); },
