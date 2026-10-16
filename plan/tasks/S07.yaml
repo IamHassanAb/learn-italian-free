@@ -1,12 +1,15 @@
 id: S07
 stage: S
-title: 'Maintainer: put the publishable key in app/config.json, rebuild, push'
+title: 'Maintainer: set up sync on each device inside the app (key never committed)'
 size: S
 status: todo
 depends_on:
 - S06
-change: 'Maintainer: put the publishable key in app/config.json, rebuild, push.'
+change: 'In the app: More, Settings, Sync across devices: paste the project address and publishable key, or open
+  a setup link. The key lives only in that device''s storage.'
 done_when:
-- Settings shows the sign-in form
+- Sign-in form appears on the device
+- No key appears in git, app/ or docs/ (git grep finds nothing)
 touches:
-- app/config.json
+- app/js/views/settings.js
+- app/js/views/setup.js

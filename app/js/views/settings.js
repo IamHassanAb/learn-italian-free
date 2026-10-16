@@ -1,5 +1,6 @@
 import { h, toast, mount } from "../ui.js";
 import { localDate } from "../lib/util.js";
+import { validateConfig, saveDeviceConfig, clearDeviceConfig, makeSetupPayload } from "../lib/syncconfig.js";
 
 export function settingsView(ctx) {
   const { store } = ctx, s = store.state.settings, root = h("div", { class: "stack" });
@@ -20,18 +21,36 @@ export function settingsView(ctx) {
   }
 
   function syncCard() {
+    const copyLink = () => {
+      const link = `${location.origin}${location.pathname}#/setup/${makeSetupPayload(ctx.syncConfig)}`;
+      (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(() => toast("Setup link copied. Open it on your other device."))
+        .catch(() => { const box = h("input", { type: "text", readonly: true, value: link, "aria-label": "Setup link" }); document.getElementById("setup-link-slot").replaceChildren(box); box.focus(); box.select(); });
+    };
+    if (!ctx.sync.enabled) {
+      const url = h("input", { type: "text", id: "sync-url", placeholder: "https://your-project.supabase.co", autocomplete: "off", autocapitalize: "none", spellcheck: "false" });
+      const key = h("input", { type: "password", id: "sync-key", placeholder: "sb_publishable_…", autocomplete: "off" });
+      const msg = h("p", { class: "muted small", role: "status" });
+      const save = () => { const r = validateConfig(url.value, key.value); if (!r.ok) { msg.textContent = r.error; return; } saveDeviceConfig(ctx.storage, r.config); location.hash = "#/settings"; location.reload(); };
+      return h("details", null, h("summary", null, "Sync across devices (optional)"),
+        h("form", { class: "stack", onSubmit: (e) => { e.preventDefault(); save(); } },
+          h("p", { class: "muted small" }, "Needs your own free Supabase project (see the README). The address and key are stored only on this device, never in the website or the repository."),
+          h("div", { class: "field" }, h("label", { for: "sync-url" }, "Project address"), url),
+          h("div", { class: "field" }, h("label", { for: "sync-key" }, "Publishable key (never the secret key)"), key),
+          h("button", { class: "btn warm", type: "submit" }, "Save on this device"), msg));
+    }
     const info = ctx.sync.info(), when = info.lastSync ? new Date(info.lastSync).toLocaleString() : "not yet";
+    const forget = ctx.syncSource === "device" ? h("button", { class: "btn ghost", type: "button", onClick: () => { ctx.sync.signOut().then(() => { clearDeviceConfig(ctx.storage); location.reload(); }); } }, "Remove sync setup from this device") : null;
     if (!info.signedIn) {
       const email = h("input", { type: "email", id: "sync-email", autocomplete: "username", autocapitalize: "none", spellcheck: "false" });
       const pw = h("input", { type: "password", id: "sync-pw", autocomplete: "current-password" });
       const msg = h("p", { class: "muted small", role: "status" });
       const go = () => { msg.textContent = "Signing in…"; ctx.sync.signIn(email.value, pw.value).then(() => { toast("Signed in and synced."); }).catch((e) => { msg.textContent = e.message; }); };
       return h("section", { class: "card stack" }, h("h2", null, "Sync across devices"),
-        h("p", { class: "muted small" }, "Optional. Sign in with the account you created in Supabase to keep your progress the same on every device."),
+        h("p", { class: "muted small" }, "Sign in with the account you created in your Supabase project to keep your progress the same on every device."),
         h("form", { class: "stack", onSubmit: (e) => { e.preventDefault(); go(); } },
           h("div", { class: "field" }, h("label", { for: "sync-email" }, "Email"), email),
           h("div", { class: "field" }, h("label", { for: "sync-pw" }, "Password"), pw),
-          h("button", { class: "btn warm", type: "submit" }, "Sign in")), msg);
+          h("button", { class: "btn warm", type: "submit" }, "Sign in")), msg, forget);
     }
     const busy = info.status === "syncing";
     return h("section", { class: "card stack" }, h("h2", null, "Sync across devices"),
@@ -40,7 +59,9 @@ export function settingsView(ctx) {
       h("div", { class: "row" },
         h("button", { class: "btn primary", type: "button", disabled: busy, onClick: () => ctx.sync.syncNow().then((r) => { if (r.ok) toast("Synced."); }) }, busy ? "Syncing…" : "Sync now"),
         h("button", { class: "btn ghost", type: "button", onClick: () => ctx.sync.signOut().then(() => toast("Signed out. Progress stays on this device.")) }, "Sign out")),
-      h("p", { class: "muted small" }, "Your device settings (voice, theme, new cards per day) are not synced."));
+      h("div", { class: "stack" }, h("button", { class: "btn", type: "button", onClick: copyLink }, "Copy setup link for another device"), h("div", { id: "setup-link-slot" }),
+        h("p", { class: "muted small" }, "The link carries your project address and publishable key, never your password. Send it only to yourself.")),
+      h("p", { class: "muted small" }, "Device settings (voice, theme, new cards per day) are not synced."), forget);
   }
 
   function paint() {
@@ -58,7 +79,7 @@ export function settingsView(ctx) {
         : h("p", { class: "muted" }, "No Italian voice was found. Audio buttons are hidden. You can usually add one in your device's language or speech settings.")),
       h("section", { class: "card stack" }, h("h2", null, "Appearance"),
         select("set-theme", "Theme", s.theme, [["auto", "Match my device"], ["light", "Light (cream)"], ["dark", "Dark (dusk)"]], v => { store.setting("theme", v); ctx.applyTheme(); })),
-      ctx.sync && ctx.sync.enabled ? syncCard() : null,
+      syncCard(),
       h("section", { class: "card stack" }, h("h2", null, "Your progress"),
         h("p", { class: "muted small" }, store.persistent() ? "Progress is saved in this browser on this device only. Back it up to move it to another device." : "This browser is blocking storage, so progress will be lost when you close the tab."),
         h("div", { class: "row" }, h("button", { class: "btn", type: "button", onClick: backup }, "Download backup"),

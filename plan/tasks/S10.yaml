@@ -1,0 +1,13 @@
+id: S10
+stage: S
+title: 'Optional: rotate the publishable key once the repo goes public'
+size: S
+status: todo
+depends_on:
+- S07
+change: Create a new publishable key in the Supabase dashboard, disable the old one, re-enter the new one on each
+  device.
+done_when:
+- Old key disabled; devices still sync
+touches:
+- app/

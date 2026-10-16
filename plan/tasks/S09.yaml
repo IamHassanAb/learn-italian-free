@@ -1,0 +1,13 @@
+id: S09
+stage: S
+title: Device-local sync configuration with validation and setup links
+size: S
+status: done
+depends_on:
+- S03
+change: 'app/js/lib/syncconfig.js, views/setup.js: refuses secret keys, setup link with confirmation screen, address
+  bar cleaned.'
+done_when:
+- 5 unit tests plus a headless-browser run of the full flow
+touches:
+- app/

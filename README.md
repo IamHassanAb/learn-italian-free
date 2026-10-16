@@ -38,14 +38,16 @@ The app uses your portfolio's "Study Room at Dusk" design tokens (`app/styles.cs
 
 ## Optional: sync your progress across devices
 Progress is stored on each device. To keep a phone and a laptop in step, the app can sync through **your own free Supabase project**
-(plain browser JavaScript, no server of ours; sign-ups stay off so it is private to you).
+(plain browser JavaScript, no server of ours). The project address and key are stored **only on each device**, never in this repository or the website.
 1. In your Supabase project open SQL Editor, paste `supabase/italiano_progress.sql`, and run it.
 2. Authentication, Sign In / Providers: turn **off** "Allow new users to sign up". Then Authentication, Users, Add user, and create your own email and password (auto-confirm).
-3. Project Settings, API Keys: copy the **publishable** key (`sb_publishable_...`) into `app/config.json` as `supabaseKey`, and your project address as `supabaseUrl`.
-   Never use the secret or service_role key in this app.
-4. `python build/app.py`, commit and push. Open the app, More, Settings, "Sync across devices", and sign in on each device.
+3. In the app: More, Settings, "Sync across devices (optional)". Paste your project address and the **publishable** key (Project Settings, API Keys), then Save on this device and sign in.
+   The app refuses secret and service_role keys.
+4. For another device, tap "Copy setup link for another device" and open that link there (send it only to yourself). The link has the address and publishable key, never a password.
+**About the key.** A publishable key is only an identifier. What protects your data is row-level security, the sign-in with your password, and sign-ups being off.
+It cannot be hidden from your own browser, but it is not in the repo or the site, so nobody else sees it. If it ever leaks, create a new publishable key in the dashboard and disable the old one.
 Merging never discards work: the newest review of each card wins, activity days are combined, and deleted gap entries stay deleted. Device settings are never synced.
-Leave `config.json` empty and the sync section simply does not appear.
+Without any setup the sync section stays collapsed and the app works as before.
 
 ## Rebuild the PDFs (optional)
 ```

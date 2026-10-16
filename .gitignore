@@ -19,3 +19,6 @@ Thumbs.db
 # Secrets (Azure Speech key lives here; never commit)
 .env
 *.key
+
+# Local-only files (never commit): sync setup text
+local/

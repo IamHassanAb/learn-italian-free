@@ -1,6 +1,7 @@
 import { createStore } from "./lib/store.js";
 import { createSpeech } from "./lib/speech.js";
 import { createSync } from "./lib/sync.js";
+import { loadDeviceConfig } from "./lib/syncconfig.js";
 import { longDate } from "./lib/calendar.js";
 import { h, toast } from "./ui.js";
 import { todayView } from "./views/today.js";
@@ -11,10 +12,11 @@ import { libraryView } from "./views/library.js";
 import { gapsView } from "./views/gaps.js";
 import { settingsView } from "./views/settings.js";
 import { retellView } from "./views/retell.js";
+import { setupView } from "./views/setup.js";
 
 const TABS = [["today", "Today"], ["review", "Review"], ["drills", "Drills"], ["scenarios", "Role-play"], ["more", "More"]];
-const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, more: moreView };
-const TAB_OF = { library: "more", gaps: "more", settings: "more", retell: "today" };
+const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, more: moreView };
+const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", retell: "today" };
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* blocked: the store falls back to memory */ }
@@ -36,7 +38,7 @@ function moreView(c) {
       h("a", { class: "card block", href: "#/settings", style: "text-decoration:none;color:inherit" }, h("h2", null, "Settings"), h("p", { class: "muted small" }, "New cards, voice, theme, backup."))));
 }
 
-function buildCtx(content, sync) {
+function buildCtx(content, sync, syncInfo) {
   const cardCache = { content };
   const buildCards = () => {
     const list = [];
@@ -56,7 +58,7 @@ function buildCtx(content, sync) {
   };
   const hour = () => new Date().getHours();
   return {
-    content, store, speech, sync, resources: content.resources, cards, decks, applyTheme,
+    content, store, speech, sync, syncConfig: syncInfo.config, syncSource: syncInfo.source, storage, resources: content.resources, cards, decks, applyTheme,
     greeting: () => (hour() < 5 ? "Buonanotte" : hour() < 17 ? "Buongiorno" : "Buonasera"),
     refresh: () => render(),
   };
@@ -106,7 +108,12 @@ async function boot() {
     const content = await res.json();
     let config = {};
     try { const r = await fetch("config.json", { cache: "no-cache" }); if (r.ok) config = await r.json(); } catch { /* no sync config: the app works without it */ }
-    ctx = buildCtx(content, createSync({ config, store, storage }));
+    // The connection lives in THIS device's storage (set in Settings or from a setup link), so no key is ever in the repo or the website.
+    // A baked-in config.json is still honoured for people who host their own copy.
+    const device = loadDeviceConfig(storage);
+    const active = device || { supabaseUrl: config.supabaseUrl || "", supabaseKey: config.supabaseKey || "" };
+    const source = device ? "device" : (active.supabaseUrl && active.supabaseKey ? "file" : "none");
+    ctx = buildCtx(content, createSync({ config: active, store, storage }), { config: active, source });
   } catch (err) {
     app.replaceChildren(h("div", { class: "stack" }, h("h1", null, "Could not load the lessons"), h("p", { class: "muted" }, "Check your connection and reload. If you opened index.html directly from disk, serve the folder over http instead (for example: python -m http.server)."), h("p", { class: "muted small" }, String(err.message || err))));
     return;

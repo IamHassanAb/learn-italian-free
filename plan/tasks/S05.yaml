@@ -1,11 +1,11 @@
 id: S05
 stage: S
-title: 'Maintainer: run supabase/italiano_progress.sql in project gebbkrttofqrytialpgx'
+title: 'Maintainer: run supabase/italiano_progress.sql in the maintainer's own project'
 size: S
 status: todo
 depends_on:
 - S01
-change: 'Maintainer: run supabase/italiano_progress.sql in project gebbkrttofqrytialpgx.'
+change: 'Maintainer: run supabase/italiano_progress.sql in the maintainer's own project.'
 done_when:
 - Table italiano_progress exists with RLS enabled
 touches:
