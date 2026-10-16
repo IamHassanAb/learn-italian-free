@@ -1,6 +1,7 @@
 id: D17
 decision: Never use the Law_Firm_DB Supabase project for this app
 why: The connected Supabase account shows only Law_Firm_DB (the private legal-tech startup database). The learning
-  app uses the maintainer's own project, which the connector cannot see, so the maintainer runs the SQL themselves.
+  app uses the maintainer's own separate project, which the connector cannot see, so the maintainer runs the SQL
+  themselves.
 date: '2026-10-11'
 status: active
