@@ -172,3 +172,7 @@ body[data-hand="right"] .actionbar > .primary-action { order: 3; } body[data-han
 body[data-hand="right"] .actionbar > .secondary-action { order: 2; } body[data-hand="left"] .actionbar > .secondary-action { order: 1; }
 body[data-hand="right"] .actionbar > .tertiary-action { order: 1; } body[data-hand="left"] .actionbar > .tertiary-action { order: 2; }
 body[data-hand="right"] .handrow { justify-content: flex-end; } body[data-hand="left"] .handrow { justify-content: flex-start; }
+
+/* search filters */
+.filters > summary { min-height: 48px; }
+.filters .field > label { margin-bottom: 6px; }

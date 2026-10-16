@@ -5,9 +5,12 @@ size: S
 status: done
 depends_on:
 - H02
-change: A search box (on Today and More, and as its own screen) across phrasebook, vocabulary, grammar rows and
-  your conversation log; shows the Italian first with a listen button.
+change: 'A search box (on Today and More, and as its own screen) across phrasebook, vocabulary, grammar rows and
+  your conversation log; shows the Italian first with a listen button. Filters added: where from, word or phrase,
+  topic, and for the log situation, what was it and status; browse by filter alone; notes and situations are searched;
+  first 30 results with Show more.'
 done_when:
 - Typing 'pharmacy' or 'farmacia' lists the matching phrases within a tap or two
+- Filters combine (any within a group, all across groups), covered by unit tests and a browser run
 touches:
 - app/
