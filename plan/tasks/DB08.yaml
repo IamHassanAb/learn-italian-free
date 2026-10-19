@@ -2,7 +2,7 @@ id: DB08
 stage: DB
 title: README and in-app setup text
 size: S
-status: todo
+status: done
 depends_on:
 - DB06
 change: Update setup steps for the new schema.
