@@ -1,0 +1,14 @@
+id: DB10
+stage: DB
+title: Lock, then drop the old blob table
+size: S
+status: todo
+depends_on:
+- DB05
+- DB06
+change: 0004 revokes writes, 0005 drops after a month.
+done_when:
+- Old table read-only, later gone
+touches:
+- supabase/
+- app/

@@ -1,0 +1,7 @@
+id: D22
+decision: Move to proper tables now; each learner brings their own Supabase project, with an easy move to a shared
+  backend; review events later; study preferences follow the user; keep existing log ids
+why: Owner's answers 2026-10-19 to DATABASE-PLAN.md section 9. The schema is multi-user safe so a shared backend
+  needs no rewrite; DB11 gives a one-step move between projects.
+date: '2026-10-19'
+status: active

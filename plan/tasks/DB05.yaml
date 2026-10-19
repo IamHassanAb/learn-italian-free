@@ -1,0 +1,14 @@
+id: DB05
+stage: DB
+title: Copy the old blob into the tables
+size: S
+status: done
+depends_on:
+- DB01
+change: 'supabase/migrations/0003_copy_blob.sql, repeatable, plus a verification query. Done differently from the
+  first plan: the app itself copies the old blob into the new tables on first sync (no extra SQL file to run).'
+done_when:
+- On the real data the counts match the old blob
+touches:
+- supabase/
+- app/

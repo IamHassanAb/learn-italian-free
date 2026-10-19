@@ -1,0 +1,13 @@
+id: DB03
+stage: DB
+title: Change tracking in the store
+size: S
+status: done
+depends_on:
+- DB02
+change: Store remembers which ids changed since the last push, per table.
+done_when:
+- Changing one card marks only that card
+touches:
+- supabase/
+- app/

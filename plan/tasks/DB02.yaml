@@ -1,0 +1,14 @@
+id: DB02
+stage: DB
+title: State to rows and back
+size: S
+status: done
+depends_on:
+- DB01
+change: 'app/js/lib/rows.js: pure functions turning local state into rows and rows into state for all tables, with
+  preferences.'
+done_when:
+- 'Unit tests: round trip lossless; an old v1 backup converts correctly'
+touches:
+- supabase/
+- app/

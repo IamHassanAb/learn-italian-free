@@ -1,0 +1,14 @@
+id: DB11
+stage: DB
+title: Move to another Supabase project
+size: S
+status: done
+depends_on:
+- DB04
+change: 'Settings: change connection, then mark every row changed and upload it under the new user; rows never carry
+  a user id from the device.'
+done_when:
+- Switching to a second project copies all data; counts match
+touches:
+- supabase/
+- app/

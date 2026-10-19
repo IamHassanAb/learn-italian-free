@@ -1,0 +1,7 @@
+id: DB
+title: Proper database tables
+goal: Replace the single JSON blob with real tables, synced row by row, safe for many users, easy to move to another
+  Supabase project.
+done_means: Your data lives in the new tables on every device, two devices never overwrite each other, and DATABASE-PLAN.md
+  is satisfied.
+order: 1

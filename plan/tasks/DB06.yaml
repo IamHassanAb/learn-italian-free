@@ -1,0 +1,13 @@
+id: DB06
+stage: DB
+title: Schema-version check
+size: S
+status: done
+depends_on:
+- DB04
+change: Settings shows 'run the upgrade SQL' on an old project.
+done_when:
+- An old project shows the message; a new one syncs
+touches:
+- supabase/
+- app/

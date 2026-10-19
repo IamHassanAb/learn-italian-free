@@ -1,12 +1,12 @@
 id: S05
 stage: S
-title: 'Maintainer: run supabase/italiano_progress.sql in your own Supabase project'
+title: 'Maintainer: run supabase/schema.sql in your own Supabase project'
 size: S
 status: todo
 depends_on:
 - S01
 change: Run the SQL script once in the SQL Editor of your Supabase project.
 done_when:
-- Table italiano_progress exists with RLS enabled
+- The six italiano_ tables exist with RLS enabled
 touches:
 - Supabase dashboard, SQL Editor

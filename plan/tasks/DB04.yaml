@@ -1,0 +1,14 @@
+id: DB04
+stage: DB
+title: Row-level sync
+size: S
+status: done
+depends_on:
+- DB03
+change: 'Rewrite sync.js: pull since cursor, apply, push only changed rows, batching, clock correction.'
+done_when:
+- 'Fake-server tests: two devices editing at once keep both edits; offline edits upload later; a deleted entry stays
+  deleted'
+touches:
+- supabase/
+- app/

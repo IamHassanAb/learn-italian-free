@@ -1,10 +1,15 @@
-// Optional cross-device sync through the owner's own Supabase project (plain fetch, no library).
-// Needs app/config.json {supabaseUrl, supabaseKey} (the PUBLISHABLE key, safe to publish) and supabase/italiano_progress.sql
-// run once in that project. Sign-ups should be disabled; the owner's account is created in the Supabase dashboard.
-import { mergeStates, shareable } from "./merge.js";
+// Optional cross-device sync through your own Supabase project (plain fetch, no library).
+// Needs the project address and the PUBLISHABLE key (set in Settings, kept on this device) and supabase/schema.sql run once in that project.
+// Sync works row by row: pull what changed in the cloud since last time, merge it in, then upload only the rows changed here.
+// See DATABASE-PLAN.md. The old single-JSON table (italiano_progress) is read once, if present, and copied into the new tables.
+import { mergeStates } from "./merge.js";
+import { KINDS, TABLE, applyRows, collectDirty, markAllDirty } from "./rows.js";
 
 const SESSION_KEY = "italiano-ogni-giorno:sync";
-const TABLE = "italiano_progress";
+const LEGACY_TABLE = "italiano_progress";
+const CONFLICT = { prefs: "user_id", cards: "user_id,card_id", daily: "user_id,day", gaps: "user_id,id", ratings: "user_id,scenario_id", drills: "user_id,kind" };
+const PAGE = 1000, BATCH = 200, OVERLAP_MS = 10_000;
+const UPGRADE_MSG = "This Supabase project needs the new tables. Open the SQL editor, run supabase/schema.sql from the repository, then sync again.";
 
 export function createSync({ config, store, storage, fetchImpl = (...a) => fetch(...a), now = () => Date.now(), debounceMs = 4000, setTimer = setTimeout, clearTimer = clearTimeout }) {
   const url = ((config && config.supabaseUrl) || "").replace(/\/+$/, "");
@@ -41,22 +46,69 @@ export function createSync({ config, store, storage, fetchImpl = (...a) => fetch
     return method === "GET" ? res.json() : null;
   }
 
+  const SELECT = (kind, cursor) => `${TABLE[kind]}?select=*&order=updated_at.asc${cursor ? `&updated_at=gte.${encodeURIComponent(new Date(Date.parse(cursor) - OVERLAP_MS).toISOString())}` : ""}`;
+
+  async function pull(cursors) {
+    const got = {}, next = {};
+    for (const kind of KINDS) {
+      const rows = [];
+      for (let from = 0; ; from += PAGE) {
+        const page = await rest("GET", SELECT(kind, cursors[TABLE[kind]]), undefined, { Range: `${from}-${from + PAGE - 1}`, "Range-Unit": "items" });
+        rows.push(...page); if (page.length < PAGE) break;
+      }
+      got[kind] = rows;
+      if (rows.length) next[TABLE[kind]] = rows[rows.length - 1].updated_at;
+    }
+    return { got, next };
+  }
+
+  async function push(rowsByTable) {
+    for (const [table, rows] of Object.entries(rowsByTable)) {
+      const kind = KINDS.find((k) => TABLE[k] === table);
+      for (let i = 0; i < rows.length; i += BATCH)
+        await rest("POST", `${table}?on_conflict=${CONFLICT[kind]}`, rows.slice(i, i + BATCH).map((r) => ({ ...r, user_id: session.user_id })), { Prefer: "resolution=merge-duplicates,return=minimal" });
+    }
+  }
+
+  // The cloud has the new tables? (A project that only has the old table needs schema.sql first.)
+  let schemaOk = false;
+  async function checkSchema() {
+    if (schemaOk) return;
+    try { await rest("POST", "rpc/italiano_schema_version", {}); schemaOk = true; }
+    catch (e) { if (e.status === 404 || e.code === "PGRST202") throw Object.assign(new Error(UPGRADE_MSG), { status: 404, upgrade: true }); throw e; }
+  }
+
+  // First time on this device for this project and user: copy the old single-JSON row across (if there is one) and send everything.
+  // The same step makes "move to another project" work: a different address or user means start over from this device's data.
+  async function firstSync() {
+    const where = `${url}|${session.user_id}`;
+    if (store.state.sync.cursors.where === where) return;
+    let legacy = null;
+    try { const rows = await rest("GET", `${LEGACY_TABLE}?select=data&limit=1`); legacy = rows[0] && rows[0].data && Object.keys(rows[0].data).length ? rows[0].data : null; }
+    catch (e) { if (e.status !== 404) throw e; }          // no old table: nothing to copy
+    if (legacy) store.replaceShared({ ...mergeStates(store.state, legacy), settings: store.state.settings, sync: store.state.sync });
+    store.markAllDirty();
+    store.setCursors({ where });
+  }
+
   async function syncNow() {
     if (!enabled || !session) return { ok: false, reason: "signed-out" };
     if (running) { again = true; return { ok: true, queued: true }; }
     running = true; emit("syncing");
     try {
-      const rows = await rest("GET", `${TABLE}?select=data,updated_at&limit=1`);
-      const remote = rows[0] && rows[0].data && Object.keys(rows[0].data).length ? rows[0].data : null;
-      const merged = mergeStates(store.state, remote);
-      store.replaceShared(merged);
-      await rest("POST", `${TABLE}?on_conflict=user_id`, [{ user_id: session.user_id, data: shareable(store.state) }], { Prefer: "resolution=merge-duplicates,return=minimal" });
+      await checkSchema();
+      await firstSync();
+      const { got, next } = await pull(store.state.sync.cursors);
+      const { state, changed } = applyRows(store.state, got);
+      store.replaceShared(state); store.setCursors(next);
+      const { rows, sent } = collectDirty(store.state);
+      await push(rows); store.markSent(sent);
       session.lastSync = now(); saveSession(); emit("idle");
-      return { ok: true, pulled: !!remote };
+      return { ok: true, pulled: changed, pushed: Object.values(rows).reduce((n, r) => n + r.length, 0) };
     } catch (e) {
       const offline = !e.status;     // fetch itself failed: no network
-      emit(offline ? "offline" : "error", offline ? "No connection. Will retry when you are online." : e.message);
-      return { ok: false, reason: offline ? "offline" : "error", message: e.message };
+      emit(e.upgrade ? "upgrade" : offline ? "offline" : "error", offline ? "No connection. Will retry when you are online." : e.message);
+      return { ok: false, reason: e.upgrade ? "upgrade" : offline ? "offline" : "error", message: e.message };
     } finally { running = false; if (again) { again = false; schedule(0); } }
   }
 

@@ -8,4 +8,4 @@ change: Database script for per-user progress (RLS, grants, size limit).
 done_when:
 - Table with row level security, authenticated-only grants, 1 MB size check, updated_at trigger
 touches:
-- supabase/italiano_progress.sql
+- supabase/legacy/italiano_progress.sql

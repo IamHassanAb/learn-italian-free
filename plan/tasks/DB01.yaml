@@ -1,0 +1,13 @@
+id: DB01
+stage: DB
+title: SQL schema and migrations
+size: S
+status: done
+depends_on: []
+change: 'Write supabase/schema.sql and numbered migrations: tables, constraints, indexes, RLS, grants, older-edit-loses
+  trigger, italiano_schema_version().'
+done_when:
+- Runs cleanly twice on an empty project; the security advisor shows nothing for the new tables
+touches:
+- supabase/
+- app/

@@ -44,7 +44,7 @@ export function settingsView(ctx) {
       const email = h("input", { type: "email", id: "sync-email", autocomplete: "username", autocapitalize: "none", spellcheck: "false" });
       const pw = h("input", { type: "password", id: "sync-pw", autocomplete: "current-password" });
       const msg = h("p", { class: "muted small", role: "status" });
-      const go = () => { msg.textContent = "Signing in…"; ctx.sync.signIn(email.value, pw.value).then(() => { toast("Signed in and synced."); }).catch((e) => { msg.textContent = e.message; }); };
+      const go = () => { msg.textContent = "Signing in…"; ctx.sync.signIn(email.value, pw.value).then((r) => { toast(r && r.ok ? "Signed in and synced." : "Signed in."); }).catch((e) => { msg.textContent = e.message; }); };
       return h("section", { class: "card stack" }, h("h2", null, "Sync across devices"),
         h("p", { class: "muted small" }, "Sign in with the account you created in your Supabase project to keep your progress the same on every device."),
         h("form", { class: "stack", onSubmit: (e) => { e.preventDefault(); go(); } },
@@ -55,13 +55,13 @@ export function settingsView(ctx) {
     const busy = info.status === "syncing";
     return h("section", { class: "card stack" }, h("h2", null, "Sync across devices"),
       h("p", { class: "muted small" }, `Signed in as ${info.email}. Last synced: ${when}.`),
-      info.status === "error" || info.status === "offline" ? h("p", { class: "bad small", role: "status" }, info.error) : null,
+      info.status === "error" || info.status === "offline" || info.status === "upgrade" ? h("p", { class: "bad small", role: "status" }, info.error) : null,
       h("div", { class: "row" },
         h("button", { class: "btn primary", type: "button", disabled: busy, onClick: () => ctx.sync.syncNow().then((r) => { if (r.ok) toast("Synced."); }) }, busy ? "Syncing…" : "Sync now"),
         h("button", { class: "btn ghost", type: "button", onClick: () => ctx.sync.signOut().then(() => toast("Signed out. Progress stays on this device.")) }, "Sign out")),
       h("div", { class: "stack" }, h("button", { class: "btn", type: "button", onClick: copyLink }, "Copy setup link for another device"), h("div", { id: "setup-link-slot" }),
         h("p", { class: "muted small" }, "The link carries your project address and publishable key, never your password. Send it only to yourself.")),
-      h("p", { class: "muted small" }, "Device settings (voice, theme, new cards per day) are not synced."), forget);
+      h("p", { class: "muted small" }, "Voice, theme, hand and translator settings stay on each device. New cards per day, direction and chosen decks follow you."), forget);
   }
 
   function paint() {

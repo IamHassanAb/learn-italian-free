@@ -1,0 +1,13 @@
+id: DB08
+stage: DB
+title: README and in-app setup text
+size: S
+status: todo
+depends_on:
+- DB06
+change: Update setup steps for the new schema.
+done_when:
+- A new learner can set up from the README alone
+touches:
+- supabase/
+- app/

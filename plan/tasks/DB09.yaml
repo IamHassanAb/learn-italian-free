@@ -1,0 +1,13 @@
+id: DB09
+stage: DB
+title: Review events table (later)
+size: S
+status: todo
+depends_on:
+- DB04
+change: Append-only review history and daily counts from it.
+done_when:
+- Two devices reviewing the same day give the exact total
+touches:
+- supabase/
+- app/

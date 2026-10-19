@@ -1,0 +1,15 @@
+id: DB07
+stage: DB
+title: Two-user security test
+size: S
+status: done
+depends_on:
+- DB01
+change: 'tools/rls-check.mjs signs in as two users and tries to read and change each other''s rows. Checked on real
+  Postgres (PGlite) by tools/sql-check.mjs: 14 checks including two users and the app''s own rows. A live-project
+  check can be added if wanted.'
+done_when:
+- User A can never read, change or delete user B's rows in any table
+touches:
+- supabase/
+- app/

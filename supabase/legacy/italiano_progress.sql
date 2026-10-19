@@ -1,3 +1,5 @@
+-- LEGACY (version 1): the old single-JSON sync table. New projects should use supabase/schema.sql instead.
+-- Kept so anyone who already ran it can see what it created. The app imports its data once, then ignores it.
 -- Optional cross-device sync for the Italiano ogni giorno app.
 -- Run this once in YOUR Supabase project: Dashboard -> SQL Editor -> New query -> paste -> Run.
 -- It creates one table with one row per signed-in user (their study progress as JSON),
