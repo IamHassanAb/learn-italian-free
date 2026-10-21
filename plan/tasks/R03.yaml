@@ -1,0 +1,13 @@
+id: R03
+stage: R
+title: Tu or Lei drill
+size: S
+status: todo
+depends_on: []
+change: 'New drill: given a person (the landlord, a classmate, a child, a doctor), choose tu or Lei, then give the
+  matching form of a verb or greeting.'
+done_when:
+- Drill runs in the Drills screen with unit tests; 10 questions per round
+touches:
+- content/
+- app/

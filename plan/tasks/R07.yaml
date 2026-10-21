@@ -1,0 +1,13 @@
+id: R07
+stage: R
+title: Minimal pairs for pronunciation
+size: S
+status: todo
+depends_on: []
+change: A short list of real minimal pairs (pala/palla, casa/cassa, caro/carro, nono/nonno, penna/pena) with audio
+  buttons and a double-consonant listening drill.
+done_when:
+- Items verified; drill or list available from the Library
+touches:
+- content/
+- app/

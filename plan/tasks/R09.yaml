@@ -1,0 +1,13 @@
+id: R09
+stage: R
+title: CILS A2 practice (only if you plan the exam)
+size: M
+status: todo
+depends_on: []
+change: Optional mock exam in our own words using the official A2 structure and scoring (up to 12 points per skill,
+  at least 7 per skill, 35 of 60 overall); confirm the current format on the official site first.
+done_when:
+- Owner confirms they want it; scoring checked against the official CILS site
+touches:
+- content/
+- app/

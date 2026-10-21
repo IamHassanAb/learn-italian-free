@@ -5,6 +5,7 @@ level: A1
 skill: speaking
 persona: Marco, a new acquaintance
 setting: A casual meeting
+tier: 1
 register: tu
 parts:
 - intro

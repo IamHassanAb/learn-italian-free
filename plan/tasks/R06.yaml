@@ -1,0 +1,14 @@
+id: R06
+stage: R
+title: Healthcare as a resident
+size: M
+status: todo
+depends_on: []
+change: 'Update the pharmacy and health material for someone living in Italy: tessera sanitaria, medico di base,
+  guardia medica, 118 and the pronto soccorso colour codes, and how a non-EU visitor is billed; verified against
+  official sources (Ministero della Salute, regional health sites).'
+done_when:
+- New or updated block with sources in content/ledger; scenario updated if needed
+touches:
+- content/
+- app/

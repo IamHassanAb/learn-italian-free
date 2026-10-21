@@ -1,0 +1,13 @@
+id: R01
+stage: R
+title: Tiers on scenarios
+size: S
+status: done
+depends_on: []
+change: Add a tier (1 scripted, 2 branching, 3 improvised, 4 open) to each scenario in its module.yaml, show it
+  as a chip in the Role-play list, and suggest the next scenario by tier.
+done_when:
+- Schema accepts tier; the list shows it; lint passes
+touches:
+- content/
+- app/

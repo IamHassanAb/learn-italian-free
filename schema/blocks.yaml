@@ -19,7 +19,8 @@ item_required:
 
 module:
   required: [id, title, step, level, skill, parts]
-  optional: [show_title, persona, setting, register, lookup_columns, goal]
+  optional: [show_title, persona, setting, register, tier, lookup_columns, goal]
+  tiers: [1, 2, 3, 4]               # scenario difficulty: 1 follow the script, 2 handle surprises, 3 improvise, 4 open conversation
   skills: [method, vocab, reading, listening, speaking, grammar, writing]
   steps: [0, 1, 2, 3, 4, 5]          # 0 = overview, not part of the 5-step path
 

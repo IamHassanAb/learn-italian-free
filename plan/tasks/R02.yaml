@@ -1,0 +1,14 @@
+id: R02
+stage: R
+title: Make it harder prompts
+size: M
+status: todo
+depends_on:
+- R01
+change: 'Three short ''make it harder'' prompts per scenario written by us (for example: they speak fast, the price
+  is higher, you must ask them to repeat), shown after the script and usable alone with the phone.'
+done_when:
+- Seven scenarios have three prompts each, all Italian lines verified
+touches:
+- content/
+- app/

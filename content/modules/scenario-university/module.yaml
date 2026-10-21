@@ -5,6 +5,7 @@ level: A1
 skill: speaking
 persona: Impiegata della segreteria
 setting: University students' office
+tier: 2
 register: Lei
 parts:
 - intro

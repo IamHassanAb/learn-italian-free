@@ -1,0 +1,8 @@
+id: D23
+decision: 'Use the Strommen textbook as inspiration only: ideas and structure, never its text; keep the PDF out
+  of the repository'
+why: 2026-10-21. The book is (c) Strommen Inc. and licensed only for use with a Strommen tutor, while this repository
+  is CC BY-SA. Its review notes live in _sources/ (not published). Several of its statements are wrong (see the
+  review), so every line we write ourselves is checked against a second source.
+date: '2026-10-21'
+status: active

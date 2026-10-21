@@ -22,3 +22,6 @@ Thumbs.db
 
 # Local-only files (never commit): sync setup text
 local/
+
+# third-party textbook kept for private study; not ours to publish
+italian-a1-a2-book.pdf

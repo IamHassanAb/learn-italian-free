@@ -1,0 +1,13 @@
+id: R08
+stage: R
+title: How bars and tickets really work
+size: S
+status: todo
+depends_on: []
+change: 'Add verified notes to the bar and transport scenarios: pay first or after (it varies), buonasera timing,
+  how ticket validation works in the cities you use.'
+done_when:
+- Notes added with sources; wording says what varies
+touches:
+- content/
+- app/

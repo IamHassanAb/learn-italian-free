@@ -5,6 +5,7 @@ level: A1
 skill: speaking
 persona: Bigliettaio
 setting: A ticket desk
+tier: 2
 register: Lei
 parts:
 - intro

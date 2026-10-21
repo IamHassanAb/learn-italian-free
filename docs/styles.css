@@ -60,7 +60,7 @@ body {
 .top, main { max-width: 720px; margin-inline: auto; position: relative; z-index: 1; }
 .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: calc(4px + env(safe-area-inset-top, 0px)) 4px; min-height: 52px; }
 .top .muted { margin-left: auto; font-size: .75rem; white-space: nowrap; }
-@media (max-width: 399px) { .top .muted { display: none; } }
+@media (max-width: 479px) { .top .muted { display: none; } }          /* the date moves to the Today screen on phones: the long date does not fit beside the brand and search */
 .brand { display: inline-flex; align-items: center; min-height: 44px; font: 700 1.2rem/1.2 var(--font-head); white-space: nowrap; color: hsl(var(--heading)); text-decoration: none; }
 main { outline: none; }
 h1, h2, h3 { font-family: var(--font-head); color: hsl(var(--heading)); line-height: 1.2; text-wrap: balance; margin: 0; }

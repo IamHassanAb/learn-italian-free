@@ -5,6 +5,7 @@ level: A1
 skill: speaking
 persona: Farmacista
 setting: A pharmacy
+tier: 2
 register: Lei
 parts:
 - intro

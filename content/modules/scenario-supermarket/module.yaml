@@ -5,6 +5,7 @@ level: A1
 skill: speaking
 persona: Commesso / cassiere
 setting: A supermarket
+tier: 1
 register: Lei
 parts:
 - intro

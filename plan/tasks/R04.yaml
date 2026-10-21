@@ -1,0 +1,13 @@
+id: R04
+stage: R
+title: Auxiliary and participle drill
+size: M
+status: todo
+depends_on: []
+change: 'New drill: say avere or essere first, then give the passato prossimo of a verb from our own verb list (regular
+  and irregular), with agreement for essere.'
+done_when:
+- Drill runs with unit tests; the verb list is in content with ledger entries
+touches:
+- content/
+- app/

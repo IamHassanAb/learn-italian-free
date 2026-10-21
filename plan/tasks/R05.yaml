@@ -1,0 +1,13 @@
+id: R05
+stage: R
+title: Words you will hear
+size: M
+status: todo
+depends_on: []
+change: A recognition-only module of regional words and fillers (Roman, Neapolitan, Sicilian, Milanese, Tuscan gorgia)
+  for the regions you actually meet, each checked against a second source.
+done_when:
+- Module builds into the app and PDFs; every item has a ledger entry; clearly marked recognition only
+touches:
+- content/
+- app/

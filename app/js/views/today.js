@@ -1,5 +1,6 @@
 import { h, inline, renderModule } from "../ui.js";
 import { localDate } from "../lib/util.js";
+import { longDate } from "../lib/calendar.js";
 import { buildQueue } from "../lib/srs.js";
 
 export function todayView(ctx) {
@@ -25,7 +26,7 @@ export function todayView(ctx) {
 
   const rhythm = content.modules["step5-rhythm"];
   return h("div", { class: "stack" },
-    h("div", null, h("p", { class: "eyebrow" }, "Oggi"), h("h1", null, ctx.greeting()), h("p", { class: "muted" }, "30 minutes: read, speak, listen. Grammar only when you get stuck.")),
+    h("div", null, h("p", { class: "eyebrow" }, `Oggi · ${longDate(new Date())}`), h("h1", null, ctx.greeting()), h("p", { class: "muted" }, "30 minutes: read, speak, listen. Grammar only when you get stuck.")),
     h("div", { class: "grid stats" },
       h("div", { class: "card stat" }, h("b", null, String(streak)), h("span", { class: "muted small" }, "day streak")),
       h("div", { class: "card stat" }, h("b", null, `${doneCount}/${content.today.length}`), h("span", { class: "muted small" }, "blocks done today")),

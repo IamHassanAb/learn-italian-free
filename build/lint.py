@@ -48,6 +48,7 @@ def main():
             if k not in m: errors.append("%s/module.yaml: missing required field %r" % (mid, k))
         if m.get("step") not in sch["module"]["steps"]: errors.append("%s: bad step %r" % (mid, m.get("step")))
         if m.get("skill") not in sch["module"]["skills"]: errors.append("%s: bad skill %r" % (mid, m.get("skill")))
+        if mid.startswith("scenario-") and m.get("tier") not in sch["module"]["tiers"]: errors.append("%s: scenarios need a tier from %s, got %r" % (mid, sch["module"]["tiers"], m.get("tier")))
         for p in m["_parts"]:
             where = "%s/parts/%s.yaml" % (mid, p["_name"])
             if p.get("id") in seen_ids: errors.append("%s: duplicate id %s (also %s)" % (where, p.get("id"), seen_ids[p.get("id")]))
