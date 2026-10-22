@@ -32,24 +32,25 @@ export function drillsView(ctx, params) {
         if (answered) return; answered = true;
         const ok = !giveUp && check(q, input.value);
         if (ok) correct++; else mistakes.push(q);
-        result.replaceChildren(h("p", { class: ok ? "ok" : "bad" }, ok ? "Esatto!" : giveUp ? "Answer:" : "Not quite."), h("div", { class: "row" }, h("span", { class: "flash answer" }, q.show), speakBtn(ctx, q.speak)));
+        result.replaceChildren(h("p", { class: ok ? "ok" : "bad" }, ok ? "Esatto!" : giveUp ? "Answer:" : "Not quite."), h("div", { class: "row" }, h("span", { class: "flash answer" }, q.show), q.speak ? speakBtn(ctx, q.speak) : null), q.why ? h("p", { class: "muted small" }, q.why) : null);
         if (ok && q.show && input.value.trim() && input.value.trim() !== q.show && /[àèéìòù]/.test(q.show)) result.append(h("p", { class: "muted small" }, "Note the accent in the written form."));
-        next.hidden = false; check_btn.hidden = true; skip.hidden = true; input.disabled = true; next.focus();
+        next.hidden = false; check_btn.hidden = true; skip.hidden = true; input.disabled = true; choiceRow.querySelectorAll("button").forEach((b) => { b.disabled = true; }); next.focus();
         if (ctx.speech.available() && q.speak && !q.kind.endsWith("listen")) ctx.speech.speak(q.speak, ctx.store.state.settings.rate);
       };
       const check_btn = h("button", { class: "btn primary", type: "button", onClick: () => submit(false) }, "Check");
       const skip = h("button", { class: "btn ghost", type: "button", onClick: () => submit(true) }, "Show answer");
       input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); submit(false); } });
       const isListen = q.kind.endsWith("listen");
+      // multiple-choice questions show big buttons instead of a text box
+      const choiceRow = h("div", { class: "row", role: "group", "aria-label": "Choose" }, (q.choices || []).map((c) => h("button", { class: "btn", type: "button", onClick: () => { input.value = c; submit(false); } }, c)));
       mount(root, 
         h("div", { class: "row between" }, h("p", { class: "eyebrow" }, `${DRILLS[id].title} · ${i + 1}/${qs.length}`), h("button", { class: "btn ghost small", type: "button", onClick: menu }, "End")),
         h("div", { class: "progress" }, h("i", { style: `width:${(i / qs.length) * 100}%` })),
         h("section", { class: "card stack" },
           isListen ? h("div", { class: "row" }, h("button", { class: "btn", type: "button", onClick: () => ctx.speech.speak(q.speak, ctx.store.state.settings.rate) }, "▶ Play"), h("span", { class: "muted small" }, q.prompt))
                    : h("div", null, h("div", { class: "flash" }, q.prompt), q.hint ? h("p", { class: "muted small" }, q.hint) : null),
-          h("div", { class: "field" }, h("label", { for: "ans" }, "Your answer"), input),
-          h("div", { class: "row" }, check_btn, skip), result, next));
-      input.focus();
+          q.choices ? choiceRow : [h("div", { class: "field" }, h("label", { for: "ans" }, "Your answer"), input), h("div", { class: "row" }, check_btn, skip)], result, next));
+      if (!q.choices) input.focus();
       if (isListen) setTimeout(() => ctx.speech.speak(q.speak, ctx.store.state.settings.rate), 150);
     }
     function done() {

@@ -1,0 +1,22 @@
+id: tu-lei
+area: register
+module: step3-grammar
+claims:
+- claim: Students address university professors and teachers with Lei (formal), the norm in schools and universities
+  source: https://www.orizzontescuola.it/siamo-docenti-non-gli-amici-degli-studenti-se-ci-danno-del-lei-non-significa-che-manchiamo-di-empatia-e-vicinanza-scoppia-il-dibattito-sui-social/
+  verified: '2026-10-21'
+- claim: Second source on professors and teachers being addressed with Lei
+  source: https://italian.yabla.com/lesson-How-to-Address-Your-Teacher-in-Italian-1315
+  verified: '2026-10-21'
+- claim: Use Lei with older people unless they ask for tu, and always in formal contexts such as with a public official, whatever the ages
+  source: https://www.studentessamatta.com/italian-etiquette-darci-del-tu-darsi-del-lei-formal-informal-address/
+  verified: '2026-10-21'
+- claim: Tu should be mutual; moving from Lei to tu is possible but not the other way round, and the offer comes from the older or more senior person (diamoci del tu)
+  source: https://verbling.com/articles/post/dare-del-lei-vs-dare-del-tu-la-forma-di-
+  verified: '2026-10-21'
+- claim: Lei takes the third person singular verb form (Come si chiama? Come sta?), tu the second person (Come ti chiami? Come stai?)
+  source: https://www.thinkinitalian.com/formal-lei-italian/
+  verified: '2026-10-21'
+- claim: Not settled by sources, so left out of the drill - shop assistants and customers, doctors, and young colleagues are all cases where usage differs. Friends, family, flatmates, peers and children are used with tu as the ordinary default
+  source: https://libreriamo.it/lingua-italiana/lingua-italiana-lei-voi-o-tu-pronome/
+  verified: '2026-10-21'

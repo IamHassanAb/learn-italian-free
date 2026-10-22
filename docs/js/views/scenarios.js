@@ -27,13 +27,13 @@ function list(ctx, ids) {
 function player(ctx, id) {
   const m = ctx.content.modules[id];
   if (!m) return h("div", { class: "stack" }, h("p", null, "That scenario does not exist."), h("a", { class: "btn", href: "#/scenarios" }, "All scenarios"));
-  let hide = "none";   // none | them | me
+  let hide = "none", surprise = -1;   // hide: none | them | me; surprise: index of the "make it harder" prompt picked at random
   const root = h("div", { class: "stack" });
   const part = (t) => m.parts.find(p => p.type === t);
   const goal = m.parts.find(p => p.type === "text");
 
   function paint() {
-    const dlg = part("dialogue"), vocab = part("vocab"), role = part("bullets"), r = ctx.store.state.ratings[id];
+    const dlg = part("dialogue"), vocab = part("vocab"), role = m.parts.find(p => p.type === "bullets" && !p.id.endsWith(".harder")), harder = m.parts.find(p => p.id.endsWith(".harder")), r = ctx.store.state.ratings[id];
     const lines = dlg.lines.map((raw, idx) => {
       const x = parseLine(raw), me = x.who === "Tu", hidden = (hide === "them" && !me) || (hide === "me" && me);
       const row = h("div", { class: "line" + (me ? " me" : "") + (hidden ? " hidden" : "") },
@@ -45,6 +45,16 @@ function player(ctx, id) {
     });
     function shown(x, me) { return h("div", { class: "line" + (me ? " me" : "") }, h("span", { class: "who" }, x.who || ""), h("span", { class: "txt" }, [x.aside ? h("span", { class: "aside" }, x.aside + " ") : null, inline(x.text)]), speakBtn(ctx, x.text)); }
     const mode = (v, text) => h("button", { class: "chip", type: "button", "aria-pressed": String(hide === v), onClick: () => { hide = v; paint(); } }, text);
+    // "Make it harder": each prompt adds a complication to the dialogue; the Italian line in it can be played
+    const hardItem = (text) => {
+      const lines = [...text.matchAll(/\*([^*]+)\*/g)].map((x) => x[1]);
+      return h("div", { class: "stack" }, h("p", null, inline(text)), h("div", { class: "row" }, lines.map((l) => speakBtn(ctx, l))));
+    };
+    const hardSection = harder ? h("section", { class: "card stack" },
+      h("div", { class: "row between" }, h("h2", null, "Make it harder"), h("button", { class: "btn small", type: "button", onClick: () => { surprise = (surprise + 1 + Math.floor(Math.random() * (harder.items.length - 1))) % harder.items.length; paint(); } }, "Surprise me")),
+      h("p", { class: "muted small" }, "Play the dialogue again with one of these complications."),
+      surprise >= 0 ? h("div", { class: "card", style: "border-color:hsl(var(--sage))" }, hardItem(harder.items[surprise])) : null,
+      surprise < 0 ? harder.items.map((it) => hardItem(it)) : h("details", null, h("summary", null, "All complications"), h("div", { class: "stack" }, harder.items.map((it) => hardItem(it))))) : null;
     mount(root, 
       h("a", { class: "btn ghost small", href: "#/scenarios" }, "← All scenarios"),
       h("div", null, h("p", { class: "eyebrow" }, `with ${m.persona} · ${m.register === "tu" ? "use tu" : "use Lei"}`), h("h1", null, m.title), goal ? h("p", { class: "muted" }, inline(goal.text)) : null,
@@ -52,6 +62,7 @@ function player(ctx, id) {
       vocab ? h("details", null, h("summary", null, "Vocabulary"), renderPart(ctx, vocab)) : null,
       h("section", { class: "card" }, h("div", { class: "row between" }, h("h2", null, "Dialogue"), h("div", { class: "row", role: "group", "aria-label": "Hide lines" }, mode("none", "Show all"), mode("them", "Hide theirs"), mode("me", "Hide mine"))), h("div", null, lines)),
       role ? h("section", { class: "card flat" }, h("h2", null, "Your turn"), h("p", { class: "muted small" }, "Change the details and say it again."), renderPart(ctx, { ...role, title: null })) : null,
+      hardSection,
       h("section", { class: "card" }, h("h2", null, "How did it go?"), h("div", { class: "row" }, RATINGS.map(([t, v]) => h("button", { class: "btn" + (r && r.stars === v ? " primary" : ""), type: "button", onClick: () => { ctx.store.setRating(id, v); paint(); } }, t)))));
   }
   paint();

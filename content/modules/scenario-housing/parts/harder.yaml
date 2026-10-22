@@ -1,0 +1,7 @@
+id: scenario-housing.harder
+type: bullets
+title: Make it harder
+items:
+- 'The landlord says a higher price than the advert. Say what the advert said: *Nell''annuncio il prezzo era quattrocento euro.*'
+- 'You want to know about internet. Ask: *Internet è incluso?*'
+- 'You are not ready to decide. Ask to come back: *Posso tornare a vedere la stanza domani?*'

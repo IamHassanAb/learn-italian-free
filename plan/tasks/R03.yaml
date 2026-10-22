@@ -2,7 +2,7 @@ id: R03
 stage: R
 title: Tu or Lei drill
 size: S
-status: todo
+status: done
 depends_on: []
 change: 'New drill: given a person (the landlord, a classmate, a child, a doctor), choose tu or Lei, then give the
   matching form of a verb or greeting.'

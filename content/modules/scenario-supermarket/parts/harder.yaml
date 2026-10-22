@@ -1,0 +1,7 @@
+id: scenario-supermarket.harder
+type: bullets
+title: Make it harder
+items:
+- 'You cannot find the item and the shelf is empty. Ask for help: *Scusi, non lo trovo. Può aiutarmi?*'
+- 'At the till the total looks wrong. Say so politely: *Credo che ci sia un errore nel conto.*'
+- 'The cashier speaks very fast. Slow them down: *Può parlare più lentamente?*'

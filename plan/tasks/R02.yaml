@@ -2,7 +2,7 @@ id: R02
 stage: R
 title: Make it harder prompts
 size: M
-status: todo
+status: done
 depends_on:
 - R01
 change: 'Three short ''make it harder'' prompts per scenario written by us (for example: they speak fast, the price

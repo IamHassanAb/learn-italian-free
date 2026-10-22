@@ -1,0 +1,40 @@
+id: scenario-harder
+area: scenarios
+module: scenario-bar
+claims:
+- claim: 'Slowing someone down and asking for repeats (Può parlare più lentamente? Può ripetere, per favore? Può ripetere più lentamente, per favore? Non ho capito.), used in the bar, supermarket, university, bureaucracy, pharmacy and transport prompts'
+  source: https://fastitalianlearning.com/phrases/making-phone-calls/parlare-lentamente
+  verified: '2026-10-21'
+- claim: 'Second source for asking to repeat more slowly (formal): Può ripetere più lentamente, per favore?'
+  source: https://fastitalianlearning.com/phrases/calling-police/puo-ripetere-piu-lentamente
+  verified: '2026-10-21'
+- claim: 'Informal version used in the meeting-people prompts: Puoi parlare più lentamente? / Non ho capito'
+  source: https://www.italianpod101.com/lesson/can-do-italian-for-absolute-beginners-63-how-to-ask-for-clarification-examples-and-variations
+  verified: '2026-10-21'
+- claim: 'Ho perso il treno. / Posso cambiare il biglietto? (missed a train, changing the ticket)'
+  source: https://fastitalianlearning.com/phrases/travel-problems/ho-perso-il-treno
+  verified: '2026-10-21'
+- claim: 'Second source for Posso cambiare il biglietto?; also the practical point that whether a ticket can be changed depends on the fare (Trenitalia)'
+  source: https://www.trenitalia.com/it/informazioni/la-guida-del-viaggiatore/acquisto-utilizzoemodificabigliettonazionale.html
+  verified: '2026-10-21'
+- claim: 'Credo che ci sia un errore nel conto. (polite way to point out a mistake in a bill) and Posso pagare in contanti?'
+  source: https://fastitalianlearning.com/phrases/paying-the-bill
+  verified: '2026-10-21'
+- claim: 'Può aiutarmi a compilare questo modulo? (asking for help with a form at an office, bank or post office)'
+  source: https://fastitalianlearning.com/phrases/at-the-post-office/formulario-da-compilare
+  verified: '2026-10-21'
+- claim: 'Pattern Devo portare dei documenti ...? for asking which documents to bring (the prompt uses Devo portare altri documenti?)'
+  source: https://fastitalianlearning.com/phrases/italian-bureaucracy/modulo-da-compilare
+  verified: '2026-10-21'
+- claim: 'The term ricetta medica for a doctor''s prescription handed to the pharmacist; the question Serve la ricetta medica? uses the ordinary verb servire (not individually sourced)'
+  source: https://dipartimento.unistrasi.it/public/articoli/480/A1%20UD4.pdf
+  verified: '2026-10-21'
+- claim: 'Ti va di + infinitive for a casual invitation (Ti va di fare una passeggiata domani?), informal'
+  source: https://www.italianpod101.com/lesson/three-step-italian-learn-20-make-an-invitation-in-italian-grammar
+  verified: '2026-10-21'
+- claim: 'Second source for Ti va di + infinitive (Do you feel like ...?)'
+  source: https://noun.town/lessons/english/italian/hospital-4-making-an-invitation
+  verified: '2026-10-21'
+- claim: 'NOT individually sourced: sentences built from words and patterns already in the scenario dialogues (annuncio, prezzo, euro, stanza, scadenza, documenti, binario, ritardo, febbre) with the Lei verb forms (Può ..., Posso ...). Allora vorrei solo un cappuccino; Nell''annuncio il prezzo era quattrocento euro; Internet è incluso?; Posso tornare a vedere la stanza domani?; Può scrivere la scadenza?; Non ho ancora tutti i documenti. Posso portarli domani?; Può ripetere il binario?; Quanto ritardo ha il treno?; Scusi, non lo trovo. Può aiutarmi?; Sì, ho la febbre. Worth a native-speaker read (task P01)'
+  source: https://www.thinkinitalian.com/formal-lei-italian/
+  verified: '2026-10-21'

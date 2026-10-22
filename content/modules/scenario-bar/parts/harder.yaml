@@ -1,0 +1,7 @@
+id: scenario-bar.harder
+type: bullets
+title: Make it harder
+items:
+- 'The cornetto you wanted is finished. Change your order: *Allora vorrei solo un cappuccino, per favore.*'
+- 'The barista says the price too fast. Ask for it again: *Può ripetere il prezzo, per favore?*'
+- 'The card machine is not working. Offer cash instead: *Posso pagare in contanti?*'

@@ -1,0 +1,7 @@
+id: scenario-transport.harder
+type: bullets
+title: Make it harder
+items:
+- 'You missed your train. At the ticket desk say: *Ho perso il treno. Posso cambiare il biglietto?*'
+- 'You did not catch the platform number. Ask: *Può ripetere il binario, per favore?*'
+- 'The board says the train is late. Ask how late: *Quanto ritardo ha il treno?*'

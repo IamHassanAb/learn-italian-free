@@ -1,0 +1,7 @@
+id: scenario-pharmacy.harder
+type: bullets
+title: Make it harder
+items:
+- 'You want to know if you need a doctor''s prescription. Ask: *Serve la ricetta medica?*'
+- 'The pharmacist speaks too fast. Ask: *Può parlare più lentamente?*'
+- 'They ask if you have a fever and you do. Answer in a full sentence: *Sì, ho la febbre.*'

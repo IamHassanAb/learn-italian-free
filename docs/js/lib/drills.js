@@ -2,6 +2,7 @@ import { numberToItalian, numberVariants } from "./numbers.js";
 import { acceptable, everyday, official, digital } from "./clock.js";
 import { WEEKDAYS, MONTHS, dateWords } from "./calendar.js";
 import { norm, pick, shuffle } from "./util.js";
+import { registerQuestion, REGISTER_MODES } from "./register.js";
 
 // A question: {prompt, hint?, answers: [accepted spellings], show: preferred answer, speak: text to read aloud, kind}
 export const NUMBER_RANGES = { "0-20": 20, "0-100": 100, "0-999": 999, "0-9999": 9999 };
@@ -41,6 +42,7 @@ export const DRILLS = {
   weekdays: { title: "Days of the week", blurb: "English to Italian.", options: ["weekday"], make: (_o, rnd) => calendarQuestion("weekday", rnd) },
   months: { title: "Months", blurb: "English to Italian.", options: ["month"], make: (_o, rnd) => calendarQuestion("month", rnd) },
   dates: { title: "Dates", blurb: "Say the date out loud in Italian.", options: ["date"], make: (_o, rnd) => calendarQuestion("date", rnd) },
+  "tu-lei": { title: "Tu or Lei", blurb: "Pick the right register for the person, or say the same thing politely and casually.", options: ["choose", "mixed", "say it"], make: (opt, rnd) => registerQuestion(opt, rnd) },
 };
 
 export function makeSession(drillId, option, count = 10, rnd = Math.random) {

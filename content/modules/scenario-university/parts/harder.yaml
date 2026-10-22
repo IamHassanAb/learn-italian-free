@@ -1,0 +1,7 @@
+id: scenario-university.harder
+type: bullets
+title: Make it harder
+items:
+- 'You want the deadline in writing. Ask: *Può scrivere la scadenza?*'
+- 'You are missing a document. Say so and offer to return: *Non ho ancora tutti i documenti. Posso portarli domani?*'
+- 'The clerk speaks too fast to follow. Ask: *Può ripetere, per favore?*'
