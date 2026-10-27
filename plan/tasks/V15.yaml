@@ -1,0 +1,12 @@
+id: V15
+stage: V
+title: Workplaces and hobbies (later)
+size: M
+status: todo
+depends_on:
+- V14
+change: 'Two more topic modules from the same checklist, content only (the engine needs no change): vocab-workplaces and vocab-hobbies, two-source ledger each. Owner asked for these later, after the seven first topics.'
+done_when:
+- Both modules verified and drillable
+touches:
+- content/

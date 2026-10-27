@@ -1,0 +1,14 @@
+id: I03
+stage: I
+title: Install button and hint
+size: M
+status: done
+depends_on:
+- I02
+change: 'Settings card and a dismissible banner on Today: an Install button where the browser allows it (it keeps
+  the install event), clear Share, Add to Home Screen steps on iPhone; hidden once installed; Do not show again
+  remembered on the device.'
+done_when:
+- Emulated Android shows the button and installs; emulated iPhone shows the steps; standalone shows nothing
+touches:
+- app/

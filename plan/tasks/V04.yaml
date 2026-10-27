@@ -1,0 +1,14 @@
+id: V04
+stage: V
+title: Family and relatives module
+size: S
+status: done
+depends_on:
+- V01
+change: vocab-family with groups (close, extended, in-laws), articles and examples, two-source ledger.
+done_when:
+- Words verified; builds
+touches:
+- content/
+- app/
+- schema/

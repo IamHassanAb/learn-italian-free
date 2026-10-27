@@ -10,6 +10,8 @@ export function translateView(ctx) {
   const root = h("div", { class: "stack" });
   let dir = store.state.settings.translateDir || "auto", timer = null, seq = 0, current = null, saving = false, situation = store.state.settings.lastSituation || "";
 
+  // Google Translate often opens empty on a phone, so copy what you typed first: paste it there.
+  const copyTyped = (text) => { if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => toast("Copied what you typed. Paste it in Google Translate.")).catch(() => {}); };
   const input = h("textarea", { id: "tr-input", rows: 3, placeholder: "Type English or Italian…", autocapitalize: "sentences", spellcheck: "false", "aria-label": "Text to translate" });
   const results = h("div", { class: "stack", "aria-live": "polite" });
   const form = h("div");
@@ -36,7 +38,7 @@ export function translateView(ctx) {
     try {
       const r = await translator.translate(text, from, to);
       if (my !== seq) return;
-      current = { text, from, to, out: r.text, provider: r.provider, alternatives: r.alternatives };
+      current = { text, from, to, out: r.text, provider: r.provider, alternatives: r.alternatives, unchanged: !!r.unchanged };
       paintResult();
     } catch (e) {
       if (my !== seq) return;
@@ -44,7 +46,7 @@ export function translateView(ctx) {
       const msg = e.code === "quota" ? "The free daily translation limit is used up. Add your email in Settings to raise it, or use Google Translate below."
         : e instanceof TypeError ? "No connection right now. Try again when you are online, or use Google Translate below."
         : e.message || "Translation failed.";
-      results.replaceChildren(h("p", { class: "bad", role: "alert" }, msg), h("a", { class: "btn", href: googleTranslateLink(text, from, to), target: "_blank", rel: "noopener noreferrer" }, "Open in Google Translate"));
+      results.replaceChildren(h("p", { class: "bad", role: "alert" }, msg), h("a", { class: "btn", href: googleTranslateLink(text, from, to), target: "_blank", rel: "noopener noreferrer", onClick: () => copyTyped(text) }, "Open in Google Translate"));
     }
   }
 
@@ -69,12 +71,13 @@ export function translateView(ctx) {
         h("div", { class: "row" },
           c.to === "it" ? speakBtn(ctx, c.out, "Listen") : null,
           h("button", { class: "btn small", type: "button", onClick: copy }, "Copy"),
-          h("a", { class: "btn small", href: googleTranslateLink(c.text, c.from, c.to), target: "_blank", rel: "noopener noreferrer" }, "Check in Google Translate"),
+          h("a", { class: "btn small", href: googleTranslateLink(c.text, c.from, c.to), target: "_blank", rel: "noopener noreferrer", onClick: () => copyTyped(c.text) }, "Check in Google Translate"),
           h("div", { class: "row handrow", style: "width:100%" },
             h("button", { class: "btn", type: "button", onClick: () => { saving = true; paintForm(); form.scrollIntoView({ block: "center" }); } }, "Add details…"),
             h("button", { class: "btn warm", type: "button", onClick: quickSave }, "Quick save"))),
         c.alternatives.length ? h("div", { class: "stack" }, h("p", { class: "muted small" }, "Other possible translations (from other translators):"),
           c.alternatives.map((a) => h("div", { class: "row between" }, h("span", null, a.text), h("button", { class: "btn small", type: "button", onClick: () => { c.out = a.text; c.alternatives = c.alternatives.filter((x) => x !== a); paintResult(); } }, "Use this")))) : null,
+        c.unchanged ? h("p", { class: "bad small" }, "This is the same as what you typed. Some words are the same in both languages, but if it should be different, tap Check in Google Translate.") : null,
         h("p", { class: "muted small" }, "Machine translation can be wrong. Check anything important with a local, then mark it checked in the log."),
         c.provider === "mymemory" ? h("p", { class: "muted small" }, `Your text is sent to MyMemory (translated.net) to translate it. About ${used.toLocaleString()} of ${limit.toLocaleString()} characters used today (this device's estimate).`) : h("p", { class: "muted small" }, "Translated on this device. Nothing was sent anywhere.")));
     if (saving) paintForm();

@@ -84,7 +84,17 @@ class Renderer:
             out.append(self.table(rows, bool(cols) and p.get("header", True)))
         elif t == "vocab":
             hdr = p.get("header", True)
-            rows = ([["Italiano", "English"]] if hdr else []) + [[i["it"], i["en"]] for i in p["items"]]
+            def disp(i):
+                a = i.get("art"); return (a + ("" if a.endswith("'") else " ") + i["it"]) if a else i["it"]
+            def forms(i):
+                f = i.get("forms")
+                if not f: return ""
+                u = []
+                for k in ("m", "f", "mp", "fp"):
+                    if f.get(k) and f[k] not in u: u.append(f[k])
+                return "never changes" if len(u) == 1 else " · ".join(u)
+            hasf = any("forms" in i for i in p["items"])
+            rows = ([["Italiano", "English"] + (["Forms"] if hasf else [])] if hdr else []) + [[disp(i), i["en"]] + ([forms(i)] if hasf else []) for i in p["items"]]
             out.append(self.table(rows, hdr))
         elif t == "phrases":
             ex = any(i.get("example") for i in p["items"])

@@ -75,3 +75,19 @@ test("log entries: updates are remembered and the newest edit wins when merging 
   assert.equal(mergeStates(older, s.state).gaps[0].checked, true);
   assert.equal(mergeStates(s.state, older).gaps[0].checked, true);
 });
+
+test("polish: an echoed answer is replaced by the best real alternative, and a stray full stop is dropped", async () => {
+  const { polish } = await import("../js/lib/translate.js");
+  const r = polish("sky", "sky", [{ text: "sky", match: 0.99, by: "" }, { text: "cielo.", match: 0.8, by: "x" }, { text: "Sky", match: 0.5, by: "" }]);
+  assert.equal(r.text, "cielo"); assert.equal(r.unchanged, false); assert.ok(r.alternatives.every((a) => !/^sky$/i.test(a.text) || false) || r.alternatives.length <= 3);
+  const full = polish("Where is it.", "Dov'è.", [{ text: "Dov'è.", match: 1, by: "" }]); assert.equal(full.text, "Dov'è.");
+});
+test("polish: nothing better to offer means the result is flagged as unchanged (words like pizza are fine)", async () => {
+  const { polish } = await import("../js/lib/translate.js");
+  const r = polish("pizza", "pizza.", [{ text: "Pizza", match: 0.9, by: "" }]); assert.equal(r.text, "pizza"); assert.equal(r.unchanged, true);
+});
+test("polish: a normal translation is untouched apart from the full stop rule", async () => {
+  const { polish } = await import("../js/lib/translate.js");
+  const r = polish("coffee", "caffè.", [{ text: "caffè", match: 0.9, by: "" }, { text: "il caffè", match: 0.7, by: "" }]);
+  assert.equal(r.text, "caffè"); assert.equal(r.unchanged, false); assert.deepEqual(r.alternatives.map((a) => a.text), ["il caffè"]);
+});

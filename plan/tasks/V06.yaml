@@ -1,0 +1,15 @@
+id: V06
+stage: V
+title: School and studying module
+size: S
+status: todo
+depends_on:
+- V01
+change: 'vocab-school: school, university, studying, exams, with examples that fit a student in Italy, two-source
+  ledger.'
+done_when:
+- Words verified; builds
+touches:
+- content/
+- app/
+- schema/

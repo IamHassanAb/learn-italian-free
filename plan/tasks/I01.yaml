@@ -1,0 +1,12 @@
+id: I01
+stage: I
+title: Manifest identity and iPhone details
+size: S
+status: done
+depends_on: []
+change: Add a stable id, lang and categories to the manifest; iPhone home-screen title and a 180 px touch icon;
+  optional shortcuts (Translate, Review, Search) so a long-press on the icon jumps to them.
+done_when:
+- CDP shows no manifest warnings; the icon label reads Italiano
+touches:
+- app/

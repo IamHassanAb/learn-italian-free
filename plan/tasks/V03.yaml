@@ -1,0 +1,15 @@
+id: V03
+stage: V
+title: Colours module
+size: S
+status: done
+depends_on:
+- V01
+change: vocab-colours with swatches and agreement forms (rosso/rossa/rossi/rosse; rosa, viola, blu, beige do not
+  agree), two-source ledger.
+done_when:
+- Words verified; module builds into the app, PDFs and flashcards
+touches:
+- content/
+- app/
+- schema/

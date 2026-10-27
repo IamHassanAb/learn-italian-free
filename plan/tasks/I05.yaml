@@ -1,0 +1,12 @@
+id: I05
+stage: I
+title: Easy to find and share
+size: S
+status: done
+depends_on: []
+change: A Share or Copy link button for the app address, and a small QR code in the README and Settings that opens
+  the app from another device.
+done_when:
+- Scanning the QR code opens the live site
+touches:
+- app/

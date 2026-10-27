@@ -1,0 +1,292 @@
+id: basics-professions.words
+type: vocab
+title: Jobs, word by word
+items:
+- id: p01
+  it: studente
+  art: lo
+  en: student
+  forms:
+    m: studente
+    f: studentessa
+    mp: studenti
+    fp: studentesse
+  group: Study and teaching
+  example: Sono uno studente.
+- id: p02
+  it: professore
+  art: il
+  en: professor; secondary-school teacher
+  forms:
+    m: professore
+    f: professoressa
+    mp: professori
+    fp: professoresse
+  group: Study and teaching
+  example: Il professore spiega la lezione.
+- id: p03
+  it: insegnante
+  art: l'
+  en: teacher
+  forms:
+    m: insegnante
+    f: insegnante
+    mp: insegnanti
+    fp: insegnanti
+  group: Study and teaching
+  example: Mia madre è insegnante.
+- id: p04
+  it: ricercatore
+  art: il
+  en: researcher
+  forms:
+    m: ricercatore
+    f: ricercatrice
+    mp: ricercatori
+    fp: ricercatrici
+  group: Study and teaching
+  example: Il ricercatore lavora all'università.
+- id: p05
+  it: medico
+  art: il
+  en: doctor (physician)
+  forms:
+    m: medico
+    f: medica
+    mp: medici
+    fp: mediche
+  group: Health
+  accept_forms:
+    f:
+    - dottoressa
+    fp:
+    - dottoresse
+  example: Il medico visita i pazienti.
+- id: p06
+  it: dottore
+  art: il
+  en: doctor; also a polite title for a university graduate
+  forms:
+    m: dottore
+    f: dottoressa
+    mp: dottori
+    fp: dottoresse
+  group: Health
+  example: Buongiorno, dottore.
+- id: p07
+  it: infermiere
+  art: l'
+  en: nurse
+  forms:
+    m: infermiere
+    f: infermiera
+    mp: infermieri
+    fp: infermiere
+  group: Health
+  example: L'infermiere misura la febbre.
+- id: p08
+  it: dentista
+  art: il
+  en: dentist
+  forms:
+    m: dentista
+    f: dentista
+    mp: dentisti
+    fp: dentiste
+  group: Health
+  example: Ho un appuntamento dal dentista.
+- id: p09
+  it: farmacista
+  art: il
+  en: pharmacist
+  forms:
+    m: farmacista
+    f: farmacista
+    mp: farmacisti
+    fp: farmaciste
+  group: Health
+  example: La farmacista consiglia uno sciroppo.
+- id: p10
+  it: impiegato
+  art: l'
+  en: office worker; clerk
+  forms:
+    m: impiegato
+    f: impiegata
+    mp: impiegati
+    fp: impiegate
+  group: Offices and professional work
+  example: L'impiegato lavora in ufficio.
+- id: p11
+  it: ingegnere
+  art: l'
+  en: engineer
+  forms:
+    m: ingegnere
+    f: ingegnera
+    mp: ingegneri
+    fp: ingegnere
+  group: Offices and professional work
+  accept_forms:
+    f:
+    - ingegnere
+  example: Mio zio è ingegnere.
+- id: p12
+  it: architetto
+  art: l'
+  en: architect
+  forms:
+    m: architetto
+    f: architetta
+    mp: architetti
+    fp: architette
+  group: Offices and professional work
+  example: L'architetto disegna una casa.
+- id: p13
+  it: avvocato
+  art: l'
+  en: lawyer
+  forms:
+    m: avvocato
+    f: avvocata
+    mp: avvocati
+    fp: avvocate
+  group: Offices and professional work
+  accept_forms:
+    f:
+    - avvocatessa
+    fp:
+    - avvocatesse
+  example: L'avvocato legge il contratto.
+- id: p14
+  it: programmatore
+  art: il
+  en: programmer
+  forms:
+    m: programmatore
+    f: programmatrice
+    mp: programmatori
+    fp: programmatrici
+  group: Offices and professional work
+  example: Il programmatore scrive il codice.
+- id: p15
+  it: giornalista
+  art: il
+  en: journalist
+  forms:
+    m: giornalista
+    f: giornalista
+    mp: giornalisti
+    fp: giornaliste
+  group: Offices and professional work
+  example: La giornalista fa una domanda.
+- id: p16
+  it: commesso
+  art: il
+  en: shop assistant
+  forms:
+    m: commesso
+    f: commessa
+    mp: commessi
+    fp: commesse
+  group: Shops, food and services
+  example: Il commesso mi aiuta a scegliere.
+- id: p17
+  it: cassiere
+  art: il
+  en: cashier
+  forms:
+    m: cassiere
+    f: cassiera
+    mp: cassieri
+    fp: cassiere
+  group: Shops, food and services
+  example: Il cassiere mi dà lo scontrino.
+- id: p18
+  it: cameriere
+  art: il
+  en: waiter
+  forms:
+    m: cameriere
+    f: cameriera
+    mp: camerieri
+    fp: cameriere
+  group: Shops, food and services
+  example: Il cameriere porta il caffè.
+- id: p19
+  it: cuoco
+  art: il
+  en: cook; chef
+  forms:
+    m: cuoco
+    f: cuoca
+    mp: cuochi
+    fp: cuoche
+  group: Shops, food and services
+  example: Il cuoco prepara la pasta.
+- id: p20
+  it: barista
+  art: il
+  en: barista; bartender
+  forms:
+    m: barista
+    f: barista
+    mp: baristi
+    fp: bariste
+  group: Shops, food and services
+  example: Il barista prepara un cappuccino.
+- id: p21
+  it: parrucchiere
+  art: il
+  en: hairdresser
+  forms:
+    m: parrucchiere
+    f: parrucchiera
+    mp: parrucchieri
+    fp: parrucchiere
+  group: Shops, food and services
+  example: Vado dal parrucchiere.
+- id: p22
+  it: operaio
+  art: l'
+  en: manual worker; factory worker
+  forms:
+    m: operaio
+    f: operaia
+    mp: operai
+    fp: operaie
+  group: Shops, food and services
+  example: Mio padre è operaio.
+- id: p23
+  it: scrittore
+  art: lo
+  en: writer
+  forms:
+    m: scrittore
+    f: scrittrice
+    mp: scrittori
+    fp: scrittrici
+  group: Arts and media
+  example: Questo scrittore è molto famoso.
+- id: p24
+  it: attore
+  art: l'
+  en: actor
+  forms:
+    m: attore
+    f: attrice
+    mp: attori
+    fp: attrici
+  group: Arts and media
+  example: L'attore è italiano.
+- id: p25
+  it: cantante
+  art: il
+  en: singer
+  forms:
+    m: cantante
+    f: cantante
+    mp: cantanti
+    fp: cantanti
+  group: Arts and media
+  example: La cantante è molto brava.

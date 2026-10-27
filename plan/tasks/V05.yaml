@@ -1,0 +1,17 @@
+id: V05
+stage: V
+title: Professions module
+size: M
+status: done
+depends_on:
+- V01
+change: 'vocab-professions with masculine and feminine forms and accepted variants (avvocata, avvocatessa; medica,
+  dottoressa), two-source ledger. Workplaces moved to V15 (owner: later). Built as basics-professions (25 jobs,
+  five groups); the module naming follows colours and family (basics-*), not vocab-*. Search finds words by their
+  other forms (cuoca finds il cuoco).'
+done_when:
+- Every feminine form verified; variants listed
+touches:
+- content/
+- app/
+- schema/

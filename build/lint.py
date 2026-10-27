@@ -64,6 +64,20 @@ def main():
                     iid = str(it.get("id"))
                     if iid in ids: errors.append("%s: duplicate item id %s" % (where, iid))
                     ids.add(iid)
+            if p["type"] == "vocab":
+                for it in p.get("items", []):
+                    w = "%s item %s" % (where, it.get("id"))
+                    for k in it:
+                        if k not in sch["item_required"]["vocab"] + sch["item_optional"]: errors.append("%s: unknown field %r" % (w, k))
+                    if "art" in it and it["art"] not in sch["articles"]: errors.append("%s: bad article %r" % (w, it["art"]))
+                    if "swatch" in it and not re.fullmatch(r"#[0-9a-fA-F]{6}", str(it["swatch"])): errors.append("%s: swatch must be #rrggbb, got %r" % (w, it["swatch"]))
+                    if "forms" in it:
+                        f = it["forms"]
+                        if not isinstance(f, dict) or "m" not in f or not set(f) <= set(sch["form_keys"]): errors.append("%s: forms needs m and only keys %s" % (w, sch["form_keys"]))
+                    if "accept_forms" in it:
+                        af = it["accept_forms"]
+                        if not (isinstance(af, dict) and set(af) <= {"f", "mp", "fp"} and all(isinstance(v, list) for v in af.values())): errors.append("%s: accept_forms must map f, mp or fp to lists" % w)
+                    if "accept" in it and not (isinstance(it["accept"], list) and all(isinstance(a, str) for a in it["accept"])): errors.append("%s: accept must be a list of words" % w)
             for field, s in strings({k: v for k, v in p.items()}):
                 if s.count("**") % 2: errors.append("%s: unbalanced ** in %r" % (where, s[:50]))
                 if re.search(r"</?[a-zA-Z]+[ >]", s): errors.append("%s: raw HTML tag in %r (use **bold** / *italic*)" % (where, s[:50]))
@@ -73,6 +87,35 @@ def main():
                 if field in sch["italian_fields"]:
                     for w in re.findall(r"[A-Za-z]+", MARK.sub("", s)):
                         if w.lower() in ACCENT: warns.append("%s: %r in Italian text, did you mean %r?" % (where, w, ACCENT[w.lower()]))
+
+    # word-list quality: no repeated words in a module, the masculine form matches the word, examples use the word
+    for mid, m in c.modules.items():
+        seen_it = {}
+        for p in m["_parts"]:
+            if p["type"] != "vocab": continue
+            for it in p.get("items", []):
+                if not any(k in it for k in ("forms", "art", "swatch", "group")): continue          # only the topic word lists
+                key = (it.get("it") or "").strip().lower()
+                if key in seen_it: errors.append("%s: word %r appears twice (%s and %s)" % (mid, it.get("it"), seen_it[key], it.get("id")))
+                seen_it[key] = it.get("id")
+                f = it.get("forms")
+                if f and f.get("m") != it.get("it"): errors.append("%s item %s: forms.m %r must equal the word %r" % (mid, it.get("id"), f.get("m"), it.get("it")))
+                if it.get("example"):
+                    wordforms = {str(it.get("it", "")).lower()} | {str(v).lower() for v in (f or {}).values()}
+                    text = it["example"].lower()
+                    if not any(re.search(r"(?<![a-zà-ù])" + re.escape(w) + r"(?![a-zà-ù])", text) for w in wordforms if w):
+                        warns.append("%s item %s: the example does not contain the word or one of its forms: %r" % (mid, it.get("id"), it["example"]))
+
+    # a topic's drills need the right fields on its words
+    for mid, m in c.modules.items():
+        kinds = m.get("drills")
+        if not kinds: continue
+        items = [it for p in m["_parts"] if p["type"] == "vocab" for it in p.get("items", [])]
+        for k in kinds:
+            if k not in sch["module"]["drills"]: errors.append("%s: unknown drill %r (allowed: %s)" % (mid, k, sch["module"]["drills"]))
+        if len(items) < 4: errors.append("%s: drills need at least 4 words, found %d" % (mid, len(items)))
+        if "swatch" in kinds and sum(1 for it in items if "swatch" in it) < 4: errors.append("%s: the swatch drill needs at least 4 words with a swatch" % mid)
+        if "gender" in kinds and sum(1 for it in items if "forms" in it) < 3: errors.append("%s: the gender drill needs at least 3 words with forms" % mid)
 
     for name, d in c.ledger.items():
         if d.get("module") not in c.modules: errors.append("ledger/%s: unknown module %r" % (name, d.get("module")))

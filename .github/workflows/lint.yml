@@ -14,7 +14,7 @@ jobs:
       - name: Check the plan
         run: python build/plan.py
       - name: App unit tests
-        run: node --test app/tests/lib.test.mjs app/tests/drills.test.mjs app/tests/sync.test.mjs app/tests/syncconfig.test.mjs app/tests/translate.test.mjs app/tests/search.test.mjs app/tests/rows.test.mjs app/tests/tiers.test.mjs app/tests/register.test.mjs
+        run: node --test app/tests/lib.test.mjs app/tests/drills.test.mjs app/tests/sync.test.mjs app/tests/syncconfig.test.mjs app/tests/translate.test.mjs app/tests/search.test.mjs app/tests/rows.test.mjs app/tests/tiers.test.mjs app/tests/register.test.mjs app/tests/install.test.mjs app/tests/vocabdrills.test.mjs app/tests/modules.test.mjs
       - uses: actions/setup-node@v4
         with:
           node-version: "22"

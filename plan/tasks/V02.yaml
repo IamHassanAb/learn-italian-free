@@ -1,0 +1,16 @@
+id: V02
+stage: V
+title: Sources and rights
+size: S
+status: done
+depends_on: []
+change: 'Git-ignore the third-party checklist; check which OnlineItalianClub lesson pages are free and add them
+  as optional resource files; choose two dictionary sources for verification. Done for the colours slice: checklist
+  git-ignored; OnlineItalianClub colours lesson checked (free to read, no login; the site also sells lessons and
+  ebooks) and added as oic-colours. Each later topic adds its own link when it is built.'
+done_when:
+- Resources recorded with cost and last-checked date; checklist not in git
+touches:
+- content/
+- app/
+- schema/

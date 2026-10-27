@@ -1,0 +1,7 @@
+id: D24
+decision: 'Install as a PWA from the GitHub Pages address: no app stores, no custom domain'
+why: 2026-10-27. Owner wants the app downloadable and easy to find. A PWA is free and already installable. Play
+  Store (25 USD once) and App Store (99 USD a year) cost money, and a custom domain costs about 10 USD a year, so
+  they are out while everything stays free.
+date: '2026-10-27'
+status: active

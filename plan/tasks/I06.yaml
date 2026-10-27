@@ -1,0 +1,13 @@
+id: I06
+stage: I
+title: Verify and install for real
+size: S
+status: todo
+depends_on:
+- I03
+change: Chrome installability check, emulated Android and iPhone runs, then the owner installs on their own phone
+  and opens it from the icon.
+done_when:
+- Owner confirms it opens in its own window from the home screen
+touches:
+- app/

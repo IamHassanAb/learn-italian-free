@@ -1,0 +1,12 @@
+id: I02
+stage: I
+title: Install state logic
+size: S
+status: done
+depends_on: []
+change: 'One small pure function that decides what to show: already installed, can install with one tap, iPhone
+  needs the Share steps, or nothing; unit-tested with fake user agents.'
+done_when:
+- Tests cover Android, desktop Chrome and Edge, iPhone Safari, installed and dismissed
+touches:
+- app/

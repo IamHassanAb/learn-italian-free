@@ -1,0 +1,14 @@
+id: V13
+stage: V
+title: Missed words come back
+size: S
+status: done
+depends_on:
+- V12
+change: After a round, a button makes the words you missed due in flashcards today.
+done_when:
+- Missed items are due in Review; nothing is changed for words you got right
+touches:
+- content/
+- app/
+- schema/

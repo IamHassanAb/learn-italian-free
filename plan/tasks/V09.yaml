@@ -1,0 +1,15 @@
+id: V09
+stage: V
+title: 'Searching for a job: phrases and words'
+size: S
+status: todo
+depends_on:
+- V01
+change: 'vocab-job-search: phrases for looking for work (Cerco lavoro, Ho esperienza come...) and the words around
+  them, two-source ledger, flagged for the P01 native-speaker read.'
+done_when:
+- Phrases verified; builds
+touches:
+- content/
+- app/
+- schema/

@@ -1,0 +1,18 @@
+id: V12
+stage: V
+title: 'Drills screen: topic grid and new question types'
+size: M
+status: done
+depends_on:
+- V10
+- V11
+change: 'Group the Drills menu (Numbers and time, Vocabulary topics, mixed round); show the colour block, tap-to-answer
+  choices, example line after each answer. Built: grouped menu, colour block, tap-to-answer 2x2 choices, example
+  line after each answer, voice-aware modes. Not built: the mixed round across all topics (add it once two or more
+  topics exist).'
+done_when:
+- Mobile audit stays at zero; browser run of a full colours round; a topic with no voice hides Listen
+touches:
+- content/
+- app/
+- schema/

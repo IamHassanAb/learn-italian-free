@@ -1,0 +1,16 @@
+id: V10
+stage: V
+title: Drill engine for topic vocabulary
+size: M
+status: done
+depends_on:
+- V01
+- V03
+change: 'lib/vocabdrills.js: pick the meaning (four choices), type it, listen, colour swatch, masculine or feminine;
+  questions use the existing question shape.'
+done_when:
+- 'Unit tests: every item makes a question, distractors are unique and never the answer, accepted variants work'
+touches:
+- content/
+- app/
+- schema/

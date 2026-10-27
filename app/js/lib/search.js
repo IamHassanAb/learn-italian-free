@@ -1,3 +1,4 @@
+import { withArticle } from "./vocabdrills.js";
 // Quick search across phrases, vocabulary, grammar lookups and your conversation log. Accent- and case-insensitive.
 // Method: every entry is flattened once into a lowercase, accent-free string ("hay"). A query matches when every word typed
 // appears in it (the start of a word ranks higher). Filters are plain field checks. This is a scan of an in-memory list,
@@ -18,7 +19,7 @@ export function buildCourseIndex(content) {
     const m = content.modules[id], src = srcOf(id);
     for (const p of m.parts) {
       if (p.type === "vocab" || p.type === "phrases") for (const it of p.items)
-        rows.push({ src, kind: p.type === "vocab" ? "word" : "phrase", id: `${p.id}.${it.id}`, deck: id, topic: m.title, it: it.it, en: it.en, hay: norm(`${it.it} ${it.en} ${it.example || ""} ${m.title}`) });
+        rows.push({ src, kind: p.type === "vocab" ? "word" : "phrase", id: `${p.id}.${it.id}`, deck: id, topic: m.title, it: withArticle(it), en: it.en, hay: norm(`${withArticle(it)} ${it.it} ${Object.values(it.forms || {}).join(" ")} ${it.en} ${it.example || ""} ${m.title}`) });
       else if (p.type === "lookup-row")
         rows.push({ src: "grammar", kind: "grammar", id: p.id, deck: id, topic: m.title, it: null, en: p.when, answer: p.answer, hay: norm(`${p.when} ${p.answer}`) });
     }

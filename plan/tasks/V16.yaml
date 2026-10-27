@@ -1,0 +1,12 @@
+id: V16
+stage: V
+title: Printable topic words PDF
+size: S
+status: todo
+depends_on:
+- V03
+change: 'One new PDF bundle (pdf-07-topic-words, file 07-Topic-Words.pdf) with every vocabulary topic, each starting on a new page, so one file prints as a whole or page by page. The 06-200-Phrases.pdf stays as it is. A "print this topic" button in the app is an optional extra (V17) if the owner wants single topics.'
+done_when:
+- The PDF builds with all finished topics and a contents list; each topic starts on its own page
+touches:
+- content/bundles/

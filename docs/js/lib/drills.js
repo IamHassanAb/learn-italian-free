@@ -53,4 +53,6 @@ export function makeSession(drillId, option, count = 10, rnd = Math.random) {
   }
   return out;
 }
+// Topic drills (colours, ...) are generated from the content and added at start-up.
+export function registerDrills(defs) { Object.assign(DRILLS, defs); }
 export const check = (q, input) => q.answers.some(a => norm(a) === norm(input));

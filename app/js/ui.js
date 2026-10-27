@@ -1,5 +1,6 @@
 // DOM helpers and the generic renderer for content parts. Text is always inserted as text nodes, never as HTML.
 import { speakable } from "./lib/util.js";
+import { withArticle } from "./lib/vocabdrills.js";
 
 export function h(tag, props, ...kids) {
   const el = document.createElement(tag);
@@ -59,7 +60,20 @@ export function renderPart(ctx, p) {
     case "bullets": out.push(h("ul", null, p.items.map(i => h("li", null, inline(i, ctx.resources))))); break;
     case "dialogue": out.push(h("div", null, p.lines.map(l => { const x = parseLine(l); return h("div", { class: "line" }, h("span", { class: "who" }, x.who || ""), h("span", { class: "txt" }, inline(x.text, ctx.resources)), speakBtn(ctx, x.text)); }))); break;
     case "table": out.push(table(ctx, p.columns, p.rows)); break;
-    case "vocab": out.push(table(ctx, p.header === false ? null : ["Italiano", "English"], p.items.map(i => [i.it, i.en]), 0)); break;
+    case "vocab": {
+      if (!p.items.some((i) => i.swatch || i.forms || i.group)) { out.push(table(ctx, p.header === false ? null : ["Italiano", "English"], p.items.map(i => [withArticle(i), i.en]), 0)); break; }
+      // words with a colour sample and/or their other forms (feminine, plural)
+      const hasForms = p.items.some((i) => i.forms);
+      const formsText = (f) => { if (!f) return ""; const u = [...new Set([f.m, f.f, f.mp, f.fp].filter(Boolean))]; return u.length === 1 ? "never changes" : u.join(" · "); };
+      out.push(h("div", { class: "tablewrap" }, h("table", null,
+        h("thead", null, h("tr", null, h("th", null, "Italiano"), h("th", null, "English"), hasForms ? h("th", null, "Forms") : null)),
+        h("tbody", null, p.items.flatMap((i, n) => [
+          i.group && i.group !== (p.items[n - 1] || {}).group ? h("tr", null, h("th", { colspan: hasForms ? 3 : 2 }, i.group)) : null,
+          h("tr", null,
+            h("td", null, h("div", { class: "row" }, i.swatch ? h("span", { class: "dot", style: `background:${i.swatch}`, "aria-hidden": "true" }) : null, speakBtn(ctx, withArticle(i)), h("span", null, withArticle(i)))),
+            h("td", null, i.en), hasForms ? h("td", { class: "small" }, formsText(i.forms)) : null)])))));
+      break;
+    }
     case "phrases": { const ex = p.items.some(i => i.example); out.push(table(ctx, ex ? ["Phrase", "English", "Example"] : ["Phrase", "English"], p.items.map(i => ex ? [i.it, i.en, i.example || ""] : [i.it, i.en]), 0)); break; }
     case "writing-task": out.push(h("details", null, h("summary", null, inline(p.title, ctx.resources)), h("p", null, inline(p.prompt, ctx.resources)), h("p", { class: "muted small" }, "Model answer:"), h("p", null, inline(p.model, ctx.resources)))); break;
     default: break;   // template blanks are for the printed PDFs

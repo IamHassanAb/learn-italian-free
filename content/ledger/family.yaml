@@ -2,6 +2,39 @@ id: family
 area: family
 module: basics-family
 claims:
-- claim: compagno/a di corso = classmate; coinquilino = flatmate
+- claim: compagno/a di corso = classmate; coinquilino = flatmate (earlier check, kept)
   source: https://www.collinsdictionary.com/dictionary/italian-english/compagno-di-classe
   verified: '2026-10-07'
+- claim: 'Family terms with their plurals and articles: lo zio / gli zii, il cugino / i cugini, la cugina / le cugine, il nipote / i nipoti, la suocera / le suocere, il suocero / i suoceri, la cognata / le cognate, il cognato / i cognati, la nuora / le nuore, il genero / i generi, la sorella / le sorelle, il fratello / i fratelli, il padre / i padri, la madre / le madri, il figlio / i figli, i nonni'
+  source: https://www.lingoda.com/blog/en/italian-for-family/
+  verified: '2026-10-27'
+- claim: Second source for the family word list and its meanings (madre, padre, fratello, sorella, nonno, nonna, zio, zia, cugino, nipote, suocero, cognato, genero, nuora)
+  source: https://migaku.com/blog/language-fun/italian-family-vocabulary
+  verified: '2026-10-27'
+- claim: 'Wife / husband plurals (la moglie / le mogli) and zii for uncles, confirmed across several family vocabulary lists'
+  source: https://berlitz.com/blog/family-in-italian
+  verified: '2026-10-27'
+- claim: 'Nipote is one form for both genders and means grandchild, nephew or niece depending on context; the plural nipoti is also the same for both. One other site claims the plural does not change, which conflicts with the standard nipoti, so it was not followed'
+  source: https://www.italki.com/en/blog/family-in-italian-language
+  verified: '2026-10-27'
+- claim: Possessives drop the article with singular family members (mia sorella, mio fratello, tua madre) but keep it in the plural (le mie sorelle, i miei fratelli); loro always keeps it (il loro zio)
+  source: https://www.uvm.edu/~cmazzoni/3grammatica/grammatica/possessives.html
+  verified: '2026-10-27'
+- claim: Second source on the same rule, and that boyfriends, girlfriends and other non-family words keep the article (il suo ragazzo, il mio fidanzato); a family noun with a suffix or an adjective also takes the article
+  source: https://italian.yabla.com/lesson-Those-Pesky-Possessive-Adjectives-567
+  verified: '2026-10-27'
+- claim: 'Sources disagree on mamma with a possessive (mia mamma vs la mia mamma), so the examples avoid it and use madre'
+  source: https://dailyitalianwords.com/mia-mamma-vs-la-mia-mamma-vs-la-mamma/
+  verified: '2026-10-27'
+- claim: coinquilino/a = flatmate, vicino = neighbour, compagno/a di classe = classmate, fidanzato/a = fiance(e)
+  source: https://www.brainscape.com/flashcards/people-12806851/packs/21245901
+  verified: '2026-10-27'
+- claim: 'ragazzo / ragazza are used in everyday speech for a boyfriend or girlfriend as well as boy / girl (seen in real flatshare posts); fidanzato / fidanzata suggests a more committed or engaged relationship. The nuance between the two is general usage and not confirmed by a dictionary source here'
+  source: https://www.condominioweb.com/forum/quesito/coinquilina-fa-vivere-il-suo-ragazzo-a-casa-162126/
+  verified: '2026-10-27'
+- claim: parente means relative, not parent (a common false friend)
+  source: https://fastitalianlearning.com/flashcards/family
+  verified: '2026-10-27'
+- claim: 'Not individually sourced: compagno di corso as an accepted alternative to compagno di classe; bambino / bambina as child; the example sentences. Worth a native-speaker read (task P01)'
+  source: https://www.lingoda.com/blog/en/italian-for-family/
+  verified: '2026-10-27'

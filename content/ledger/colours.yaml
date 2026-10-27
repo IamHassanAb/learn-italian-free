@@ -2,6 +2,24 @@ id: colours
 area: colours
 module: basics-colours
 claims:
-- claim: blu, viola, rosa, arancione and marrone are treated as invariable (marroni/arancioni are heard)
+- claim: 'Earlier note (2026-10-07), now refined below: blu, viola, rosa and arancione/marrone were described as invariable, with marroni/arancioni heard in practice'
   source: https://migaku.com/blog/language-fun/italian-colors-vocabulary-grammar-guide
   verified: '2026-10-07'
+- claim: Colours in -o (rosso, giallo, nero, bianco, grigio, azzurro) change like ordinary adjectives (-a feminine, -i masculine plural, -e feminine plural)
+  source: https://www.busuu.com/en/italian/colors
+  verified: '2026-10-27'
+- claim: Same rule for the -o colours; verde has two forms only (verde, verdi); blu, viola and rosa do not change
+  source: https://gymglish.com/en/saga-baldoria/italian-grammar/agreement-of-colors
+  verified: '2026-10-27'
+- claim: Beige is invariable together with blu, viola and rosa
+  source: https://www.learnwitholiver.com/italian/grammar-lesson-29
+  verified: '2026-10-27'
+- claim: 'Sources differ on marrone and arancione: some list them as invariable, others say they take -i in the plural (marroni, arancioni). A reply attributed to the Accademia della Crusca says grammars and dictionaries accept both the -e and the -i plural, so the drill accepts both. Not checked on the Crusca site itself.'
+  source: https://areasosta.com/faq/come-si-dice-marroni
+  verified: '2026-10-27'
+- claim: Word list taught by a free beginner lesson (bianco, giallo, arancione, rosso, rosa, viola, azzurro, blu, verde, marrone, nero); grigio and beige added by us
+  source: https://onlineitalianclub.com/italian-vocabulary-colors/
+  verified: '2026-10-27'
+- claim: 'Not covered by the sources found, so left out of the word list: celeste'
+  source: https://www.fluentu.com/blog/italian/colors-in-italian/
+  verified: '2026-10-27'

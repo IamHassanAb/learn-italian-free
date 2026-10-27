@@ -39,6 +39,17 @@ The app uses your portfolio's "Study Room at Dusk" design tokens (`app/styles.cs
 **About translation.** Translate uses your browser's on-device translator when it has one ready (desktop Chrome), otherwise the free MyMemory service, which sees the text you type
 (5,000 characters a day, or 50,000 if you add your email in Settings; the email stays on your device). Machine translation can be wrong, so every logged line starts "unchecked" until you confirm it with a local or a source.
 
+## Install it on your phone
+The app works in any browser, but it is easier to keep on your home screen. Open **https://iamhassanab.github.io/learn-italian-free/** (or scan the code) and install it:
+
+<img src="docs/icons/qr-app.png" alt="QR code for the app address" width="160">
+
+- **Android (Chrome):** tap **Install the app** on the Today screen (or the browser menu, then Install app).
+- **iPhone and iPad (Safari):** tap Share, then **Add to Home Screen**. The installed app on iPhone and iPad keeps its own data, separate from Safari, so install first, then use it from the icon. To bring progress over, use Download backup in Safari and Restore from file in the installed app, or turn on sync.
+- **Computer (Chrome or Edge):** the install icon in the address bar, or the Install button in Settings.
+
+It installs from the website, so there is no app store and no cost. It works offline after the first visit.
+
 ## Optional: sync your progress across devices
 Progress is stored on each device. To keep a phone and a laptop in step, the app can sync through **your own free Supabase project**
 (plain browser JavaScript, no server of ours). The project address and key are stored **only on each device**, never in this repository or the website.

@@ -1,0 +1,13 @@
+id: I04
+stage: I
+title: Protect your data
+size: S
+status: done
+depends_on:
+- I03
+change: Ask the browser to keep this site storage (navigator.storage.persist); explain on the install card that
+  on iPhone the installed app has its own storage, so install first or use backup or sync to carry data over.
+done_when:
+- Install card carries the warning; persist requested once; wording verified on a real iPhone if the owner has one
+touches:
+- app/

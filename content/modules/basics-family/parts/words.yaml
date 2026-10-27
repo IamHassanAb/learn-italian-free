@@ -1,0 +1,323 @@
+id: basics-family.words
+type: vocab
+title: Family and people, word by word
+items:
+- id: f01
+  it: famiglia
+  art: la
+  en: family
+  group: Close family
+  example: La mia famiglia è grande.
+- id: f02
+  it: genitori
+  art: i
+  en: parents
+  group: Close family
+  example: I miei genitori abitano a Milano.
+- id: f03
+  it: madre
+  art: la
+  en: mother
+  group: Close family
+  accept:
+  - mamma
+  example: Mia madre è insegnante.
+- id: f04
+  it: padre
+  art: il
+  en: father
+  forms:
+    m: padre
+    f: madre
+    mp: padri
+    fp: madri
+  group: Close family
+  accept:
+  - papà
+  example: Mio padre lavora in banca.
+- id: f05
+  it: sorella
+  art: la
+  en: sister
+  group: Close family
+  example: Mia sorella studia medicina.
+- id: f06
+  it: fratello
+  art: il
+  en: brother
+  forms:
+    m: fratello
+    f: sorella
+    mp: fratelli
+    fp: sorelle
+  group: Close family
+  example: Ho un fratello più piccolo.
+- id: f07
+  it: figlia
+  art: la
+  en: daughter
+  group: Close family
+  example: Mia figlia va a scuola.
+- id: f08
+  it: figlio
+  art: il
+  en: son
+  forms:
+    m: figlio
+    f: figlia
+    mp: figli
+    fp: figlie
+  group: Close family
+  example: Mio figlio ha tre anni.
+- id: f09
+  it: nonna
+  art: la
+  en: grandmother
+  group: Close family
+  example: Mia nonna cucina benissimo.
+- id: f10
+  it: nonno
+  art: il
+  en: grandfather
+  forms:
+    m: nonno
+    f: nonna
+    mp: nonni
+    fp: nonne
+  group: Close family
+  example: Mio nonno vive a Napoli.
+- id: f11
+  it: zia
+  art: la
+  en: aunt
+  group: Extended family
+  example: Mia zia abita a Roma.
+- id: f12
+  it: zio
+  art: lo
+  en: uncle
+  forms:
+    m: zio
+    f: zia
+    mp: zii
+    fp: zie
+  group: Extended family
+  example: Mio zio è medico.
+- id: f13
+  it: cugina
+  art: la
+  en: cousin (female)
+  group: Extended family
+  example: Mia cugina studia a Torino.
+- id: f14
+  it: cugino
+  art: il
+  en: cousin (male)
+  forms:
+    m: cugino
+    f: cugina
+    mp: cugini
+    fp: cugine
+  group: Extended family
+  example: Mio cugino ha venti anni.
+- id: f15
+  it: nipote
+  en: grandchild; nephew or niece
+  forms:
+    m: nipote
+    f: nipote
+    mp: nipoti
+    fp: nipoti
+  group: Extended family
+  example: Ho due nipoti.
+- id: f16
+  it: moglie
+  art: la
+  en: wife
+  group: Partners and in-laws
+  example: Sua moglie è francese.
+- id: f17
+  it: marito
+  art: il
+  en: husband
+  forms:
+    m: marito
+    f: moglie
+    mp: mariti
+    fp: mogli
+  group: Partners and in-laws
+  example: Mio marito lavora a casa.
+- id: f18
+  it: fidanzata
+  art: la
+  en: girlfriend; fiancée
+  group: Partners and in-laws
+  example: La mia fidanzata è spagnola.
+- id: f19
+  it: fidanzato
+  art: il
+  en: boyfriend; fiancé
+  forms:
+    m: fidanzato
+    f: fidanzata
+    mp: fidanzati
+    fp: fidanzate
+  group: Partners and in-laws
+  example: Il mio fidanzato è tedesco.
+- id: f20
+  it: suocera
+  art: la
+  en: mother-in-law
+  group: Partners and in-laws
+  example: Mia suocera è molto gentile.
+- id: f21
+  it: suocero
+  art: il
+  en: father-in-law
+  forms:
+    m: suocero
+    f: suocera
+    mp: suoceri
+    fp: suocere
+  group: Partners and in-laws
+  example: Mio suocero è in pensione.
+- id: f22
+  it: cognata
+  art: la
+  en: sister-in-law
+  group: Partners and in-laws
+  example: Mia cognata lavora a Bologna.
+- id: f23
+  it: cognato
+  art: il
+  en: brother-in-law
+  forms:
+    m: cognato
+    f: cognata
+    mp: cognati
+    fp: cognate
+  group: Partners and in-laws
+  example: Mio cognato ha una pizzeria.
+- id: f24
+  it: nuora
+  art: la
+  en: daughter-in-law
+  group: Partners and in-laws
+  example: Mia nuora è di Firenze.
+- id: f25
+  it: genero
+  art: il
+  en: son-in-law
+  forms:
+    m: genero
+    f: nuora
+    mp: generi
+    fp: nuore
+  group: Partners and in-laws
+  example: Mio genero è ingegnere.
+- id: f26
+  it: amica
+  art: l'
+  en: friend (female)
+  group: People around you
+  example: La mia amica è di Roma.
+- id: f27
+  it: amico
+  art: l'
+  en: friend (male)
+  forms:
+    m: amico
+    f: amica
+    mp: amici
+    fp: amiche
+  group: People around you
+  example: Il mio amico studia con me.
+- id: f28
+  it: coinquilina
+  art: la
+  en: flatmate (female)
+  group: People around you
+  example: La mia coinquilina è tedesca.
+- id: f29
+  it: coinquilino
+  art: il
+  en: flatmate (male)
+  forms:
+    m: coinquilino
+    f: coinquilina
+    mp: coinquilini
+    fp: coinquiline
+  group: People around you
+  example: Il mio coinquilino cucina bene.
+- id: f30
+  it: compagna di classe
+  art: la
+  en: classmate (female)
+  group: People around you
+  accept:
+  - compagna di corso
+  example: La mia compagna di classe è inglese.
+- id: f31
+  it: compagno di classe
+  art: il
+  en: classmate (male)
+  forms:
+    m: compagno di classe
+    f: compagna di classe
+    mp: compagni di classe
+    fp: compagne di classe
+  group: People around you
+  accept:
+  - compagno di corso
+  example: Il mio compagno di classe è spagnolo.
+- id: f32
+  it: vicina
+  art: la
+  en: neighbour (female)
+  group: People around you
+  example: La mia vicina è molto simpatica.
+- id: f33
+  it: vicino
+  art: il
+  en: neighbour (male)
+  forms:
+    m: vicino
+    f: vicina
+    mp: vicini
+    fp: vicine
+  group: People around you
+  example: Il mio vicino ha un cane.
+- id: f34
+  it: bambina
+  art: la
+  en: child (girl)
+  group: People around you
+  example: La bambina gioca in giardino.
+- id: f35
+  it: bambino
+  art: il
+  en: child (boy)
+  forms:
+    m: bambino
+    f: bambina
+    mp: bambini
+    fp: bambine
+  group: People around you
+  example: Il bambino mangia un gelato.
+- id: f36
+  it: ragazza
+  art: la
+  en: 'girl; young woman (also: girlfriend)'
+  group: People around you
+  example: Una ragazza chiede informazioni.
+- id: f37
+  it: ragazzo
+  art: il
+  en: 'boy; young man (also: boyfriend)'
+  forms:
+    m: ragazzo
+    f: ragazza
+    mp: ragazzi
+    fp: ragazze
+  group: People around you
+  example: Un ragazzo aspetta l'autobus.

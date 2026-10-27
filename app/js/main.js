@@ -16,6 +16,9 @@ import { setupView } from "./views/setup.js";
 import { searchView } from "./views/search.js";
 import { translateView } from "./views/translate.js";
 import { createTranslator } from "./lib/translate.js";
+import { registerDrills } from "./lib/drills.js";
+import { buildTopicDrills, withArticle } from "./lib/vocabdrills.js";
+import { createInstall } from "./install.js";
 
 const TABS = [["today", "Today"], ["review", "Review"], ["translate", "Translate"], ["scenarios", "Role-play"], ["more", "More"]];
 const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, translate: translateView, search: searchView, more: moreView };
@@ -33,6 +36,7 @@ let storage = null;
 try { storage = window.localStorage; } catch { /* blocked: the store falls back to memory */ }
 const store = createStore(storage);
 const speech = createSpeech(window);
+const install = createInstall({ win: window, storage });      // created first: the browser can announce "installable" before the screens exist
 const app = document.getElementById("app");
 let current = null, ctx = null;
 
@@ -59,7 +63,7 @@ function buildCtx(content, sync, syncInfo) {
     for (const id of content.order) {
       const m = content.modules[id];
       for (const p of m.parts) if (p.type === "vocab" || p.type === "phrases")
-        for (const it of p.items) list.push({ id: `${p.id}.${it.id}`, deck: id, deckTitle: m.title, it: it.it, en: it.en, example: it.example });
+        for (const it of p.items) list.push({ id: `${p.id}.${it.id}`, deck: id, deckTitle: m.title, it: withArticle(it), en: it.en, example: it.example });
     }
     return list;
   };
@@ -72,7 +76,7 @@ function buildCtx(content, sync, syncInfo) {
   };
   const hour = () => new Date().getHours();
   return {
-    content, store, speech, sync, translator: createTranslator({ win: window, storage, getSettings: () => store.state.settings }), syncConfig: syncInfo.config, syncSource: syncInfo.source, storage, resources: content.resources, cards, decks, applyTheme,
+    content, store, speech, sync, install, translator: createTranslator({ win: window, storage, getSettings: () => store.state.settings }), syncConfig: syncInfo.config, syncSource: syncInfo.source, storage, resources: content.resources, cards, decks, applyTheme,
     greeting: () => (hour() < 5 ? "Buonanotte" : hour() < 17 ? "Buongiorno" : "Buonasera"),
     refresh: () => render(),
   };
@@ -136,6 +140,7 @@ async function boot() {
     const device = loadDeviceConfig(storage);
     const active = device || { supabaseUrl: config.supabaseUrl || "", supabaseKey: config.supabaseKey || "" };
     const source = device ? "device" : (active.supabaseUrl && active.supabaseKey ? "file" : "none");
+    registerDrills(buildTopicDrills(content));
     ctx = buildCtx(content, createSync({ config: active, store, storage }), { config: active, source });
   } catch (err) {
     app.replaceChildren(h("div", { class: "stack" }, h("h1", null, "Could not load the lessons"), h("p", { class: "muted" }, "Check your connection and reload. If you opened index.html directly from disk, serve the folder over http instead (for example: python -m http.server)."), h("p", { class: "muted small" }, String(err.message || err))));
@@ -144,6 +149,7 @@ async function boot() {
   window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
   render();
   startSync();
+  install.requestPersistence();
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }

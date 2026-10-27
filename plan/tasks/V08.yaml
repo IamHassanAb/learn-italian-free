@@ -1,0 +1,15 @@
+id: V08
+stage: V
+title: Nationalities module
+size: S
+status: todo
+depends_on:
+- V01
+change: 'vocab-nationalities: countries (capital letter) and nationality adjectives (lower case, with forms), two-source
+  ledger.'
+done_when:
+- Words verified; countries and adjectives checked
+touches:
+- content/
+- app/
+- schema/

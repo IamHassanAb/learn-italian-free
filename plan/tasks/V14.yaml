@@ -1,0 +1,14 @@
+id: V14
+stage: V
+title: Add the remaining topics and check on a phone
+size: S
+status: todo
+depends_on:
+- V12
+change: Check V04 to V09 in the engine with no code changes; run the owner on a real phone.
+done_when:
+- Owner has done a round of each topic on their phone
+touches:
+- content/
+- app/
+- schema/

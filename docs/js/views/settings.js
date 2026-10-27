@@ -1,3 +1,4 @@
+import { installCard } from "./installcard.js";
 import { h, toast, mount } from "../ui.js";
 import { localDate } from "../lib/util.js";
 import { validateConfig, saveDeviceConfig, clearDeviceConfig, makeSetupPayload } from "../lib/syncconfig.js";
@@ -86,6 +87,7 @@ export function settingsView(ctx) {
         h("div", { class: "field" }, h("label", { for: "set-temail" }, "Your email (optional)"),
           h("input", { type: "email", id: "set-temail", value: s.translateEmail || "", autocomplete: "email", autocapitalize: "none", spellcheck: "false", onChange: (e) => store.setting("translateEmail", e.target.value.trim()) })),
         h("p", { class: "muted small" }, "MyMemory allows 5,000 characters a day, or 50,000 if it has an email. The email is stored only on this device and sent to MyMemory with each translation.")),
+      installCard(ctx),
       syncCard(),
       h("section", { class: "card stack" }, h("h2", null, "Your progress"),
         h("p", { class: "muted small" }, store.persistent() ? "Progress is saved in this browser on this device only. Back it up to move it to another device." : "This browser is blocking storage, so progress will be lost when you close the tab."),

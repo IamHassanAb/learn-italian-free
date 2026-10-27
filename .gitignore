@@ -25,3 +25,6 @@ local/
 
 # third-party textbook kept for private study; not ours to publish
 italian-a1-a2-book.pdf
+
+# third-party study checklist (OnlineItalianClub); kept for our own planning
+checklist-A1-version-2.0*.doc

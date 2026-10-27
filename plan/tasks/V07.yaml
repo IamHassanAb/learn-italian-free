@@ -1,0 +1,14 @@
+id: V07
+stage: V
+title: Classroom objects module
+size: S
+status: todo
+depends_on:
+- V01
+change: 'vocab-classroom: objects and phrases in a classroom, with articles, two-source ledger.'
+done_when:
+- Words verified; builds
+touches:
+- content/
+- app/
+- schema/

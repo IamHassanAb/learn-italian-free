@@ -1,0 +1,28 @@
+id: professions
+area: professions
+module: basics-professions
+claims:
+- claim: 'Professions with their forms as listed by a free beginner lesson: operaio / operaia, commesso / commessa, insegnante (no feminine form), infermiere / infermiera, farmacista / farmacista, studente / studentessa, cameriere / cameriera, impiegato / impiegata, dottore / dottoressa, attore / attrice, scrittore / scrittrice, cantante / cantante'
+  source: https://onlineitalianclub.com/italian-vocabulary-professions/
+  verified: '2026-10-28'
+- claim: 'Second source: avvocato / avvocata, programmatore / programmatrice, professore / professoressa, parrucchiere / parrucchiera, giornalista, barista, cuoco / cuoca, dentista, farmacista, attore / attrice, impiegato / impiegata; -tore becomes -trice, -ista keeps one form; la medica is the modern feminine of medico'
+  source: https://migaku.com/blog/language-fun/italian-professions-vocabulary
+  verified: '2026-10-28'
+- claim: 'Endings: -iere becomes -iera (cameriere, cameriera; infermiere, infermiera; the same rule gives cassiere, cassiera and parrucchiere, parrucchiera); words in -ista and -nte do not change (farmacista, insegnante)'
+  source: https://blogs.transparent.com/italian/?p=3591
+  verified: '2026-10-28'
+- claim: 'Feminine professional titles: the Accademia della Crusca (quoted by the Ordine degli Avvocati di Torino) recommends architetta, medica, chirurga, avvocata; avvocatessa is also admitted but can sound ironic. Quoted at second hand, not checked on the Crusca site itself'
+  source: https://ordineavvocatitorino.it/sites/default/files/documents/CPO/6%20MAGGIO%20-%20L'importanza%20di%20una%20riflessione%20sugli%20usi%20della%20lingua%20sotto%20il%20profilo%20di%20genere%20-%20Silvia%20Nugara.pdf
+  verified: '2026-10-28'
+- claim: 'Avvocata and avvocatessa are both admitted by the Accademia della Crusca, without one prevailing; some prefer avvocata'
+  source: https://brocardi.it/notizie-giuridiche/dice-avvocata-avvocato-battaglia-ideologica-dibattito-aperto-accademia/3455.html
+  verified: '2026-10-28'
+- claim: 'Ingegnera: the Italian national council of engineers approved a stamp reading Ingegnera, so the feminine is official; l''ingegnere used for a woman is also still common, so both are accepted'
+  source: https://www.cni.it/images/Rassegna_stampa/2023/19_08.pdf
+  verified: '2026-10-28'
+- claim: 'Usage is debated: -essa forms (professoressa, dottoressa, studentessa) are standard and everyday, but for newer titles -essa can sound ironic and some speakers prefer the masculine word with a feminine article (la presidente). The drills accept the common alternatives'
+  source: https://www.italianpod101.com/lesson/absolute-beginner-questions-answered-by-marika-15-profession-names-masculine-or-feminine
+  verified: '2026-10-28'
+- claim: 'NOT individually sourced: ricercatore / ricercatrice (follows the regular -tore, -trice pattern above), cassiere / cassiera and parrucchiere / parrucchiera plurals (pattern), and the example sentences. Worth a native-speaker read (task P01)'
+  source: https://blogs.transparent.com/italian/?p=3591
+  verified: '2026-10-28'

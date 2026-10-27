@@ -176,3 +176,13 @@ body[data-hand="right"] .handrow { justify-content: flex-end; } body[data-hand="
 /* search filters */
 .filters > summary { min-height: 48px; }
 .filters .field > label { margin-bottom: 6px; }
+
+/* colour sample in the colour drill, and the dot beside a colour word */
+.dot { width: 16px; height: 16px; border-radius: 50%; border: 1px solid hsl(var(--foreground) / .35); flex: none; }
+.swatch { width: 100%; max-width: 240px; height: 96px; border-radius: var(--radius); border: 2px solid hsl(var(--border)); margin-bottom: 12px; }
+
+/* the hidden attribute must win over button display rules (the Next button was showing before an answer) */
+[hidden] { display: none !important; }
+/* tap-to-answer choices: two columns of big buttons */
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.choices .btn { min-height: 56px; font-size: 1rem; }

@@ -1,0 +1,14 @@
+id: V01
+stage: V
+title: Content model for topic vocabulary
+size: S
+status: done
+depends_on: []
+change: Add optional item fields (art, forms, swatch, group, accept) and an optional drills list on modules to the
+  schema; lint checks that each drill type has the fields it needs.
+done_when:
+- Lint rejects a gender drill without forms and a swatch drill without swatches; existing modules still pass
+touches:
+- content/
+- app/
+- schema/

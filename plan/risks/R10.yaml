@@ -1,0 +1,6 @@
+id: R10
+risk: On iPhone the installed app keeps its own storage, separate from Safari, so data saved in Safari does not
+  appear in the installed app; Safari may also delete a website data after about a week without use
+affects: I03-I06
+mitigation: Say so on the install card, install before logging data, carry data over with backup restore or sync,
+  and ask the browser to keep storage. To be confirmed on a real iPhone.

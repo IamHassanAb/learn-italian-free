@@ -17,9 +17,22 @@ item_required:
   vocab: [id, it, en]
   phrases: [id, it, en]
 
+# Optional extras on vocab items (all checked by build/lint.py):
+#   art     the definite article, shown with the word (il, lo, la, l', i, gli, le)
+#   forms   {m, f, mp, fp}: masculine, feminine, masculine plural, feminine plural (adjectives, professions, nationalities)
+#   swatch  a colour as #rrggbb, for colour drills
+#   group   a short label for a sub-list
+#   accept  extra spellings accepted for the word itself (mamma for madre)
+#   accept_forms  extra spellings accepted for a form: {f: [...], mp: [...], fp: [...]} (arancione for the plural arancioni)
+#   example a short Italian line using the word
+item_optional: [art, forms, swatch, group, accept, accept_forms, example]
+articles: [il, lo, la, "l'", i, gli, le]
+form_keys: [m, f, mp, fp]
+
 module:
   required: [id, title, step, level, skill, parts]
-  optional: [show_title, persona, setting, register, tier, lookup_columns, goal]
+  optional: [show_title, persona, setting, register, tier, lookup_columns, goal, drills]
+  drills: [pick, type, listen, swatch, gender]   # exercise types a topic module offers; see lint for what each needs
   tiers: [1, 2, 3, 4]               # scenario difficulty: 1 follow the script, 2 handle surprises, 3 improvise, 4 open conversation
   skills: [method, vocab, reading, listening, speaking, grammar, writing]
   steps: [0, 1, 2, 3, 4, 5]          # 0 = overview, not part of the 5-step path

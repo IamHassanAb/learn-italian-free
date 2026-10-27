@@ -1,6 +1,7 @@
-import { h, speakBtn, mount } from "../ui.js";
+import { h, speakBtn, mount, toast } from "../ui.js";
 import { localDate } from "../lib/util.js";
 import { DRILLS, makeSession, check } from "../lib/drills.js";
+import { setVoiceAvailable } from "../lib/vocabdrills.js";
 
 export function drillsView(ctx, params) {
   const root = h("div", { class: "stack" });
@@ -8,16 +9,22 @@ export function drillsView(ctx, params) {
   const opts = {};   // chosen option per drill
 
   function menu() {
-    mount(root, 
+    setVoiceAvailable(ctx.speech.available());
+    const card = ([id, d]) => {
+      const stats = ctx.store.state.drills[id], voiceOff = d.needsVoice && !ctx.speech.available();
+      const options = d.options.filter((o) => !(d.optionNeedsVoice || []).includes(o) || ctx.speech.available());
+      opts[id] ||= d.defaultOption || options[1] || options[0];
+      if (!options.includes(opts[id])) opts[id] = options[0];
+      return h("section", { class: "card stack" },
+        h("div", null, h("h2", null, d.title), h("p", { class: "muted small" }, d.blurb, stats ? `  Best so far: ${stats.correct}/${stats.total} over ${stats.sessions} session${stats.sessions === 1 ? "" : "s"}.` : "")),
+        options.length > 1 ? h("div", { class: "row", role: "group", "aria-label": "Mode" }, options.map(o => h("button", { class: "chip", type: "button", "aria-pressed": String(opts[id] === o), onClick: (e) => { opts[id] = o; [...e.target.parentNode.children].forEach(c => c.setAttribute("aria-pressed", String(c === e.target))); } }, o))) : null,
+        voiceOff ? h("p", { class: "muted small" }, "No Italian voice found on this device, so this drill is unavailable here.") : h("button", { class: "btn warm", type: "button", onClick: () => run(id, opts[id]) }, "Start"));
+    };
+    const groups = {};
+    for (const e of Object.entries(DRILLS)) (groups[e[1].group || "Numbers and time"] ||= []).push(e);
+    mount(root,
       h("div", null, h("p", { class: "eyebrow" }, "Drills"), h("h1", null, "Quick practice"), h("p", { class: "muted" }, "Ten questions each. Generated fresh every time.")),
-      Object.entries(DRILLS).map(([id, d]) => {
-        const stats = ctx.store.state.drills[id], voiceOff = d.needsVoice && !ctx.speech.available();
-        opts[id] ||= d.options[1] || d.options[0];
-        return h("section", { class: "card stack" },
-          h("div", null, h("h2", null, d.title), h("p", { class: "muted small" }, d.blurb, stats ? `  Best so far: ${stats.correct}/${stats.total} over ${stats.sessions} session${stats.sessions === 1 ? "" : "s"}.` : "")),
-          d.options.length > 1 ? h("div", { class: "row", role: "group", "aria-label": "Range" }, d.options.map(o => h("button", { class: "chip", type: "button", "aria-pressed": String(opts[id] === o), onClick: (e) => { opts[id] = o; [...e.target.parentNode.children].forEach(c => c.setAttribute("aria-pressed", String(c === e.target))); } }, o))) : null,
-          voiceOff ? h("p", { class: "muted small" }, "No Italian voice found on this device, so this drill is unavailable here.") : h("button", { class: "btn warm", type: "button", onClick: () => run(id, opts[id]) }, "Start"));
-      }));
+      Object.entries(groups).map(([g, list]) => h("section", { class: "stack" }, h("h2", null, g), h("div", { class: g === "Vocabulary topics" ? "grid" : "stack" }, list.map(card)))));
   }
 
   function run(id, opt) {
@@ -42,22 +49,29 @@ export function drillsView(ctx, params) {
       input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); submit(false); } });
       const isListen = q.kind.endsWith("listen");
       // multiple-choice questions show big buttons instead of a text box
-      const choiceRow = h("div", { class: "row", role: "group", "aria-label": "Choose" }, (q.choices || []).map((c) => h("button", { class: "btn", type: "button", onClick: () => { input.value = c; submit(false); } }, c)));
+      const choiceRow = h("div", { class: "choices", role: "group", "aria-label": "Choose" }, (q.choices || []).map((c) => h("button", { class: "btn", type: "button", onClick: () => { input.value = c; submit(false); } }, c)));
       mount(root, 
         h("div", { class: "row between" }, h("p", { class: "eyebrow" }, `${DRILLS[id].title} · ${i + 1}/${qs.length}`), h("button", { class: "btn ghost small", type: "button", onClick: menu }, "End")),
         h("div", { class: "progress" }, h("i", { style: `width:${(i / qs.length) * 100}%` })),
         h("section", { class: "card stack" },
           isListen ? h("div", { class: "row" }, h("button", { class: "btn", type: "button", onClick: () => ctx.speech.speak(q.speak, ctx.store.state.settings.rate) }, "▶ Play"), h("span", { class: "muted small" }, q.prompt))
-                   : h("div", null, h("div", { class: "flash" }, q.prompt), q.hint ? h("p", { class: "muted small" }, q.hint) : null),
+                   : h("div", null, q.swatch ? h("div", { class: "swatch", style: `background:${q.swatch}`, role: "img", "aria-label": "A colour sample" }) : null, h("div", { class: "flash" }, q.prompt), q.hint ? h("p", { class: "muted small" }, q.hint) : null),
           q.choices ? choiceRow : [h("div", { class: "field" }, h("label", { for: "ans" }, "Your answer"), input), h("div", { class: "row" }, check_btn, skip)], result, next));
       if (!q.choices) input.focus();
       if (isListen) setTimeout(() => ctx.speech.speak(q.speak, ctx.store.state.settings.rate), 150);
+    }
+    // Missed words go back to the start of the flashcard ladder, due today.
+    function requeue(list) {
+      const ids = [...new Set(list.filter((q) => q.card).map((q) => q.card))];
+      for (const id of ids) { const st = ctx.store.card(id) || { box: 0, reps: 0, lapses: 0 }; ctx.store.setCard(id, { ...st, box: 0, due: today, lapses: (st.lapses || 0) + (st.reps ? 1 : 0) }); }
+      toast(`${ids.length} word${ids.length === 1 ? "" : "s"} due in Review today.`);
     }
     function done() {
       ctx.store.addDrill(today, id, correct, qs.length);
       mount(root, 
         h("div", null, h("p", { class: "eyebrow" }, DRILLS[id].title), h("h1", null, `${correct} / ${qs.length}`)),
-        mistakes.length ? h("section", { class: "card" }, h("h2", null, "Worth another look"), h("ul", null, mistakes.map(q => h("li", null, `${q.prompt} → ${q.show}`)))) : h("p", { class: "ok" }, "Perfect round."),
+        mistakes.length ? h("section", { class: "card stack" }, h("h2", null, "Worth another look"), h("ul", null, mistakes.map(q => h("li", null, `${q.prompt} → ${q.show}`))),
+          mistakes.some((q) => q.card) ? h("button", { class: "btn", type: "button", onClick: (e) => { requeue(mistakes); e.target.disabled = true; } }, "Put the missed words in today's review") : null) : h("p", { class: "ok" }, "Perfect round."),
         h("div", { class: "row" }, h("button", { class: "btn primary", type: "button", onClick: () => run(id, opt) }, "Again"), h("button", { class: "btn", type: "button", onClick: menu }, "All drills")));
     }
     step();

@@ -4,4 +4,10 @@ step: 4
 level: A1
 skill: vocab
 parts:
-- vocab
+- intro
+- words
+drills:
+- pick
+- type
+- listen
+- gender

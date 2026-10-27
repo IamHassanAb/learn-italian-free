@@ -1,0 +1,15 @@
+id: B19
+stage: B
+title: Cognate practice (Step 1)
+size: M
+status: todo
+depends_on:
+- B03
+change: 'Step 1 of the method has only reading material so far. Add a short practice: see an English word, guess
+  the Italian from the ending pattern (-tion to -zione, -ty to -tà, -ous to -oso), then check; include the false
+  friends. Built from the existing cognates module, so no new word lists to maintain.'
+done_when:
+- A 10-question round runs on the phone from the cognates module data; false friends are marked and explained
+touches:
+- app/
+- content/

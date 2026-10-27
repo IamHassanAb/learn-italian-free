@@ -3,8 +3,9 @@ import assert from "node:assert/strict";
 import { norm, buildIndex, search } from "../js/lib/search.js";
 
 const content = {
-  order: ["pb-health", "scenario-bar", "basics-time", "step3-grammar"],
+  order: ["basics-jobs", "pb-health", "scenario-bar", "basics-time", "step3-grammar"],
   modules: {
+    "basics-jobs": { title: "Jobs", parts: [{ id: "pj", type: "vocab", items: [{ id: "a", it: "cuoco", art: "il", en: "cook", forms: { m: "cuoco", f: "cuoca", mp: "cuochi", fp: "cuoche" } }] }] },
     "pb-health": { title: "Healthcare", parts: [{ id: "p1", type: "phrases", items: [{ id: "a", it: "Dov'è la farmacia?", en: "Where is the pharmacy?" }, { id: "b", it: "Ho bisogno di un medico.", en: "I need a doctor." }] }] },
     "scenario-bar": { title: "Al bar", parts: [{ id: "p2", type: "vocab", items: [{ id: "a", it: "un caffè", en: "a coffee" }] }] },
     "basics-time": { title: "Time", parts: [{ id: "p3", type: "vocab", items: [{ id: "a", it: "l'ora", en: "the hour" }] }] },
@@ -37,7 +38,7 @@ test("log notes and situations are searchable", () => {
 });
 test("filters: source, kind and topic combine", () => {
   assert.deepEqual(ids(search(index, "", { src: set("scenario") })), ["p2.a"]);
-  assert.deepEqual(ids(search(index, "", { kind: set("word") })), ["p2.a", "p3.a"]);
+  assert.deepEqual(ids(search(index, "", { kind: set("word") })), ["pj.a", "p2.a", "p3.a"]);
   assert.deepEqual(ids(search(index, "", { src: set("phrasebook", "scenario"), kind: set("word") })), ["p2.a"]);
   assert.deepEqual(ids(search(index, "", { deck: set("basics-time") })), ["p3.a"]);
 });
@@ -52,4 +53,8 @@ test("a query and a filter work together; grammar is searchable", () => {
   assert.equal(search(index, "moment", { src: set("log"), sit: set("shop") }).length, 1);
   assert.equal(search(index, "moment", { sit: set("café") }).length, 0);
   assert.equal(search(index, "word the")[0].kind, "grammar");
+});
+
+test("words are found by their other forms and by the article form", () => {
+  assert.equal(search(index, "cuoca")[0].id, "pj.a"); assert.equal(search(index, "il cuoco")[0].id, "pj.a"); assert.equal(search(index, "cuoche")[0].id, "pj.a");
 });

@@ -1,0 +1,84 @@
+id: basics-colours.words
+type: vocab
+title: The colours, one by one
+items:
+- id: c01
+  it: rosso
+  en: red
+  swatch: '#d32f2f'
+  forms: {m: rosso, f: rossa, mp: rossi, fp: rosse}
+  example: Una macchina rossa.
+- id: c02
+  it: arancione
+  en: orange
+  swatch: '#f57c00'
+  forms: {m: arancione, f: arancione, mp: arancioni, fp: arancioni}
+  accept_forms: {mp: [arancione], fp: [arancione]}
+  example: Una maglia arancione.
+- id: c03
+  it: giallo
+  en: yellow
+  swatch: '#fbc02d'
+  forms: {m: giallo, f: gialla, mp: gialli, fp: gialle}
+  example: Un fiore giallo.
+- id: c04
+  it: verde
+  en: green
+  swatch: '#388e3c'
+  forms: {m: verde, f: verde, mp: verdi, fp: verdi}
+  example: Una mela verde.
+- id: c05
+  it: azzurro
+  en: light blue
+  swatch: '#4fc3f7'
+  forms: {m: azzurro, f: azzurra, mp: azzurri, fp: azzurre}
+  example: Un cielo azzurro.
+- id: c06
+  it: blu
+  en: dark blue
+  swatch: '#1e40af'
+  forms: {m: blu, f: blu, mp: blu, fp: blu}
+  example: Una giacca blu.
+- id: c07
+  it: viola
+  en: purple
+  swatch: '#7b1fa2'
+  forms: {m: viola, f: viola, mp: viola, fp: viola}
+  example: Una sciarpa viola.
+- id: c08
+  it: rosa
+  en: pink
+  swatch: '#f48fb1'
+  forms: {m: rosa, f: rosa, mp: rosa, fp: rosa}
+  example: Una borsa rosa.
+- id: c09
+  it: marrone
+  en: brown
+  swatch: '#795548'
+  forms: {m: marrone, f: marrone, mp: marroni, fp: marroni}
+  accept_forms: {mp: [marrone], fp: [marrone]}
+  example: Un cane marrone.
+- id: c10
+  it: grigio
+  en: grey
+  swatch: '#9e9e9e'
+  forms: {m: grigio, f: grigia, mp: grigi, fp: grigie}
+  example: Un gatto grigio.
+- id: c11
+  it: nero
+  en: black
+  swatch: '#111111'
+  forms: {m: nero, f: nera, mp: neri, fp: nere}
+  example: Un caffè nero.
+- id: c12
+  it: bianco
+  en: white
+  swatch: '#fafafa'
+  forms: {m: bianco, f: bianca, mp: bianchi, fp: bianche}
+  example: Una casa bianca.
+- id: c13
+  it: beige
+  en: beige
+  swatch: '#d9c7a3'
+  forms: {m: beige, f: beige, mp: beige, fp: beige}
+  example: Un cappotto beige.

@@ -1,0 +1,15 @@
+id: V11
+stage: V
+title: Register topics as drills
+size: S
+status: done
+depends_on:
+- V10
+change: Generate one drill per module that lists drills; stats stored under vocab-<topic> in the existing drill
+  totals.
+done_when:
+- Colours shows in the Drills list and saves its score; sync tests unchanged
+touches:
+- content/
+- app/
+- schema/

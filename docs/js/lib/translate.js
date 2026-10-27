@@ -47,6 +47,21 @@ function dedupe(alts, best) {
   return out.slice(0, 3);
 }
 
+// MyMemory sometimes returns the input unchanged as its top answer (for "sky" it said "sky" and listed "cielo." lower down),
+// and adds a full stop to single words. Prefer a real translation from the alternatives, and match the input's punctuation.
+const sameText = (a, b) => String(a).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim() === String(b).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+export function polish(input, best, alts) {
+  const stop = /[.!?…]\s*$/.test(input) ? (s) => s : (s) => s.replace(/\.\s*$/, "");
+  alts = alts.map((a) => ({ ...a, text: stop(a.text.trim()) })).filter((a) => a.text);
+  best = stop(best.trim());
+  if (sameText(best, input)) {
+    const better = alts.filter((a) => !sameText(a.text, input)).sort((x, y) => y.match - x.match)[0];
+    if (better) { alts = alts.filter((a) => a !== better); alts.push({ text: best, match: 0, by: "" }); best = better.text; }
+  }
+  const out = dedupe(alts.filter((a) => !sameText(a.text, input) || sameText(best, input)), best);
+  return { text: best, alternatives: out, provider: "mymemory", unchanged: sameText(best, input) };
+}
+
 async function myMemory({ fetchImpl, text, from, to, email }) {
   const parts = splitText(text); const done = []; let alternatives = [];
   for (const part of parts) {
@@ -62,8 +77,7 @@ async function myMemory({ fetchImpl, text, from, to, email }) {
     done.push(t);
     if (parts.length === 1) alternatives = (j.matches || []).map((m) => ({ text: decodeEntities(m.translation || ""), match: Number(m.match) || 0, by: m["created-by"] || "" }));
   }
-  const best = done.join(" ");
-  return { text: best, alternatives: dedupe(alternatives, best), provider: "mymemory" };
+  return polish(text, done.join(" "), alternatives);
 }
 
 async function chromeOnDevice({ win, cache, text, from, to }) {
