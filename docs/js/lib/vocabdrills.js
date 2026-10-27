@@ -19,8 +19,10 @@ export const setVoiceAvailable = (v) => { voiceAvailable = !!v; };
 
 // Distinct wrong choices from the same topic; the right one is placed at a random position.
 function choicesFor(correct, pool, textOf, rnd, n = 4) {
+  // wrong choices come from the same group when there are enough (a sentence among sentences, not among single words)
+  const near = pool.filter((x) => x !== correct && correct.group && x.group === correct.group);
   const want = textOf(correct), seen = new Set([want]), wrong = [];
-  for (const w of shuffle(pool, rnd)) { const t = textOf(w); if (!seen.has(t)) { seen.add(t); wrong.push(t); if (wrong.length === n - 1) break; } }
+  for (const w of shuffle(near.length >= n - 1 && new Set(near.map(textOf)).size >= n - 1 ? near : pool, rnd)) { const t = textOf(w); if (!seen.has(t)) { seen.add(t); wrong.push(t); if (wrong.length === n - 1) break; } }
   return shuffle([want, ...wrong], rnd);
 }
 

@@ -1,0 +1,28 @@
+id: nationalities
+area: nationalities
+module: basics-nationalities
+claims:
+- claim: 'Nationalities with forms in a free beginner lesson: italiano / italiana, tedesco / tedesca, spagnolo / spagnola, austriaco / austriaca, svizzero / svizzera, polacco / polacca, russo / russa; inglese, irlandese, portoghese, francese, danese (one form for both genders). Masculine ends in -o and feminine in -a; words in -ese are the same for men and women'
+  source: https://onlineitalianclub.com/italian-vocabulary-nationalities/
+  verified: '2026-10-28'
+- claim: 'Four-form adjectives (m. sg, f. sg, m. pl, f. pl): americano, indiano, egiziano, marocchino, brasiliano, messicano; two-form: cinese / cinesi, giapponese / giapponesi, canadese / canadesi. Nationality adjectives are never capitalised; country names are'
+  source: https://elon.io/grammar/italian/adjectives/nationality-adjectives
+  verified: '2026-10-28'
+- claim: 'Second source for the patterns: spagnoli / spagnole, polacchi / polacche, -e nationalities with only singular and plural (inglese, inglesi), pakistano or pachistano (a), turco (a)'
+  source: https://franoi.com/columns/painting-with-adjectives/
+  verified: '2026-10-28'
+- claim: 'Pachistano is an alternative spelling of pakistano (a dictionary-style entry); pakistano is the form used in the module, pachistano is accepted'
+  source: https://kaweah.freedombox.rocks/kiwix/wiktionary_en_all_maxi_2023-04/pachistano
+  verified: '2026-10-28'
+- claim: 'Countries with their articles: l''Italia, la Francia, la Cina, l''India, l''Inghilterra, la Spagna, il Giappone, il Canada, il Brasile, il Messico, l''Egitto, gli Stati Uniti. After in a singular country drops the article (in Italia, in Cina, in Giappone), plural names keep it (negli Stati Uniti); after da the article stays (dalla Francia, dall''Italia, degli Stati Uniti)'
+  source: https://elon.io/grammar/italian/articles/with-countries
+  verified: '2026-10-28'
+- claim: 'Second source: la Francia, la Spagna (dalla Spagna), il Portogallo (dal Portogallo), il Giappone, gli Stati Uniti (dagli Stati Uniti), l''Italia; vivo in Italia, andiamo in Francia, negli Stati Uniti'
+  source: https://preply.com/en/blog/country-names-in-italian/
+  verified: '2026-10-28'
+- claim: 'il Pakistan (masculine, with the article) as used by an Italian school geography page; weaker than the others: no dictionary entry was found. dal Pakistan follows the da + il pattern'
+  source: https://www.skuola.net/geografia/pakistan.html
+  verified: '2026-10-28'
+- claim: 'NOT individually sourced: the plural forms austriaci / austriache (the regular pattern for -aco words), turchi / turche, tedeschi / tedesche (regular -co pattern, matching the sourced polacchi / polacche), pakistani / pakistane, and the example sentences. Left out for lack of a source on the article or the form: Germania, Svizzera, Austria, Polonia, Russia, Turchia, Grecia, Marocco, Irlanda, Australia, Regno Unito, greco, australiano, britannico. Worth a native-speaker read (task P01)'
+  source: https://elon.io/grammar/italian/adjectives/nationality-adjectives
+  verified: '2026-10-28'

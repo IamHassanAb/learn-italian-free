@@ -2,11 +2,13 @@ id: V06
 stage: V
 title: School and studying module
 size: S
-status: todo
+status: done
 depends_on:
 - V01
 change: 'vocab-school: school, university, studying, exams, with examples that fit a student in Italy, two-source
-  ledger.'
+  ledger. Built as basics-school (27 words and phrases in four groups: places, study life, degrees and credits,
+  verbs and phrases). Sources: two vocabulary lists plus university pages (Sapienza glossary, University of Pisa,
+  Perugia, Palermo). Left out for lack of a source: borsa di studio, dipartimento, facolta, orario.'
 done_when:
 - Words verified; builds
 touches:

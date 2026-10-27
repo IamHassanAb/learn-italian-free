@@ -1,0 +1,185 @@
+id: basics-job-search.words
+type: vocab
+title: Looking for work, word by word
+items:
+- id: j01
+  it: lavoro
+  art: il
+  en: job; work
+  group: Looking for work
+  example: Cerco un lavoro in un bar.
+- id: j02
+  it: cercare lavoro
+  en: to look for a job
+  group: Looking for work
+  example: Voglio cercare lavoro in un negozio.
+- id: j03
+  it: centro per l'impiego
+  art: il
+  en: job centre
+  group: Looking for work
+  example: Vado al centro per l'impiego.
+- id: j04
+  it: opportunità di lavoro
+  art: l'
+  en: job vacancy
+  group: Looking for work
+  example: C'è un'opportunità di lavoro in un bar.
+- id: j05
+  it: offerta di lavoro
+  art: l'
+  en: job offer; job ad
+  group: Looking for work
+  example: Ho letto un'offerta di lavoro.
+- id: j06
+  it: azienda
+  art: l'
+  en: company
+  group: Looking for work
+  example: L'azienda cerca personale.
+- id: j07
+  it: curriculum
+  art: il
+  en: CV; résumé
+  group: Looking for work
+  example: Devo aggiornare il mio curriculum.
+- id: j08
+  it: lettera di presentazione
+  art: la
+  en: cover letter
+  group: Looking for work
+  example: Scrivo una lettera di presentazione.
+- id: j09
+  it: fare domanda di lavoro
+  en: to apply for a job
+  group: Looking for work
+  example: Voglio fare domanda di lavoro a una banca.
+- id: j10
+  it: candidarsi
+  en: to apply (for a position)
+  group: Looking for work
+  example: Per candidarsi bisogna mandare il curriculum.
+- id: j11
+  it: colloquio di lavoro
+  art: il
+  en: job interview
+  group: Interview and hiring
+  example: Ho un colloquio di lavoro domani.
+- id: j12
+  it: stage
+  art: lo
+  en: internship
+  group: Interview and hiring
+  accept:
+  - tirocinio
+  example: Ho fatto uno stage in un'azienda.
+- id: j13
+  it: periodo di prova
+  art: il
+  en: probation period
+  group: Interview and hiring
+  example: Sono ancora in periodo di prova.
+- id: j14
+  it: assumere
+  en: to hire
+  group: Interview and hiring
+  example: L'azienda vuole assumere due persone.
+- id: j15
+  it: stipendio
+  art: lo
+  en: salary
+  group: Contract and pay
+  example: Lo stipendio arriva alla fine del mese.
+- id: j16
+  it: guadagnare
+  en: to earn
+  group: Contract and pay
+  example: Voglio guadagnare un po' di soldi.
+- id: j17
+  it: lavoro part-time
+  art: il
+  en: part-time job
+  group: Contract and pay
+  example: Cerco un lavoro part-time.
+- id: j18
+  it: tempo pieno
+  art: il
+  en: full-time
+  group: Contract and pay
+  example: Lavoro a tempo pieno.
+- id: j19
+  it: contratto a tempo indeterminato
+  art: il
+  en: permanent contract
+  group: Contract and pay
+  example: Finalmente ho un contratto a tempo indeterminato!
+- id: j20
+  it: lavoro con turni
+  art: il
+  en: shift work
+  group: Contract and pay
+  example: È un lavoro con turni.
+- id: j21
+  it: ore straordinarie
+  art: le
+  en: overtime
+  group: Contract and pay
+  example: Faccio molte ore straordinarie.
+- id: j22
+  it: ferie annuali
+  art: le
+  en: annual leave
+  group: Contract and pay
+  accept:
+  - ferie
+  example: Le ferie annuali sono in agosto.
+- id: j23
+  it: Cerco lavoro.
+  en: I'm looking for a job.
+  group: Things to say
+  example: Cerco lavoro in un bar o in un negozio.
+- id: j24
+  it: Cosa fai per lavoro?
+  en: What do you do for work?
+  group: Things to say
+  example: Sono studente e lavoro in un bar.
+- id: j25
+  it: Sono in cerca di lavoro da qualche mese.
+  en: I've been looking for work for a few months.
+  group: Things to say
+  example: Ho mandato molti curriculum.
+- id: j26
+  it: Ho avuto un colloquio di lavoro ieri.
+  en: I had a job interview yesterday.
+  group: Things to say
+  example: È andato bene.
+- id: j27
+  it: Che orario fai al lavoro?
+  en: What are your working hours?
+  group: Things to say
+  example: Comincio alle nove e finisco alle cinque.
+- id: j28
+  it: Mi piace molto il mio lavoro.
+  en: I really like my job.
+  group: Things to say
+  example: Lavoro con persone simpatiche.
+- id: j29
+  it: Ho cambiato lavoro di recente.
+  en: I changed jobs recently.
+  group: Things to say
+  example: Ora lavoro in una libreria.
+- id: j30
+  it: Sono disponibile per un lavoro part-time.
+  en: I'm available for part-time work.
+  group: Things to say
+  example: Posso lavorare la sera.
+- id: j31
+  it: Devo aggiornare il mio curriculum.
+  en: I need to update my CV.
+  group: Things to say
+  example: Poi lo mando a due aziende.
+- id: j32
+  it: La nostra azienda sta cercando personale.
+  en: Our company is looking for staff (as in a job ad).
+  group: Things to say
+  example: 'Cercasi personale: mandare il curriculum.'

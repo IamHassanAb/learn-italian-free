@@ -1,0 +1,327 @@
+id: basics-nationalities.words
+type: vocab
+title: Countries and nationalities, word by word
+items:
+- id: n01
+  it: Italia
+  art: l'
+  en: Italy
+  group: Countries
+  example: Vivo in Italia.
+- id: n02
+  it: Francia
+  art: la
+  en: France
+  group: Countries
+  example: Vado in Francia.
+- id: n03
+  it: Spagna
+  art: la
+  en: Spain
+  group: Countries
+  example: Vengo dalla Spagna.
+- id: n04
+  it: Portogallo
+  art: il
+  en: Portugal
+  group: Countries
+  example: Vengo dal Portogallo.
+- id: n05
+  it: Inghilterra
+  art: l'
+  en: England
+  group: Countries
+  example: Vivo in Inghilterra.
+- id: n06
+  it: Stati Uniti
+  art: gli
+  en: the United States
+  group: Countries
+  example: Vivo negli Stati Uniti.
+- id: n07
+  it: Canada
+  art: il
+  en: Canada
+  group: Countries
+  example: Vado in Canada.
+- id: n08
+  it: Messico
+  art: il
+  en: Mexico
+  group: Countries
+  example: Vado in Messico.
+- id: n09
+  it: Brasile
+  art: il
+  en: Brazil
+  group: Countries
+  example: Vivo in Brasile.
+- id: n10
+  it: Cina
+  art: la
+  en: China
+  group: Countries
+  example: Vado in Cina.
+- id: n11
+  it: Giappone
+  art: il
+  en: Japan
+  group: Countries
+  example: Il Giappone è lontano.
+- id: n12
+  it: India
+  art: l'
+  en: India
+  group: Countries
+  example: Vengo dall'India.
+- id: n13
+  it: Pakistan
+  art: il
+  en: Pakistan
+  group: Countries
+  example: Vengo dal Pakistan.
+- id: n14
+  it: Egitto
+  art: l'
+  en: Egypt
+  group: Countries
+  example: Vengo dall'Egitto.
+- id: n15
+  it: italiano
+  en: Italian
+  forms:
+    m: italiano
+    f: italiana
+    mp: italiani
+    fp: italiane
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Marco è italiano.
+- id: n16
+  it: tedesco
+  en: German
+  forms:
+    m: tedesco
+    f: tedesca
+    mp: tedeschi
+    fp: tedesche
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Anna è tedesca.
+- id: n17
+  it: spagnolo
+  en: Spanish
+  forms:
+    m: spagnolo
+    f: spagnola
+    mp: spagnoli
+    fp: spagnole
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Il mio amico è spagnolo.
+- id: n18
+  it: austriaco
+  en: Austrian
+  forms:
+    m: austriaco
+    f: austriaca
+    mp: austriaci
+    fp: austriache
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Il mio professore è austriaco.
+- id: n19
+  it: svizzero
+  en: Swiss
+  forms:
+    m: svizzero
+    f: svizzera
+    mp: svizzeri
+    fp: svizzere
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: La mia vicina è svizzera.
+- id: n20
+  it: polacco
+  en: Polish
+  forms:
+    m: polacco
+    f: polacca
+    mp: polacchi
+    fp: polacche
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Ho un'amica polacca.
+- id: n21
+  it: russo
+  en: Russian
+  forms:
+    m: russo
+    f: russa
+    mp: russi
+    fp: russe
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Il mio coinquilino è russo.
+- id: n22
+  it: americano
+  en: American
+  forms:
+    m: americano
+    f: americana
+    mp: americani
+    fp: americane
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Lei è americana.
+- id: n23
+  it: indiano
+  en: Indian
+  forms:
+    m: indiano
+    f: indiana
+    mp: indiani
+    fp: indiane
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Mangio in un ristorante indiano.
+- id: n24
+  it: pakistano
+  en: Pakistani
+  forms:
+    m: pakistano
+    f: pakistana
+    mp: pakistani
+    fp: pakistane
+  group: Nationalities that change (-o, -a, -i, -e)
+  accept:
+  - pachistano
+  accept_forms:
+    f:
+    - pachistana
+    mp:
+    - pachistani
+    fp:
+    - pachistane
+  example: Il mio amico è pakistano.
+- id: n25
+  it: egiziano
+  en: Egyptian
+  forms:
+    m: egiziano
+    f: egiziana
+    mp: egiziani
+    fp: egiziane
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Un mio amico è egiziano.
+- id: n26
+  it: marocchino
+  en: Moroccan
+  forms:
+    m: marocchino
+    f: marocchina
+    mp: marocchini
+    fp: marocchine
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: La mia vicina è marocchina.
+- id: n27
+  it: brasiliano
+  en: Brazilian
+  forms:
+    m: brasiliano
+    f: brasiliana
+    mp: brasiliani
+    fp: brasiliane
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Il mio vicino è brasiliano.
+- id: n28
+  it: messicano
+  en: Mexican
+  forms:
+    m: messicano
+    f: messicana
+    mp: messicani
+    fp: messicane
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Mangio un piatto messicano.
+- id: n29
+  it: turco
+  en: Turkish
+  forms:
+    m: turco
+    f: turca
+    mp: turchi
+    fp: turche
+  group: Nationalities that change (-o, -a, -i, -e)
+  example: Il mio compagno di classe è turco.
+- id: n30
+  it: inglese
+  en: English
+  forms:
+    m: inglese
+    f: inglese
+    mp: inglesi
+    fp: inglesi
+  group: Nationalities in -e (one form for men and women)
+  example: Sono inglese.
+- id: n31
+  it: irlandese
+  en: Irish
+  forms:
+    m: irlandese
+    f: irlandese
+    mp: irlandesi
+    fp: irlandesi
+  group: Nationalities in -e (one form for men and women)
+  example: Mia nonna è irlandese.
+- id: n32
+  it: portoghese
+  en: Portuguese
+  forms:
+    m: portoghese
+    f: portoghese
+    mp: portoghesi
+    fp: portoghesi
+  group: Nationalities in -e (one form for men and women)
+  example: Il mio vicino è portoghese.
+- id: n33
+  it: francese
+  en: French
+  forms:
+    m: francese
+    f: francese
+    mp: francesi
+    fp: francesi
+  group: Nationalities in -e (one form for men and women)
+  example: Lei è francese.
+- id: n34
+  it: danese
+  en: Danish
+  forms:
+    m: danese
+    f: danese
+    mp: danesi
+    fp: danesi
+  group: Nationalities in -e (one form for men and women)
+  example: Il mio amico è danese.
+- id: n35
+  it: cinese
+  en: Chinese
+  forms:
+    m: cinese
+    f: cinese
+    mp: cinesi
+    fp: cinesi
+  group: Nationalities in -e (one form for men and women)
+  example: Mangio in un ristorante cinese.
+- id: n36
+  it: giapponese
+  en: Japanese
+  forms:
+    m: giapponese
+    f: giapponese
+    mp: giapponesi
+    fp: giapponesi
+  group: Nationalities in -e (one form for men and women)
+  example: Studio con una ragazza giapponese.
+- id: n37
+  it: canadese
+  en: Canadian
+  forms:
+    m: canadese
+    f: canadese
+    mp: canadesi
+    fp: canadesi
+  group: Nationalities in -e (one form for men and women)
+  example: Il mio professore è canadese.

@@ -2,11 +2,14 @@ id: V08
 stage: V
 title: Nationalities module
 size: S
-status: todo
+status: done
 depends_on:
 - V01
 change: 'vocab-nationalities: countries (capital letter) and nationality adjectives (lower case, with forms), two-source
-  ledger.'
+  ledger. Built as basics-nationalities: 14 countries (with their articles) and 23 nationalities with all four forms.
+  Only countries whose article was found in a source are included; Germania, Svizzera, Austria, Polonia, Russia,
+  Turchia, Grecia, Marocco, Irlanda, Australia, Regno Unito were left out for now. Pakistani is written pakistano,
+  with pachistano accepted.'
 done_when:
 - Words verified; countries and adjectives checked
 touches:

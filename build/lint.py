@@ -88,7 +88,9 @@ def main():
                     for w in re.findall(r"[A-Za-z]+", MARK.sub("", s)):
                         if w.lower() in ACCENT: warns.append("%s: %r in Italian text, did you mean %r?" % (where, w, ACCENT[w.lower()]))
 
-    # word-list quality: no repeated words in a module, the masculine form matches the word, examples use the word
+    # word-list quality: no repeated words in a module (or across topic modules, which would give two flashcards for one word),
+    # the masculine form matches the word, examples use the word
+    topic_words = {}
     for mid, m in c.modules.items():
         seen_it = {}
         for p in m["_parts"]:
@@ -98,9 +100,11 @@ def main():
                 key = (it.get("it") or "").strip().lower()
                 if key in seen_it: errors.append("%s: word %r appears twice (%s and %s)" % (mid, it.get("it"), seen_it[key], it.get("id")))
                 seen_it[key] = it.get("id")
+                if key in topic_words and topic_words[key] != mid: warns.append("%s: word %r is also in %s (two flashcards for one word)" % (mid, it.get("it"), topic_words[key]))
+                topic_words.setdefault(key, mid)
                 f = it.get("forms")
                 if f and f.get("m") != it.get("it"): errors.append("%s item %s: forms.m %r must equal the word %r" % (mid, it.get("id"), f.get("m"), it.get("it")))
-                if it.get("example"):
+                if it.get("example") and not re.search(r"[.?!]$", str(it.get("it", ""))):          # a whole sentence (ends like a sentence) does not need its example to repeat it
                     wordforms = {str(it.get("it", "")).lower()} | {str(v).lower() for v in (f or {}).values()}
                     text = it["example"].lower()
                     if not any(re.search(r"(?<![a-zà-ù])" + re.escape(w) + r"(?![a-zà-ù])", text) for w in wordforms if w):

@@ -1,0 +1,28 @@
+id: job-search
+area: job-search
+module: basics-job-search
+claims:
+- claim: 'Job-search terms: ricerca di un lavoro, centro per l''impiego (job centre), opportunità di lavoro (vacancy), curriculum (CV), lettera di accompagnamento / presentazione (cover letter), fare domanda di lavoro a (to apply), colloquio di lavoro (interview), tirocinio / stage (internship), periodo di prova (probation), offerta di lavoro (job offer), stipendio (salary), lavoro part-time, tempo pieno (full-time), lavoro con turni (shift work), ore straordinarie (overtime), ferie annuali (annual leave), azienda (company)'
+  source: https://www.thelocal.it/20171106/working-in-italy-the-italian-job-speak-you-need-to-know
+  verified: '2026-10-28'
+- claim: 'Sentences with levels: Cosa fai per lavoro? (A1); Sono in cerca di lavoro da qualche mese (A2); Ho avuto un colloquio di lavoro ieri (A2); Che orario fai al lavoro? (A2); Mi piace molto il mio lavoro (A1); Ho cambiato lavoro di recente (A2); Ho fatto uno stage in un''azienda internazionale (A2); La nostra azienda sta cercando personale (B1); Finalmente ho un contratto a tempo indeterminato (B1, permanent contract); Guadagno abbastanza bene (B1)'
+  source: https://fastitalianlearning.com/phrases/talking-about-work
+  verified: '2026-10-28'
+- claim: 'Cerco lavoro is a basic A1 expression for looking for a job; sono in cerca di lavoro is the fixed phrase for the same idea, and cerco lavoro takes no per'
+  source: https://fastitalianlearning.com/phrases/talking-about-work/sono-in-cerca-di-lavoro
+  verified: '2026-10-28'
+- claim: 'Second source for Cerco lavoro as an A1 expression'
+  source: https://sublearn.com/ja/learn/it/phrases/cerco-lavoro
+  verified: '2026-10-28'
+- claim: 'cercare lavoro (to look for work), assumere (to hire), stipendio (salary), guadagnare (to earn), impiego, and the sentence Sono disponibile per un lavoro part-time. Weaker: one list page of uncertain quality'
+  source: https://nopbm.pages.dev/en/italian-course/vocabulary/work-vocabulary-in-italian.html
+  verified: '2026-10-28'
+- claim: 'A2 job-hunting vocabulary: curriculum, esperienza lavorativa, competenze, and the sentence Devo aggiornare il mio curriculum. Taken from the search summary of this lesson; the page itself refused a direct fetch (HTTP 403), so this one is weaker'
+  source: https://app.colanguage.com/italian/syllabus/a2/37
+  verified: '2026-10-28'
+- claim: 'Used in a real listening text about job hunting: annuncio, offerta di lavoro, curriculum, colloquio'
+  source: https://onlineitalianclub.com/la-ricerca-di-lucia-6th-a2-listening-with-transcript/
+  verified: '2026-10-28'
+- claim: 'candidarsi (to apply) is listed beside curriculum, assunzione, azienda and selezione in a vocabulary entry, single source. NOT individually sourced: the example sentences, Cercasi personale, and the answers given in the sentence group. Sentences are marked by the source levels A1, A2 or B1 above; the permanent-contract and company-looking-for-staff sentences are B1. Left out for lack of a source: contratto a tempo determinato, licenziamento, lavoro in nero, busta paga, partita IVA. Worth a native-speaker read (task P01)'
+  source: https://fastitalianlearning.com/vocabulary/work/colloquio
+  verified: '2026-10-28'

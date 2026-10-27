@@ -1,0 +1,118 @@
+id: basics-classroom.words
+type: vocab
+title: Classroom words, one by one
+items:
+- id: k01
+  it: aula
+  art: l'
+  en: classroom
+  group: In the room
+  example: La lezione è nell'aula quattro.
+- id: k02
+  it: classe
+  art: la
+  en: class (the group of students)
+  group: In the room
+  example: Nella mia classe ci sono venti studenti.
+- id: k03
+  it: banco
+  art: il
+  en: school desk
+  group: In the room
+  example: Il quaderno è sul banco.
+- id: k04
+  it: scrivania
+  art: la
+  en: desk
+  group: In the room
+  example: La scrivania è in camera mia.
+- id: k05
+  it: sedia
+  art: la
+  en: chair
+  group: In the room
+  example: Prendo una sedia.
+- id: k06
+  it: lavagna
+  art: la
+  en: board (blackboard or whiteboard)
+  group: In the room
+  example: Il professore scrive alla lavagna.
+- id: k07
+  it: cestino
+  art: il
+  en: waste bin
+  group: In the room
+  example: La carta va nel cestino.
+- id: k08
+  it: libro
+  art: il
+  en: book
+  group: On your desk
+  example: Apri il libro a pagina dieci.
+- id: k09
+  it: quaderno
+  art: il
+  en: notebook
+  group: On your desk
+  example: Scrivo gli appunti sul quaderno.
+- id: k10
+  it: penna
+  art: la
+  en: pen
+  group: On your desk
+  example: Hai una penna?
+- id: k11
+  it: matita
+  art: la
+  en: pencil
+  group: On your desk
+  example: Scrivo con la matita.
+- id: k12
+  it: gomma
+  art: la
+  en: eraser
+  group: On your desk
+  example: Mi presti la gomma?
+- id: k13
+  it: righello
+  art: il
+  en: ruler
+  group: On your desk
+  example: Ho bisogno del righello.
+- id: k14
+  it: forbici
+  art: le
+  en: scissors
+  group: On your desk
+  example: Le forbici sono nell'astuccio.
+- id: k15
+  it: colla
+  art: la
+  en: glue
+  group: On your desk
+  example: Mi serve la colla.
+- id: k16
+  it: evidenziatore
+  art: l'
+  en: highlighter
+  group: On your desk
+  example: Uso l'evidenziatore per gli appunti.
+- id: k17
+  it: calcolatrice
+  art: la
+  en: calculator
+  group: On your desk
+  example: Posso usare la calcolatrice?
+- id: k18
+  it: astuccio
+  art: l'
+  en: pencil case
+  group: In your bag
+  example: La penna è nell'astuccio.
+- id: k19
+  it: zaino
+  art: lo
+  en: backpack
+  group: In your bag
+  example: Che c'è nello zaino?

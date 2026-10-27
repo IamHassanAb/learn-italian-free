@@ -1,0 +1,96 @@
+id: basics-workplaces.words
+type: vocab
+title: Places of work, word by word
+items:
+- id: w01
+  it: ufficio
+  art: l'
+  en: office
+  group: Places of work
+  example: Lavoro in un ufficio.
+- id: w02
+  it: ospedale
+  art: l'
+  en: hospital
+  group: Places of work
+  example: Mio padre lavora in un ospedale.
+- id: w03
+  it: negozio
+  art: il
+  en: shop
+  group: Places of work
+  example: Lavoro in un negozio.
+- id: w04
+  it: bar
+  art: il
+  en: bar; café
+  group: Places of work
+  example: Lavoro in un bar la sera.
+- id: w05
+  it: ristorante
+  art: il
+  en: restaurant
+  group: Places of work
+  example: Lavoro come cameriere in un ristorante.
+- id: w06
+  it: fabbrica
+  art: la
+  en: factory
+  group: Places of work
+  example: Mio zio lavora in una fabbrica.
+- id: w07
+  it: banca
+  art: la
+  en: bank
+  group: Places of work
+  example: Mia sorella lavora in una banca.
+- id: w08
+  it: officina
+  art: l'
+  en: workshop; garage (not an office)
+  group: Places of work
+  example: La macchina è in officina.
+- id: w09
+  it: panetteria
+  art: la
+  en: bakery
+  group: Places of work
+  example: Compro il pane in panetteria.
+- id: w10
+  it: pronto soccorso
+  art: il
+  en: emergency room
+  group: Places of work
+  example: Dov'è il pronto soccorso?
+- id: w11
+  it: studio privato
+  art: lo
+  en: private practice
+  group: Places of work
+  example: Il dentista ha uno studio privato.
+- id: w12
+  it: posto di lavoro
+  art: il
+  en: workplace
+  group: Places of work
+  example: Il mio posto di lavoro è in centro.
+- id: w13
+  it: Lavoro in un ufficio.
+  en: I work in an office.
+  group: Saying where you work
+  example: Sono impiegato.
+- id: w14
+  it: Lavoro in un negozio.
+  en: I work in a shop.
+  group: Saying where you work
+  example: Sono commessa.
+- id: w15
+  it: Lavoro in un ospedale.
+  en: I work in a hospital.
+  group: Saying where you work
+  example: Sono infermiere.
+- id: w16
+  it: Lavoro come cameriere in un ristorante.
+  en: I work as a waiter in a restaurant.
+  group: Saying where you work
+  example: Il lavoro è faticoso ma mi piace.

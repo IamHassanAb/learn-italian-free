@@ -1,0 +1,25 @@
+id: classroom
+area: classroom
+module: basics-classroom
+claims:
+- claim: 'Classroom words in a free beginner lesson: il banco (desk), la sedia (chair), la lavagna (board), il cestino (waste bin), il quaderno (notebook), la classe (class, not classroom), il libro (book), la penna (pen), la matita (pencil)'
+  source: https://onlineitalianclub.com/italian-vocabulary-school-and-studying/
+  verified: '2026-10-28'
+- claim: 'School supplies: penna, matita, gomma (eraser), quaderno, zaino (backpack), righello (ruler), forbici (scissors), evidenziatore (highlighter), astuccio (pencil case), calcolatrice (calculator)'
+  source: https://migaku.com/blog/language-fun/italian-school-vocabulary
+  verified: '2026-10-28'
+- claim: 'Second source for supplies: lo zaino (backpack), l''astuccio (pencil case), la colla (glue), il righello (ruler), le forbici (scissors), la gomma (eraser)'
+  source: https://eu.rosettastone.com/flashcards/school-supplies-level-1?lang=it-IT
+  verified: '2026-10-28'
+- claim: 'Gomma also means rubber, a car tyre and chewing gum, and Italians often just say gomma when asking for an eraser'
+  source: https://www.italianpod101.com/lesson/italian-words-of-the-week-with-ilaria-for-beginners-25-school-supplies
+  verified: '2026-10-28'
+- claim: 'un''aula is a classroom and la classe is the group of students; la lavagna (blackboard) and la scrivania (desk) in a university course vocabulary list; the classroom question Che c''è nello zaino? comes from a school lesson plan'
+  source: https://hcmc.uvic.ca/eol/hisitaex/exercises/italian/italian100/prelim/classe.htm
+  verified: '2026-10-28'
+- claim: 'Second source for aula and classe, and for Che c''è nell''aula? / Che c''è nello zaino? / Dov''è la lavagna?'
+  source: https://instruction.meridenk12.org/courses/541/1/5/
+  verified: '2026-10-28'
+- claim: 'Only ONE source found for each of these, so they are weaker than the rest: il banco and il cestino (the beginner lesson), la colla (Rosetta Stone), l''evidenziatore and la calcolatrice (Migaku), la scrivania (the university course list). The example sentences are not sourced. Left out for lack of a source: il foglio, la cattedra, il temperamatite, la cartella. Worth a native-speaker read (task P01)'
+  source: https://migaku.com/blog/language-fun/italian-school-vocabulary
+  verified: '2026-10-28'

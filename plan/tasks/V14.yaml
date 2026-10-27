@@ -5,7 +5,8 @@ size: S
 status: todo
 depends_on:
 - V12
-change: Check V04 to V09 in the engine with no code changes; run the owner on a real phone.
+change: All seven topics are built (colours, family, professions, school, classroom, nationalities, job search).
+  What is left is the owner running a round of each on their own phone, and the mixed round across topics.
 done_when:
 - Owner has done a round of each topic on their phone
 touches:

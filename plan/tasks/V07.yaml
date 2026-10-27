@@ -2,10 +2,12 @@ id: V07
 stage: V
 title: Classroom objects module
 size: S
-status: todo
+status: done
 depends_on:
 - V01
-change: 'vocab-classroom: objects and phrases in a classroom, with articles, two-source ledger.'
+change: 'vocab-classroom: objects and phrases in a classroom, with articles, two-source ledger. Built as basics-classroom
+  (19 words in three groups: in the room, on your desk, in your bag). Six words have only one source and are marked
+  as weaker in the ledger. Lint now also warns when a word appears in two topic modules.'
 done_when:
 - Words verified; builds
 touches:

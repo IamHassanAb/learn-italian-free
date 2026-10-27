@@ -1,0 +1,174 @@
+id: basics-hobbies.words
+type: vocab
+title: Hobbies, word by word
+items:
+- id: h01
+  it: tempo libero
+  art: il
+  en: free time
+  group: Free time
+  example: Nel tempo libero leggo molto.
+- id: h02
+  it: passatempo
+  art: il
+  en: pastime; hobby
+  group: Free time
+  example: Il mio passatempo preferito è cucinare.
+- id: h03
+  it: hobby
+  art: l'
+  en: hobby
+  group: Free time
+  example: Qual è il tuo hobby?
+- id: h04
+  it: calcio
+  art: il
+  en: football (soccer)
+  group: Free time
+  example: Guardo una partita di calcio.
+- id: h05
+  it: fotografia
+  art: la
+  en: photography
+  group: Free time
+  example: Mi appassiona la fotografia.
+- id: h06
+  it: leggere
+  en: to read
+  group: Things you do
+  example: Nel tempo libero mi piace leggere.
+- id: h07
+  it: nuotare
+  en: to swim
+  group: Things you do
+  example: Mi piace nuotare in piscina.
+- id: h08
+  it: cucinare
+  en: to cook
+  group: Things you do
+  example: Mi piace cucinare per gli amici.
+- id: h09
+  it: ballare
+  en: to dance
+  group: Things you do
+  example: Mi piace ballare il sabato sera.
+- id: h10
+  it: correre
+  en: to run
+  group: Things you do
+  example: Mi piace correre al parco.
+- id: h11
+  it: ascoltare la musica
+  en: to listen to music
+  group: Things you do
+  example: Mi piace ascoltare la musica sul treno.
+- id: h12
+  it: guardare la TV
+  en: to watch TV
+  group: Things you do
+  example: La sera mi piace guardare la TV.
+- id: h13
+  it: andare al cinema
+  en: to go to the cinema
+  group: Things you do
+  example: Mi piace andare al cinema con gli amici.
+- id: h14
+  it: fare una passeggiata
+  en: to go for a walk
+  group: Things you do
+  example: Dopo cena mi piace fare una passeggiata.
+- id: h15
+  it: andare in bicicletta
+  en: to cycle; to ride a bike
+  group: Things you do
+  example: Mi piace andare in bicicletta.
+- id: h16
+  it: andare in palestra
+  en: to go to the gym
+  group: Things you do
+  example: Voglio andare in palestra tre volte a settimana.
+- id: h17
+  it: uscire con gli amici
+  en: to go out with friends
+  group: Things you do
+  example: Il sabato mi piace uscire con gli amici.
+- id: h18
+  it: suonare la chitarra
+  en: to play the guitar
+  group: Things you do
+  example: Voglio imparare a suonare la chitarra.
+- id: h19
+  it: fare volontariato
+  en: to volunteer
+  group: Things you do
+  example: Mi piace fare volontariato il sabato.
+- id: h20
+  it: fare escursioni
+  en: to go hiking
+  group: Things you do
+  example: Mi piace fare escursioni in montagna.
+- id: h21
+  it: giocare ai videogiochi
+  en: to play video games
+  group: Sports and games
+  example: Mi piace giocare ai videogiochi la sera.
+- id: h22
+  it: giocare a tennis
+  en: to play tennis
+  group: Sports and games
+  example: Mi piace giocare a tennis.
+- id: h23
+  it: giocare a scacchi
+  en: to play chess
+  group: Sports and games
+  example: Mi piace giocare a scacchi con mio nonno.
+- id: h24
+  it: sciare
+  en: to ski
+  group: Sports and games
+  example: Mi piace sciare d'inverno.
+- id: h25
+  it: Mi piace cucinare.
+  en: I like cooking.
+  group: Things to say
+  example: Cucino quasi ogni sera.
+- id: h26
+  it: Nel tempo libero leggo molto.
+  en: I read a lot in my free time.
+  group: Things to say
+  example: Leggo romanzi e giornali.
+- id: h27
+  it: Pratico sport regolarmente.
+  en: I do sport regularly.
+  group: Things to say
+  example: Corro tre volte a settimana.
+- id: h28
+  it: Mi piace molto ballare.
+  en: I really like dancing.
+  group: Things to say
+  example: Vado a ballare il sabato sera.
+- id: h29
+  it: Mi piace andare in bicicletta.
+  en: I like cycling.
+  group: Things to say
+  example: Vado in bicicletta in campagna.
+- id: h30
+  it: Vado in palestra quattro volte a settimana.
+  en: I go to the gym four times a week.
+  group: Things to say
+  example: Vado dopo il lavoro.
+- id: h31
+  it: Gioco ai videogiochi la sera.
+  en: I play video games in the evening.
+  group: Things to say
+  example: Gioco con mio fratello.
+- id: h32
+  it: Gioco a tennis due volte a settimana.
+  en: I play tennis twice a week.
+  group: Things to say
+  example: Gioco con un amico.
+- id: h33
+  it: Suono la chitarra da anni.
+  en: I've been playing the guitar for years.
+  group: Things to say
+  example: Suono anche il pianoforte.

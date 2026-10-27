@@ -34,6 +34,12 @@ modules:
 - basics-food
 - basics-family
 - basics-professions
+- basics-school
+- basics-classroom
+- basics-nationalities
+- basics-job-search
+- basics-workplaces
+- basics-hobbies
 - basics-colours
 - basics-emergency
 - basics-self-test

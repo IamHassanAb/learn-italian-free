@@ -1,0 +1,22 @@
+id: workplaces
+area: workplaces
+module: basics-workplaces
+claims:
+- claim: 'Workplace words in a free beginner lesson: l''ufficio (office), l''ospedale (hospital), il negozio (shop), il bar, la fabbrica (factory), la banca (bank), l''officina (workshop), il pronto soccorso (emergency room), lo studio privato (private practice), la panetteria (bakery). The same list also has il cantiere translated as yard'
+  source: https://onlineitalianclub.com/italian-vocabulary-workplaces/
+  verified: '2026-10-28'
+- claim: 'Model sentences with in: Lavoro in un ufficio, Lavoro in un negozio, Lavoro in un ospedale; and Lavoro come cameriere in un ristorante (I work as a waiter in a restaurant)'
+  source: https://nlsnorwegian.no/describing-your-occupation-in-italian-common-phrases
+  verified: '2026-10-28'
+- claim: 'Second source for the workplace words and the ristorante sentence, and for il posto di lavoro or l''ufficio as the word for the workplace (weaker: a list page of uncertain quality)'
+  source: https://www.polyglotclub.com/wiki/Language/Italian/Vocabulary/Work-and-Employment
+  verified: '2026-10-28'
+- claim: 'officina means workshop or garage, not office (a false friend of English office, which is ufficio)'
+  source: https://fastitalianlearning.com/false-friends/objects/officina
+  verified: '2026-10-28'
+- claim: 'pronto soccorso is the hospital emergency room; Dov''è il pronto soccorso? is the standard question'
+  source: https://fastitalianlearning.com/phrases/at-the-hospital/dov-e-il-pronto-soccorso
+  verified: '2026-10-28'
+- claim: 'NOT individually sourced: the example sentences; bar and ristorante as places of work rest on the lesson list and the model sentence only. Left out: il cantiere (the only source calls it a yard and no dictionary entry for construction site was found), la scuola (already in the school words), il supermercato, la farmacia, l''università (no source for them as workplaces), and any rule for lavoro al or alla. Worth a native-speaker read (task P01)'
+  source: https://onlineitalianclub.com/italian-vocabulary-workplaces/
+  verified: '2026-10-28'

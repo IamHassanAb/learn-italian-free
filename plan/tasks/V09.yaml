@@ -2,11 +2,15 @@ id: V09
 stage: V
 title: 'Searching for a job: phrases and words'
 size: S
-status: todo
+status: done
 depends_on:
 - V01
 change: 'vocab-job-search: phrases for looking for work (Cerco lavoro, Ho esperienza come...) and the words around
-  them, two-source ledger, flagged for the P01 native-speaker read.'
+  them, two-source ledger, flagged for the P01 native-speaker read. Built as basics-job-search: 32 items in four
+  groups (looking for work, interview and hiring, contract and pay, ten whole sentences). Two sources only for most
+  terms: The Local Italy glossary and FastItalian phrases with their levels. Weaker: a few items with a single source
+  (flagged in the ledger). The pick drill now takes wrong choices from the same group, so a sentence is never offered
+  among single words.'
 done_when:
 - Phrases verified; builds
 touches:

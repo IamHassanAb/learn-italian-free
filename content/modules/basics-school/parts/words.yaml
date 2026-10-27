@@ -1,0 +1,156 @@
+id: basics-school.words
+type: vocab
+title: School and studying, word by word
+items:
+- id: s01
+  it: scuola
+  art: la
+  en: school
+  group: Places
+  example: Mia sorella va ancora a scuola.
+- id: s02
+  it: università
+  art: l'
+  en: university
+  group: Places
+  example: Studio all'università di Bologna.
+- id: s03
+  it: biblioteca
+  art: la
+  en: library
+  group: Places
+  example: Vado in biblioteca per studiare.
+- id: s04
+  it: mensa
+  art: la
+  en: canteen
+  group: Places
+  example: A pranzo mangio alla mensa.
+- id: s05
+  it: segreteria
+  art: la
+  en: administration office (student office)
+  group: Places
+  example: Devo andare in segreteria.
+- id: s06
+  it: lezione
+  art: la
+  en: lesson; lecture
+  group: Study life
+  example: La lezione comincia alle nove.
+- id: s07
+  it: esame
+  art: l'
+  en: exam
+  group: Study life
+  example: L'esame di italiano è domani.
+- id: s08
+  it: voto
+  art: il
+  en: grade; mark
+  group: Study life
+  example: Il voto minimo per passare è diciotto.
+- id: s09
+  it: compiti
+  art: i
+  en: homework
+  group: Study life
+  example: Hai fatto i compiti?
+- id: s10
+  it: appunti
+  art: gli
+  en: notes (what you write in class)
+  group: Study life
+  example: Prendo gli appunti a lezione.
+- id: s11
+  it: iscrizione
+  art: l'
+  en: enrolment; registration
+  group: Study life
+  example: L'iscrizione è online.
+- id: s12
+  it: numero di matricola
+  art: il
+  en: student number
+  group: Study life
+  example: Scrivi il tuo numero di matricola.
+- id: s13
+  it: laurea
+  art: la
+  en: bachelor's degree (laurea triennale)
+  group: Degrees and credits
+  example: La laurea triennale dura tre anni.
+- id: s14
+  it: laurea magistrale
+  art: la
+  en: master's degree
+  group: Degrees and credits
+  example: La laurea magistrale dura due anni.
+- id: s15
+  it: dottorato di ricerca
+  art: il
+  en: PhD
+  group: Degrees and credits
+  example: Il dottorato di ricerca dura almeno tre anni.
+- id: s16
+  it: credito formativo
+  art: il
+  en: university credit (CFU)
+  group: Degrees and credits
+  example: Ogni credito formativo vale circa venticinque ore di lavoro.
+- id: s17
+  it: tesi
+  art: la
+  en: thesis
+  group: Degrees and credits
+  example: Scrivo la tesi in biblioteca.
+- id: s18
+  it: studiare
+  en: to study
+  group: Verbs and phrases
+  example: Mi piace studiare in biblioteca.
+- id: s19
+  it: imparare
+  en: to learn
+  group: Verbs and phrases
+  example: Voglio imparare l'italiano.
+- id: s20
+  it: frequentare le lezioni
+  en: to attend classes
+  group: Verbs and phrases
+  example: Devo frequentare le lezioni ogni giorno.
+- id: s21
+  it: iscriversi
+  en: to enrol; to register
+  group: Verbs and phrases
+  example: Per iscriversi bisogna andare in segreteria.
+- id: s22
+  it: laurearsi
+  en: to graduate
+  group: Verbs and phrases
+  example: Per laurearsi servono centottanta crediti.
+- id: s23
+  it: sostenere un esame
+  en: to sit an exam
+  group: Verbs and phrases
+  example: Domani devo sostenere un esame.
+- id: s24
+  it: superare un esame
+  en: to pass an exam
+  group: Verbs and phrases
+  example: Per superare un esame serve un voto di almeno diciotto.
+- id: s25
+  it: fare i compiti
+  en: to do homework
+  group: Verbs and phrases
+  example: Dopo cena devo fare i compiti.
+- id: s26
+  it: prendere appunti
+  en: to take notes
+  group: Verbs and phrases
+  example: Mi aiuta prendere appunti durante la lezione.
+- id: s27
+  it: prendere un bel voto
+  en: to get a good grade
+  group: Verbs and phrases
+  example: Voglio prendere un bel voto.

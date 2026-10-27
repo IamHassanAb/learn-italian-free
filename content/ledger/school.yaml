@@ -1,0 +1,31 @@
+id: school
+area: school
+module: basics-school
+claims:
+- claim: 'School words in a free beginner lesson: la mensa (canteen), imparare (to learn); school and study words in a second list: scuola, università, lezione, esame, voto (prendere un bel voto), compiti (fare i compiti), appunti (prendere appunti), biblioteca, studiare, imparare, frequentare (frequentare / andare a scuola), laurea and laurea magistrale, tesi (thesis defence), mensa'
+  source: https://migaku.com/blog/language-fun/italian-school-vocabulary
+  verified: '2026-10-28'
+- claim: 'Second source for the beginner school words (mensa, imparare) from the checklist lesson'
+  source: https://onlineitalianclub.com/italian-vocabulary-school-and-studying/
+  verified: '2026-10-28'
+- claim: 'Degree levels: laurea (bachelor''s, three years), laurea magistrale (master''s, two years), dottorato di ricerca (PhD)'
+  source: https://www.uniroma1.it/en/pagina/italian-university-system-mini-glossary-international-freshers
+  verified: '2026-10-28'
+- claim: 'Credits and marks: 1 CFU is about 25 hours of work; a laurea triennale is 180 CFU and a laurea magistrale 120 CFU; exams are marked out of thirty, 18 is the pass mark, 30 e lode is the top result; a degree ends with a tesi; the third cycle is the dottorato di ricerca (at least three years)'
+  source: https://www.unipi.it/didattica/iscrizioni/immatricolazioni-e-iscrizioni/iscrizioni-per-studenti-internazionali/luniversita-in-italia-sistema-educativo-crediti-e-voti/
+  verified: '2026-10-28'
+- claim: 'Second source for CFU (Credito Formativo Universitario, about 25 hours, 180 for a bachelor''s, 120 for a master''s) and the student number (numero di matricola) given on enrolment'
+  source: https://www.europassitalian.com/moving-to-italy/university-system-guide/
+  verified: '2026-10-28'
+- claim: 'Enrolment words as used by universities: iscriversi (to enrol), the segreteria studenti (student administration office), the immatricolazione procedure, frequentare le lezioni (attend classes), sostenere un esame (sit an exam)'
+  source: https://lettere.unipg.it/files/informazioni_per_le_matricole_2.pdf
+  verified: '2026-10-28'
+- claim: 'Second source for segreteria studenti, iscriversi and sostenere (una prova / un esame), and that attendance (frequenza) is required only for some courses'
+  source: https://www.unipa.it/target/futuri-studenti-archivio/iscriversi/segreterie-studenti/
+  verified: '2026-10-28'
+- claim: 'superare un esame (to pass an exam) and laurearsi (to graduate) with example sentences: Ho superato l''esame di italiano; Mia sorella si sta laureando all''università'
+  source: https://migaku.com/blog/language-fun/italian-school-vocabulary
+  verified: '2026-10-28'
+- claim: 'NOT individually sourced: the example sentences, iscrizione (the noun; the word appears in university page addresses and texts), and the exact wording of the practical lines. Left out for lack of a source: borsa di studio, dipartimento, facolta, orario. Worth a native-speaker read (task P01)'
+  source: https://www.uniroma1.it/en/pagina/italian-university-system-mini-glossary-international-freshers
+  verified: '2026-10-28'

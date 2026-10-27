@@ -97,3 +97,14 @@ test("every word in every topic is well formed: the masculine form is the word, 
     }
   }
 });
+
+test("wrong choices come from the same group when the group is big enough", () => {
+  const items = [];
+  for (let i = 1; i <= 6; i++) items.push({ id: `w${i}`, it: `parola${i}`, en: `word ${i}`, group: "Words" });
+  for (let i = 1; i <= 6; i++) items.push({ id: `s${i}`, it: `Frase numero ${i}.`, en: `Sentence ${i}.`, group: "Sentences" });
+  const m = { id: "g", title: "G", drills: ["pick"], parts: [{ id: "g.p", type: "vocab", items }] }, rnd = seeded(12);
+  for (let i = 0; i < 100; i++) {
+    const q = topicQuestion(m, "pick", rnd), sentence = /^Frase|^Sentence/.test(q.prompt) || q.answers.some((a) => /^Frase|^Sentence/.test(a));
+    assert.ok(q.choices.every((c) => /^(Frase|Sentence)/.test(c) === sentence), `mixed choices: ${q.prompt} ${q.choices}`);
+  }
+});
