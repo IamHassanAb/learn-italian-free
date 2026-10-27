@@ -2,11 +2,13 @@ id: T08
 stage: T
 title: Recurring-error view
 size: S
-status: todo
+status: done
 depends_on:
 - T04
 change: 'Recurring-error view: count logged errors by grammar topic, link to the grammar row, retest due corrections
-  after a few days.'
+  after a few days. Built: a Repeated mistakes card at the top of the Conversation log: lines tagged with a grammar
+  topic or corrected by a local, counted by topic, flagged at three, with a Show these lines filter and the rule
+  in short. Retesting uses the normal flashcard schedule.'
 done_when:
 - A topic with 3 or more entries is flagged
 touches:

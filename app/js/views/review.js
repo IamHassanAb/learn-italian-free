@@ -1,6 +1,7 @@
 import { h, inline, speakBtn, mount } from "../ui.js";
 import { localDate, hashStr } from "../lib/util.js";
 import { buildQueue, rate, previewDays } from "../lib/srs.js";
+import { useCloze } from "../lib/cloze.js";
 
 const label = (d) => (d === 0 ? "now" : d === 1 ? "1 day" : `${d} days`);
 
@@ -46,9 +47,11 @@ export function reviewView(ctx) {
     const card = session.queue[0], itFirst = front(card), st = store.card(card.id), isNew = !st;
     const pct = Math.round((session.done / session.total) * 100);
     const prompt = itFirst ? card.it : card.en, answer = itFirst ? card.en : card.it;
+    // your own logged sentences are sometimes shown as fill-in-the-blank (the meaning is the hint)
+    const cl = card.deck === "gaps" ? useCloze(store.state.settings.cloze || "sometimes", card.it, card.id + today) : null;
     const reveal = () => {
       session.revealed = true; show();
-      if (!itFirst && store.state.settings.autoSpeak !== false) ctx.speech.speak(card.it, store.state.settings.rate);
+      if ((cl || !itFirst) && store.state.settings.autoSpeak !== false) ctx.speech.speak(card.it, store.state.settings.rate);
     };
     const grade = (g) => {
       store.setCard(card.id, rate(st, g, today)); store.addReviewed(today, 1, isNew ? 1 : 0);
@@ -64,13 +67,18 @@ export function reviewView(ctx) {
     mount(root, 
       h("div", { class: "row between" }, h("p", { class: "eyebrow" }, `${card.deckTitle}${isNew ? " · new" : ""}`), h("button", { class: "btn ghost small", type: "button", onClick: () => { document.onkeydown = null; session = null; bodyClass(false); setup(); } }, "End")),
       h("div", { class: "progress", role: "progressbar", "aria-valuenow": pct, "aria-valuemin": 0, "aria-valuemax": 100 }, h("i", { style: `width:${pct}%` })),
-      h("section", { class: "card stack", "aria-live": "polite" },
+      cl ? h("section", { class: "card stack", "aria-live": "polite" },
+        h("p", { class: "muted small" }, "Fill the blank"),
+        h("div", { class: "row" }, h("div", { class: "flash cloze" }, cl.before, session.revealed ? h("span", { class: "answer" }, cl.answer) : h("span", { class: "blank", role: "img", "aria-label": "blank" }, "_____"), cl.after), session.revealed ? speakBtn(ctx, card.it) : null),
+        h("p", { class: "muted" }, card.en))
+      : h("section", { class: "card stack", "aria-live": "polite" },
         h("p", { class: "muted small" }, itFirst ? "What does this mean?" : "Say it in Italian"),
         h("div", { class: "row" }, h("div", { class: "flash" }, inline(prompt)), itFirst ? speakBtn(ctx, card.it) : null),
         session.revealed ? [
           h("hr"),
           h("div", { class: "row" }, h("div", { class: "flash answer" }, inline(answer)), itFirst ? null : speakBtn(ctx, card.it)),
-          card.example ? h("p", { class: "muted" }, "e.g. ", inline(card.example)) : null] : null),
+          card.example ? h("p", { class: "muted" }, "e.g. ", inline(card.example)) : null,
+          card.mine && card.mine.length ? h("p", { class: "muted" }, "Your sentence: ", h("em", null, card.mine[card.mine.length - 1].text), card.mine[card.mine.length - 1].checked ? " ✓" : "") : null] : null),
       // fixed bar at the bottom of the screen: within thumb reach, and the main button sits on the side of your hand (Settings)
       session.revealed
         ? h("div", { class: "actionbar" },

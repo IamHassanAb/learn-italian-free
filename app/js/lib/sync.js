@@ -9,7 +9,8 @@ const SESSION_KEY = "italiano-ogni-giorno:sync";
 const LEGACY_TABLE = "italiano_progress";
 const CONFLICT = { prefs: "user_id", cards: "user_id,card_id", daily: "user_id,day", gaps: "user_id,id", ratings: "user_id,scenario_id", drills: "user_id,kind" };
 const PAGE = 1000, BATCH = 200, OVERLAP_MS = 10_000;
-const UPGRADE_MSG = "This Supabase project needs the new tables. Open the SQL editor, run supabase/schema.sql from the repository, then sync again.";
+const MIN_SCHEMA = 3;                    // 3 added own_sentences on log lines
+const UPGRADE_MSG = "This Supabase project needs the newest tables. Open the SQL editor, run supabase/schema.sql from the repository (it is safe to run again), then sync again.";
 
 export function createSync({ config, store, storage, fetchImpl = (...a) => fetch(...a), now = () => Date.now(), debounceMs = 4000, setTimer = setTimeout, clearTimer = clearTimeout }) {
   const url = ((config && config.supabaseUrl) || "").replace(/\/+$/, "");
@@ -43,7 +44,7 @@ export function createSync({ config, store, storage, fetchImpl = (...a) => fetch
     const t = await token(); if (!t) throw Object.assign(new Error("Signed out"), { status: 401 });
     const res = await fetchImpl(`${url}/rest/v1/${path}`, { method, headers: { ...headers(t), ...extra }, body: body === undefined ? undefined : JSON.stringify(body) });
     if (!res.ok) { const j = await res.json().catch(() => ({})); throw Object.assign(new Error(j.message || `Sync failed (${res.status})`), { status: res.status, code: j.code }); }
-    return method === "GET" ? res.json() : null;
+    return method === "GET" || path.startsWith("rpc/") ? res.json() : null;
   }
 
   const SELECT = (kind, cursor) => `${TABLE[kind]}?select=*&order=updated_at.asc${cursor ? `&updated_at=gte.${encodeURIComponent(new Date(Date.parse(cursor) - OVERLAP_MS).toISOString())}` : ""}`;
@@ -74,8 +75,8 @@ export function createSync({ config, store, storage, fetchImpl = (...a) => fetch
   let schemaOk = false;
   async function checkSchema() {
     if (schemaOk) return;
-    try { await rest("POST", "rpc/italiano_schema_version", {}); schemaOk = true; }
-    catch (e) { if (e.status === 404 || e.code === "PGRST202") throw Object.assign(new Error(UPGRADE_MSG), { status: 404, upgrade: true }); throw e; }
+    try { const v = await rest("POST", "rpc/italiano_schema_version", {}); if (Number(v) < MIN_SCHEMA) throw Object.assign(new Error(UPGRADE_MSG), { status: 404, upgrade: true }); schemaOk = true; }
+    catch (e) { if (e.upgrade) throw e; if (e.status === 404 || e.code === "PGRST202") throw Object.assign(new Error(UPGRADE_MSG), { status: 404, upgrade: true }); throw e; }
   }
 
   // First time on this device for this project and user: copy the old single-JSON row across (if there is one) and send everything.

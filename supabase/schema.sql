@@ -1,4 +1,4 @@
--- Italiano ogni giorno: cloud sync schema (version 2).
+-- Italiano ogni giorno: cloud sync schema (version 3: log lines can carry the sentences you wrote with them).
 -- Run this once in YOUR Supabase project: Dashboard -> SQL Editor -> New query -> paste -> Run.
 -- It is safe to run again: nothing is dropped or emptied.
 --
@@ -16,7 +16,7 @@
 
 create table if not exists public.italiano_profiles (
   user_id           uuid primary key references auth.users (id) on delete cascade,
-  schema_version    int  not null default 2,
+  schema_version    int  not null default 3,
   timezone          text check (char_length(timezone) <= 64),
   prefs             jsonb not null default '{}'::jsonb check (octet_length(prefs::text) < 20000),   -- study preferences that follow the learner
   created_at        timestamptz not null default now(),
@@ -64,6 +64,7 @@ create table if not exists public.italiano_log_entries (
   checked           boolean not null default false,
   created_on        date not null default current_date,
   deleted_at        timestamptz,                                -- deleted lines stay as markers so every device learns of the delete
+  own_sentences     jsonb not null default '[]'::jsonb,         -- [{id, text, at, checked}]: sentences you wrote with this line
   client_updated_at timestamptz not null default now(),
   updated_at        timestamptz not null default now(),
   primary key (user_id, id)
@@ -89,6 +90,11 @@ create table if not exists public.italiano_drill_stats (
   updated_at        timestamptz not null default now(),
   primary key (user_id, kind)
 );
+
+-- Projects that ran version 2 of this file get the new column here (safe to run again).
+alter table public.italiano_log_entries add column if not exists own_sentences jsonb not null default '[]'::jsonb;
+alter table public.italiano_log_entries drop constraint if exists italiano_log_entries_own_sentences_check;
+alter table public.italiano_log_entries add constraint italiano_log_entries_own_sentences_check check (jsonb_typeof(own_sentences) = 'array' and jsonb_array_length(own_sentences) <= 20 and octet_length(own_sentences::text) < 20000);
 
 -- ---------------------------------------------------------------- indexes
 -- The primary keys already start with user_id, which is what row level security filters on.
@@ -161,7 +167,7 @@ returns int
 language sql
 stable
 set search_path = ''
-as $$ select 2 $$;
+as $$ select 3 $$;
 revoke all on function public.italiano_schema_version() from public, anon;
 grant execute on function public.italiano_schema_version() to authenticated;
 

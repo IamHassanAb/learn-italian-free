@@ -35,7 +35,7 @@ if (process.argv[1] && process.argv[1].endsWith("sql-check.mjs")) {
   const db = await freshDb();
 
   await step("schema.sql runs, and runs a second time without errors", async () => { await db.exec(sql("supabase/schema.sql")); await db.exec(sql("supabase/schema.sql")); });
-  await step("schema version is 2", async () => assert.equal((await asUser(db, A, () => db.query("select public.italiano_schema_version() v"))).rows[0].v, 2));
+  await step("schema version is 3", async () => assert.equal((await asUser(db, A, () => db.query("select public.italiano_schema_version() v"))).rows[0].v, 3));
   await step("anonymous users can read and write nothing", async () => {
     for (const t of ["italiano_profiles", "italiano_card_states", "italiano_daily", "italiano_log_entries", "italiano_scenario_ratings", "italiano_drill_stats"])
       await asUser(db, null, async () => rejects(db.query(`select * from public.${t}`), /permission denied/));
@@ -102,11 +102,12 @@ if (process.argv[1] && process.argv[1].endsWith("sql-check.mjs")) {
     one.setCard("pb-banking.p146", { box: 3, due: "2026-11-01", reps: 5, lapses: 1, last: "2026-10-19" });
     one.markBlock("2026-10-19", "read", true); one.markBlock("2026-10-19", "speak", true); one.addReviewed("2026-10-19", 7, 2); one.addDrill("2026-10-19", "numbers", 8, 10); one.setRating("scenario-bar", 3);
     const g = one.addGap({ it: "Dov'è la farmacia?", en: "Where is the pharmacy?", ctx: "health", kind: "corrected", note: "I said 'Dove la farmacia'", tag: "step3-grammar.x", src: "translate", provider: "mymemory", checked: true });
+    one.addOwnSentence(g.id, "Ieri ho chiesto dov'è la farmacia."); one.setOwnChecked(g.id, one.state.gaps.find((x) => x.id === g.id).mine[0].id, true);
     const gone = one.addGap({ it: "da cancellare", en: "to delete", src: "manual" }); one.removeGap(gone.id);
     one.setting("newPerDay", 15); one.setting("decks", ["pb-banking"]);
     const { rows } = collectDirty(one.state);
     for (const [table, list] of Object.entries(rows)) for (const r of list) {
-      const cols = ["user_id", ...Object.keys(r)], vals = [A, ...Object.values(r).map((v) => (v && typeof v === "object" && !Array.isArray(v) ? JSON.stringify(v) : v))];
+      const cols = ["user_id", ...Object.keys(r)], vals = [A, ...Object.values(r).map((v) => (v && typeof v === "object" && (!Array.isArray(v) || (Object.keys(r).find((k) => r[k] === v) === "own_sentences")) ? JSON.stringify(v) : v))];
       await asUser(db, A, () => db.query(`insert into public.${table} (${cols.join(", ")}) values (${cols.map((_, i) => "$" + (i + 1)).join(", ")}) on conflict do nothing`, vals));
     }
     const pulled = {};
@@ -119,7 +120,22 @@ if (process.argv[1] && process.argv[1].endsWith("sql-check.mjs")) {
     assert.deepEqual(state.daily, one.state.daily);
     assert.deepEqual(state.gaps.map((x) => ({ ...x, updated: undefined })), one.state.gaps.map((x) => ({ ...x, updated: undefined })));
     assert.equal(state.settings.newPerDay, 15); assert.deepEqual(state.settings.decks, ["pb-banking"]);
+    assert.equal(state.gaps.find((x) => x.id === g.id).mine[0].text, "Ieri ho chiesto dov'è la farmacia."); assert.equal(state.gaps.find((x) => x.id === g.id).mine[0].checked, true);
     assert.equal(state.gaps.some((x) => x.id === gone.id), false); assert.ok(state.gapsDeleted.includes(gone.id));
+  });
+  await step("a project that ran version 2 gets the new column by running schema.sql again, and keeps its rows", async () => {
+    await db.exec("alter table public.italiano_log_entries drop constraint if exists italiano_log_entries_own_sentences_check; alter table public.italiano_log_entries drop column own_sentences");
+    const before = (await db.query("select count(*)::int n from public.italiano_log_entries")).rows[0].n;
+    await db.exec(sql("supabase/schema.sql"));
+    assert.equal((await db.query("select count(*)::int n from information_schema.columns where table_name = 'italiano_log_entries' and column_name = 'own_sentences'")).rows[0].n, 1);
+    assert.equal((await db.query("select count(*)::int n from public.italiano_log_entries")).rows[0].n, before);
+  });
+  await step("own sentences must be a short list: too many, or not a list, are refused", async () => {
+    const many = JSON.stringify(Array.from({ length: 21 }, (_, i) => ({ id: "s" + i, text: "x y" })));
+    await asUser(db, A, async () => {
+      await rejects(db.query(`insert into public.italiano_log_entries (user_id, id, italian, english, own_sentences) values ('${A}', 'm1', 'a', 'b', $1)`, [many]), /check constraint/);
+      await rejects(db.query(`insert into public.italiano_log_entries (user_id, id, italian, english, own_sentences) values ('${A}', 'm2', 'a', 'b', '{"a":1}')`), /check constraint/);
+    });
   });
   await step("deleting a user removes all their data", async () => {
     await db.exec(`delete from auth.users where id = '${B}'`);

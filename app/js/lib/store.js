@@ -1,7 +1,7 @@
 import { localDate, addDays } from "./util.js";
 import { emptySync, markAllDirty, clearSent, hasDirty, PREF_KEYS } from "./rows.js";
 const KEY = "italiano-ogni-giorno:v1";
-const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null, translateProvider: "auto", translateEmail: "", translateDir: "auto", hand: "right" }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {}, sync: emptySync() });
+const DEFAULTS = () => ({ v: 1, settings: { newPerDay: 10, direction: "en-it", theme: "auto", rate: 0.9, decks: null, translateProvider: "auto", translateEmail: "", translateDir: "auto", hand: "right", cloze: "sometimes" }, cards: {}, daily: {}, gaps: [], gapsDeleted: [], ratings: {}, drills: {}, sync: emptySync() });
 
 // storage: anything with getItem/setItem (localStorage, or a stub in tests). Keeps working in memory if it throws.
 export function createStore(storage) {
@@ -48,6 +48,14 @@ export function createStore(storage) {
     addGap(g) { const e = { id: "gap." + Date.now().toString(36) + Math.random().toString(36).slice(2, 8), created: localDate(), updated: new Date().toISOString(), ...g }; state.gaps.unshift(e); touch("gaps", e.id); write(); return e; },
     updateGap(id, patch) { const g = state.gaps.find((x) => x.id === id); if (!g) return null; Object.assign(g, patch, { updated: new Date().toISOString() }); touch("gaps", id); write(); return g; },
     removeGap(id) { state.gaps = state.gaps.filter(g => g.id !== id); delete state.cards[id]; state.gapsDeleted = [...(state.gapsDeleted || []), id].slice(-500); delete state.sync.dirty.cards[id]; touch("gaps", id); write(); },
+    // Sentences you wrote with a logged line: [{id, text, at, checked}]. "checked" means a local or a source confirmed it.
+    addOwnSentence(gapId, text) {
+      const g = state.gaps.find((x) => x.id === gapId); if (!g) return null;
+      const e = { id: "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), text, at: new Date().toISOString(), checked: false };
+      this.updateGap(gapId, { mine: [...(g.mine || []), e].slice(-5) }); return e;
+    },
+    setOwnChecked(gapId, sid, checked) { const g = state.gaps.find((x) => x.id === gapId); if (g && g.mine) this.updateGap(gapId, { mine: g.mine.map((s) => (s.id === sid ? { ...s, checked: !!checked } : s)) }); },
+    removeOwnSentence(gapId, sid) { const g = state.gaps.find((x) => x.id === gapId); if (g && g.mine) { const mine = g.mine.filter((s) => s.id !== sid); this.updateGap(gapId, { mine }); if (!mine.length) { delete g.mine; write(); } } },
     setRating(id, stars) { state.ratings[id] = { stars, last: localDate() }; touch("ratings", id); write(); },
     exportJSON() { const { sync, ...rest } = state; return JSON.stringify(rest, null, 1); },     // a backup holds your data, not this device's upload bookkeeping
     importJSON(text) {

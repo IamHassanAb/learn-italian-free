@@ -29,7 +29,7 @@ function fakeSupabase({ users = { "me@example.com": "secret" }, legacy = null, s
       const auth = (opts.headers.Authorization || "").replace("Bearer ", ""); const email = tokens[auth];
       if (!email) return json(401, { message: "JWT expired", code: "PGRST303" });
       const uid = "u-" + email, name = u.pathname.slice("/rest/v1/".length);
-      if (name === "rpc/italiano_schema_version") return schema ? json(200, 2) : json(404, { code: "PGRST202", message: "Could not find the function" });
+      if (name === "rpc/italiano_schema_version") return schema ? json(200, schema === true ? 3 : schema) : json(404, { code: "PGRST202", message: "Could not find the function" });
       if (name === "italiano_progress") return legacy ? json(200, [{ data: legacy }]) : json(404, { code: "PGRST205", message: "no table" });
       const t = tables[name]; if (!t) return json(404, { code: "PGRST205", message: "no table" });
       if (opts.method === "GET") {
@@ -131,6 +131,10 @@ test("the old single-JSON copy is imported once, then left alone", async () => {
 test("a project without the new tables says what to do, and keeps your data", async () => {
   const sb = fakeSupabase({ schema: false }), A = device(sb); A.store.addGap({ it: "x", en: "y", src: "manual" });
   const r = await A.sync.signIn("me@example.com", "secret"); assert.equal(r.reason, "upgrade"); assert.match(A.sync.info().error, /schema\.sql/); assert.equal(A.store.state.gaps.length, 1);
+});
+test("a project on the older table layout (version 2) is asked to run schema.sql again", async () => {
+  const sb = fakeSupabase({ schema: 2 }), A = device(sb); A.store.addGap({ it: "x", en: "y", src: "manual" });
+  const r = await A.sync.signIn("me@example.com", "secret"); assert.equal(r.reason, "upgrade"); assert.match(A.sync.info().error, /safe to run again/); assert.equal(A.store.state.gaps.length, 1);
 });
 test("moving to another project uploads everything there", async () => {
   const one = fakeSupabase(), A = device(one); A.store.setCard("c", rate(undefined, "good", "2026-10-10")); A.store.addGap({ it: "uno", en: "one", src: "manual" });

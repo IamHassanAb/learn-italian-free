@@ -29,7 +29,7 @@ Links were opened and checked on the date recorded in each file in `content/reso
 
 ## The app (works on your phone, offline)
 A small study app lives in `docs/` and is published with GitHub Pages: a daily 30-minute plan, flashcards with spaced repetition,
-number/time/date drills, role-play scenarios, and a **Translate & log** screen: translate while you talk, then save the line (with the situation and any correction) to a conversation log that becomes flashcards. It installs to your home screen and works offline
+number/time/date drills, role-play scenarios, and a **Translate & log** screen: translate while you talk, then save the line (with the situation and any correction) to a conversation log that becomes flashcards. The log also shows which grammar topics keep coming up, turns your sentences into fill-in-the-blank cards, and has a short Write session where you make a sentence of your own with each line. It installs to your home screen and works offline
 after the first visit. Your progress stays on your device (Settings has a backup you can move to another device).
 
 Run it locally: `python -m http.server 8000 --directory docs`, then open http://localhost:8000.

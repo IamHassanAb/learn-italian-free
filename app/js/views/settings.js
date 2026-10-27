@@ -72,6 +72,7 @@ export function settingsView(ctx) {
       h("section", { class: "card stack" }, h("h2", null, "Study"),
         select("set-new", "New cards per day", s.newPerDay, [5, 10, 15, 20, 30].map(n => [n, String(n)]), v => store.setting("newPerDay", +v)),
         select("set-dir", "Flashcard direction", s.direction, [["en-it", "English → Italian (say it)"], ["it-en", "Italian → English"], ["mixed", "Mixed"]], v => store.setting("direction", v)),
+        select("set-cloze", "Your logged sentences as fill-in-the-blank", s.cloze || "sometimes", [["sometimes", "Sometimes (about half the cards)"], ["always", "Always"], ["off", "Never"]], v => store.setting("cloze", v)),
         h("label", { class: "check" }, h("input", { type: "checkbox", id: "set-auto", checked: s.autoSpeak !== false, onChange: (e) => store.setting("autoSpeak", e.target.checked) }), "Play the Italian when I reveal a card")),
       h("section", { class: "card stack" }, h("h2", null, "Voice"),
         voice ? [h("p", { class: "muted small" }, "An Italian voice is available on this device."),

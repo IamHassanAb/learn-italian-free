@@ -201,3 +201,6 @@ body[data-hand="right"] .handrow { justify-content: flex-end; } body[data-hand="
   a { color: #000 !important; text-decoration: none; }
   .dot { border-color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* fill-in-the-blank card */
+.flash.cloze .blank { display: inline-block; min-width: 3.5ch; border-bottom: 3px solid hsl(var(--warm)); color: transparent; margin-inline: 2px; user-select: none; }

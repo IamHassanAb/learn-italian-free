@@ -2,10 +2,13 @@ id: T07
 stage: T
 title: Cloze cards from logged sentences
 size: S
-status: todo
+status: done
 depends_on:
 - T04
-change: 'Cloze cards from logged sentences: hide the key chunk in the real sentence (sentence-mining model).'
+change: 'Cloze cards from logged sentences: hide the key chunk in the real sentence (sentence-mining model). Built:
+  lib/cloze.js hides one content word of a logged sentence (a different one each day, small words never); the meaning
+  is the hint; Settings choice: sometimes (about half), always or never. The key chunk is picked automatically,
+  not chosen by you.'
 done_when:
 - Card shows the sentence with the chunk hidden; answer reveals it
 touches:

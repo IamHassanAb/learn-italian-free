@@ -33,7 +33,7 @@ export function rowFor(kind, key, state, at) {
     if (!g) {                                    // deleted here: send a marker, without the text
       return (state.gapsDeleted || []).includes(key) ? { id: key, italian: "-", english: "-", deleted_at: at, source: "manual", ...cu } : null;
     }
-    return { id: g.id, italian: g.it, english: g.en, situation: g.ctx || null, kind: g.kind || null, note: g.note || null, grammar_tag: g.tag || null, source: g.src === "translate" ? "translate" : "manual", provider: g.provider || null, checked: !!g.checked, created_on: g.created, deleted_at: null, ...cu };
+    return { id: g.id, italian: g.it, english: g.en, situation: g.ctx || null, kind: g.kind || null, note: g.note || null, grammar_tag: g.tag || null, source: g.src === "translate" ? "translate" : "manual", provider: g.provider || null, checked: !!g.checked, created_on: g.created, deleted_at: null, own_sentences: g.mine || [], ...cu };
   }
   if (kind === "ratings") { const r = state.ratings[key]; return r && { scenario_id: key, stars: r.stars, rated_on: r.last || null, ...cu }; }
   if (kind === "drills") { const d = state.drills[key]; return d && { kind: key, sessions: d.sessions || 0, correct: d.correct || 0, total: d.total || 0, ...cu }; }
@@ -73,6 +73,7 @@ const fromRow = {
   drills: (r) => ({ sessions: r.sessions, correct: r.correct, total: r.total }),
   gaps: (r) => {
     const g = { id: r.id, it: r.italian, en: r.english, created: r.created_on, updated: r.client_updated_at, src: r.source, checked: !!r.checked };
+    if (Array.isArray(r.own_sentences) && r.own_sentences.length) g.mine = r.own_sentences;
     if (r.situation) g.ctx = r.situation; if (r.kind) g.kind = r.kind; if (r.note) g.note = r.note; if (r.grammar_tag) g.tag = r.grammar_tag; if (r.provider) g.provider = r.provider;
     return g;
   },

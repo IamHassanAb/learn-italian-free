@@ -15,13 +15,14 @@ import { retellView } from "./views/retell.js";
 import { setupView } from "./views/setup.js";
 import { searchView } from "./views/search.js";
 import { translateView } from "./views/translate.js";
+import { writeView } from "./views/write.js";
 import { createTranslator } from "./lib/translate.js";
 import { registerDrills } from "./lib/drills.js";
 import { buildTopicDrills, withArticle } from "./lib/vocabdrills.js";
 import { createInstall } from "./install.js";
 
 const TABS = [["today", "Today"], ["review", "Review"], ["translate", "Translate"], ["scenarios", "Role-play"], ["more", "More"]];
-const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, translate: translateView, search: searchView, more: moreView };
+const ROUTES = { today: todayView, review: reviewView, drills: drillsView, scenarios: scenariosView, library: libraryView, gaps: gapsView, settings: settingsView, retell: retellView, setup: setupView, translate: translateView, write: writeView, search: searchView, more: moreView };
 // Small line icons (24x24 paths) so each tab is recognisable at a glance.
 const ICONS = {
   today: "M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z",
@@ -30,7 +31,7 @@ const ICONS = {
   scenarios: "M4 5h16a1 1 0 011 1v9a1 1 0 01-1 1H10l-5 4v-4H4a1 1 0 01-1-1V6a1 1 0 011-1z",
   more: "M5 12h.01M12 12h.01M19 12h.01",
 };
-const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", search: "more", drills: "more", retell: "today" };
+const TAB_OF = { library: "more", gaps: "more", settings: "more", setup: "more", search: "more", write: "review", drills: "more", retell: "today" };
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* blocked: the store falls back to memory */ }
@@ -68,7 +69,7 @@ function buildCtx(content, sync, syncInfo) {
     return list;
   };
   const base = buildCards();
-  const cards = () => base.concat(store.state.gaps.map(g => ({ id: g.id, deck: "gaps", deckTitle: "Your gaps", it: g.it, en: g.en })));
+  const cards = () => base.concat(store.state.gaps.map(g => ({ id: g.id, deck: "gaps", deckTitle: "Your gaps", it: g.it, en: g.en, mine: g.mine })));
   const decks = () => {
     const map = new Map();
     for (const c of cards()) { const d = map.get(c.deck) || { id: c.deck, title: c.deckTitle, count: 0 }; d.count++; map.set(c.deck, d); }
