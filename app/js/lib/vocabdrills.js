@@ -71,13 +71,20 @@ export function topicQuestion(module, mode = "mixed", rnd = Math.random) {
   return { pick: pickQuestion, type: typeQuestion, listen: listenQuestion, swatch: swatchQuestion, gender: genderQuestion }[k](words, rnd);
 }
 
+// One question from any topic that can make the asked kind (used by the "all topics" round).
+export function anyTopicQuestion(modules, mode = "mixed", rnd = Math.random) {
+  for (const m of shuffle(modules, rnd)) { try { return topicQuestion(m, mode, rnd); } catch { /* this topic has no such question: try the next */ } }
+  throw new Error(`No ${mode} questions in any topic`);
+}
+
 // One drill per module that lists drills. id: topic-<module id>
 export const topicDrillId = (moduleId) => `topic-${moduleId}`;
 export function buildTopicDrills(content) {
-  const defs = {};
+  const defs = {}, all = [];
   for (const id of content.order) {
     const m = content.modules[id];
     if (!m.drills || !m.drills.length) continue;
+    all.push(m);
     const modes = ["mixed", ...m.drills];
     defs[topicDrillId(id)] = {
       title: m.title, group: "Vocabulary topics", topic: true, blurb: `${topicWords(m).length} words.`, options: modes, defaultOption: "mixed",
@@ -85,5 +92,13 @@ export function buildTopicDrills(content) {
       make: (opt, rnd) => topicQuestion(m, opt, rnd),
     };
   }
+  if (all.length >= 2) {
+    const kinds = ["pick", "type", "listen", "swatch", "gender"].filter((k) => all.some((m) => m.drills.includes(k)));
+    const word = (n) => (n === 1 ? "word" : "words");
+    const total = all.reduce((n, m) => n + topicWords(m).length, 0);
+    // the round across every topic goes first in the list
+    return { [TOPICS_ALL]: { title: "All topics, mixed", group: "Vocabulary topics", topic: true, blurb: `${total} ${word(total)} from ${all.length} topics.`, options: ["mixed", ...kinds], defaultOption: "mixed", optionNeedsVoice: ["listen"], needsVoice: false, make: (opt, rnd) => anyTopicQuestion(all, opt, rnd) }, ...defs };
+  }
   return defs;
 }
+export const TOPICS_ALL = "topics-all";

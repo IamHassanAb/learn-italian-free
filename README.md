@@ -20,6 +20,8 @@ You do not need to install anything to learn. The PDFs are already built.
 | `03-Speak-Now.pdf` | 4 | 14 key phrases, a kit for starting conversations, 8 real-life scenarios (café, flat hunting, university, bureaucracy...), short writing tasks |
 | `04-Italian-Home.pdf` | 5 | A small set of free podcasts, videos and TV to repeat, with a weekly rhythm |
 | `05-Everyday-Basics.pdf` | 4 | Numbers, time, days, months, weather, greetings, places, emergencies |
+| `06-200-Phrases.pdf` | 4 | 200 essential phrases for living and studying in Italy, in 17 themes |
+| `07-Topic-Words.pdf` | 4 | Colours, family, jobs, school, the classroom, countries and nationalities, job hunting, workplaces and hobbies, word by word, one topic per page |
 
 ## Free means free
 Everything linked is free to use. Some sites also sell apps or courses; they are marked "ignore" in the files and you never need them.

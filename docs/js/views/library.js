@@ -5,7 +5,7 @@ export function libraryView(ctx, params) {
   if (params[0]) {
     const m = content.modules[params[0]];
     if (!m) return h("div", { class: "stack" }, h("p", null, "That page does not exist."), h("a", { class: "btn", href: "#/library" }, "Library"));
-    return h("div", { class: "stack" }, h("a", { class: "btn ghost small", href: "#/library" }, "← Library"), h("div", null, h("p", { class: "eyebrow" }, `${m.level} · ${m.skill}`), h("h1", null, m.title)), renderModule(ctx, m));
+    return h("div", { class: "stack" }, h("div", { class: "row between" }, h("a", { class: "btn ghost small", href: "#/library" }, "← Library"), h("button", { class: "btn ghost small", type: "button", onClick: () => window.print() }, "Print this topic")), h("div", null, h("p", { class: "eyebrow" }, `${m.level} · ${m.skill}`), h("h1", null, m.title)), renderModule(ctx, m));
   }
   const stepTitle = (n) => (n === 0 ? "Start here" : (content.steps.find(s => s.number === n) || {}).title || `Step ${n}`);
   const groups = new Map();

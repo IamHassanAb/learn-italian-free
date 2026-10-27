@@ -62,11 +62,16 @@ def widths(rows):
 class Renderer:
     def __init__(self, content): self.c = content
     def P(self, text, style="p"): return Paragraph(self.c.inline(text), S[style])
-    def table(self, rows, header):
-        data = [[Paragraph(self.c.inline(x), S["p"]) for x in r] for r in rows]
-        t = Table(data, colWidths=widths(rows), repeatRows=1 if header else 0)
+    def table(self, rows, header, span_rows=()):
+        # span_rows: indexes of group-heading rows that run across the whole table
+        data = []
+        for i, r in enumerate(rows):
+            if i in span_rows: data.append([Paragraph(self.c.inline("**%s**" % r[0]), S["p"])] + [""] * (len(r) - 1))
+            else: data.append([Paragraph(self.c.inline(x), S["p"]) for x in r])
+        t = Table(data, colWidths=widths([r for i, r in enumerate(rows) if i not in span_rows]), repeatRows=1 if header else 0)
         st = [("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#bbbbbb")), ("VALIGN", (0, 0), (-1, -1), "TOP")]
         if header: st.append(("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e3f1ea")))
+        for i in span_rows: st += [("SPAN", (0, i), (-1, i)), ("BACKGROUND", (0, i), (-1, i), colors.HexColor("#f0f0f0"))]
         t.setStyle(TableStyle(st)); return t
     def lines(self, n): return [Paragraph("_" * 95, S["small"]) for _ in range(n)]
 
@@ -94,8 +99,14 @@ class Renderer:
                     if f.get(k) and f[k] not in u: u.append(f[k])
                 return "never changes" if len(u) == 1 else " · ".join(u)
             hasf = any("forms" in i for i in p["items"])
-            rows = ([["Italiano", "English"] + (["Forms"] if hasf else [])] if hdr else []) + [[disp(i), i["en"]] + ([forms(i)] if hasf else []) for i in p["items"]]
-            out.append(self.table(rows, hdr))
+            ncols = 3 if hasf else 2
+            rows = [["Italiano", "English"] + (["Forms"] if hasf else [])] if hdr else []
+            spans, last = [], None
+            for i in p["items"]:
+                if i.get("group") and i["group"] != last:           # a heading row for each group of words
+                    last = i["group"]; spans.append(len(rows)); rows.append([last] + [""] * (ncols - 1))
+                rows.append([disp(i), i["en"]] + ([forms(i)] if hasf else []))
+            out.append(self.table(rows, hdr, spans))
         elif t == "phrases":
             ex = any(i.get("example") for i in p["items"])
             rows = [["Phrase", "English", "Example"] if ex else ["Phrase", "English"]] + [[i["it"], i["en"], i.get("example", "")] if ex else [i["it"], i["en"]] for i in p["items"]]

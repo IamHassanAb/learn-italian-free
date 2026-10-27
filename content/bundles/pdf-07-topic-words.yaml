@@ -1,0 +1,32 @@
+id: pdf-07-topic-words
+output: pdf
+filename: 07-Topic-Words.pdf
+title: Topic words
+subtitle: Colours, family, jobs, school, the classroom, countries, job hunting, workplaces and hobbies, word by word
+modules:
+- id: basics-colours
+  number: true
+- id: basics-family
+  number: true
+  page_break: true
+- id: basics-professions
+  number: true
+  page_break: true
+- id: basics-workplaces
+  number: true
+  page_break: true
+- id: basics-job-search
+  number: true
+  page_break: true
+- id: basics-school
+  number: true
+  page_break: true
+- id: basics-classroom
+  number: true
+  page_break: true
+- id: basics-nationalities
+  number: true
+  page_break: true
+- id: basics-hobbies
+  number: true
+  page_break: true

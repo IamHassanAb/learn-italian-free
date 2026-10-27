@@ -2,13 +2,14 @@ id: B13
 stage: B
 title: Publish on GitHub Pages
 size: S
-status: todo
+status: done
 depends_on:
 - B03
 change: 'Maintainer: repo Settings, Pages, deploy from main /docs. Re-run python build/app.py after content changes
   and commit docs/.'
 done_when:
-- The site opens at the Pages URL and installs to a phone home screen
+- The site opens at https://iamhassanab.github.io/learn-italian-free/ (checked 2026-10-27); installing on a phone
+  is tracked in I06
 - Progress survives a redeploy (same origin, same localStorage key)
 touches:
 - docs/

@@ -1,0 +1,13 @@
+id: V17
+stage: V
+title: Print this topic from the app
+size: S
+status: done
+depends_on:
+- V03
+change: 'A Print this topic button on each Library topic page, and a print stylesheet: the words only, black on
+  white, no menus or buttons. No extra files to maintain.'
+done_when:
+- Print view hides the menus and buttons and shows the table; a printed topic page is a clean A4 table
+touches:
+- app/

@@ -186,3 +186,18 @@ body[data-hand="right"] .handrow { justify-content: flex-end; } body[data-hand="
 /* tap-to-answer choices: two columns of big buttons */
 .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .choices .btn { min-height: 56px; font-size: 1rem; }
+
+/* printing a topic from the Library: just the words, black on white */
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff !important; color: #000 !important; padding: 0 !important; font-size: 11pt; }
+  .grain, header.top, #tabs, .toast, .btn, button, .speak, .eyebrow { display: none !important; }
+  main, .top { max-width: none; }
+  h1, h2, h3, th, td, p, li { color: #000 !important; }
+  .card { border: 0 !important; background: none !important; padding: 0 !important; }
+  table { page-break-inside: auto; } tr { page-break-inside: avoid; }
+  th, td { border: 1px solid #999 !important; background: #fff !important; }
+  th { background: #eee !important; }
+  a { color: #000 !important; text-decoration: none; }
+  .dot { border-color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

@@ -1,0 +1,13 @@
+id: V18
+stage: V
+title: All topics mixed round
+size: S
+status: done
+depends_on:
+- V12
+change: A drill at the top of the vocabulary topics that draws questions from every topic (pick, type, listen, colour,
+  masculine or feminine), skipping topics that cannot ask the chosen kind.
+done_when:
+- Every mode finishes a ten-question round across topics; unit-tested
+touches:
+- app/

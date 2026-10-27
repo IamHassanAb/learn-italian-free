@@ -108,3 +108,19 @@ test("wrong choices come from the same group when the group is big enough", () =
     assert.ok(q.choices.every((c) => /^(Frase|Sentence)/.test(c) === sentence), `mixed choices: ${q.prompt} ${q.choices}`);
   }
 });
+
+test("the all-topics round comes first, draws from every topic, and only asks what a topic can ask", () => {
+  const second = { id: "t-jobs", title: "Jobs", drills: ["pick", "type", "gender"], parts: [{ id: "t-jobs.words", type: "vocab", items: [
+    { id: "j1", it: "cuoco", art: "il", en: "cook", forms: { m: "cuoco", f: "cuoca", mp: "cuochi", fp: "cuoche" } }, { id: "j2", it: "cameriere", art: "il", en: "waiter", forms: { m: "cameriere", f: "cameriera", mp: "camerieri", fp: "cameriere" } },
+    { id: "j3", it: "studente", art: "lo", en: "student", forms: { m: "studente", f: "studentessa", mp: "studenti", fp: "studentesse" } }, { id: "j4", it: "medico", art: "il", en: "doctor", forms: { m: "medico", f: "medica", mp: "medici", fp: "mediche" } } ] }] };
+  const content = { order: ["t-colours", "t-jobs"], modules: { "t-colours": mod, "t-jobs": second } };
+  const defs = buildTopicDrills(content); assert.deepEqual(Object.keys(defs), ["topics-all", "topic-t-colours", "topic-t-jobs"]);
+  registerDrills(defs); setVoiceAvailable(true);
+  assert.match(defs["topics-all"].blurb, /from 2 topics/); assert.ok(defs["topics-all"].options.includes("swatch") && defs["topics-all"].options.includes("gender"));
+  const from = new Set();
+  for (const opt of defs["topics-all"].options) {
+    const s = makeSession("topics-all", opt, 8, seeded(6)); assert.ok(s.length >= 4, `${opt}: ${s.length}`);
+    for (const q of s) { assert.ok(check(q, q.answers[0])); from.add(q.card.split(".")[0]); if (opt === "swatch") assert.ok(q.swatch); }
+  }
+  assert.ok(from.has("t-colours") && from.has("t-jobs"));
+});
